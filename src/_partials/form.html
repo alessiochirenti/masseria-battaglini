@@ -1,0 +1,31 @@
+        <form class="contact-form reveal" id="richiesta" novalidate>
+          <div class="cf-fields">
+            <div class="cf-grid">
+              <label>Nome e cognome*<input type="text" name="nome" required autocomplete="name" placeholder="Il vostro nome"></label>
+              <label>Email*<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="nome@esempio.it"></label>
+              <label>Telefono<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="+39 …"></label>
+              <label>Dimora preferita<select name="dimora">
+                <option value="">Consigliateci voi</option>
+                {{#each dimore.elenco}}<option>{{nome}}</option>{{/each}}
+              </select></label>
+              <label>Arrivo<input type="date" name="arrivo"></label>
+              <label>Partenza<input type="date" name="partenza"></label>
+              <div class="cf-pair">
+                <label>Adulti<select name="adulti"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></label>
+                <label>Bambini<select name="bambini"><option selected>0</option><option>1</option><option>2</option><option>3</option></select></label>
+              </div>
+              <label>Vi interessa<select name="interesse">
+                <option value="">Solo il soggiorno</option>
+                {{#each site.form.interessi}}<option>{{.}}</option>{{/each}}
+              </select></label>
+              <label class="cf-full">Messaggio<textarea name="messaggio" placeholder="Raccontateci il vostro soggiorno: quanti siete, cosa vi piacerebbe fare, se avete richieste particolari."></textarea></label>
+              <label class="cf-check cf-full"><input type="checkbox" name="privacy" required> Ho letto l’informativa sulla privacy e acconsento al trattamento dei dati.</label>
+            </div>
+            <div class="cf-actions">
+              <button class="btn magnetic" type="submit"><span>{{site.form.bottone}}</span></button>
+              <p class="cf-note">{{site.form.nota}}</p>
+            </div>
+          </div>
+          <p class="cf-ok" hidden>{{site.form.grazie}}<br>{{site.form.grazie_riga2}}</p>
+        </form>
+        <p class="cta-alt reveal">Preferite scrivere? <a href="https://wa.me/{{site.contatti.whatsapp}}">WhatsApp {{site.contatti.telefono}}</a> · <a href="mailto:{{site.contatti.email}}">{{site.contatti.email}}</a></p>

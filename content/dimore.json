@@ -1,0 +1,71 @@
+{
+  "titolo_pagina": "Le dimore",
+  "descrizione": "Le tre dimore di Masseria Battaglini a Martina Franca: il trullo con sette coni, la Cummersa Fiori di Campo e la Cummersa Luce di Luna. Ottanta metri quadri ciascuna, ingresso privato, vista sulla piscina e sulla Valle d’Itria.",
+  "hero": {
+    "foto": "/uploads/trulli-sala.webp",
+    "alt": "La sala del trullo: gli archi in pietra, le tende chiare e il divano bianco",
+    "titolo": "Le dimore",
+    "sottotitolo": "Un trullo con sette coni e due cummerse: tre case indipendenti, una famiglia."
+  },
+  "intro": {
+    "titolo": "Tre case,",
+    "titolo_corsivo": "non tre camere.",
+    "testo": "Ottanta metri quadri ciascuna, l’ingresso privato, un patio o un terrazzo tutto vostro e la vista sulla piscina. Ognuna ha un carattere diverso: sceglietela per come volete svegliarvi."
+  },
+  "stazione": {
+    "riga1": "Sceglietela per come",
+    "riga2": "volete svegliarvi."
+  },
+  "elenco": [
+    {
+      "id": "trulli",
+      "nome": "Trulli Battaglini",
+      "etichetta": "La suite nel trullo",
+      "titolo": "Trulli Battaglini:",
+      "titolo_corsivo": "sette coni, due camini.",
+      "testo": "Un’antica costruzione in trulli con sette coni e una lamia. L’open space con la crociera centrale è il soggiorno, con il camino, un divano letto matrimoniale e uno singolo; l’alcova separata ha il letto matrimoniale e un secondo camino. Completano la casa una piccola cucina con frigobar e il bagno con doccia.\n\nL’ingresso privato guarda il giardino e i sentieri che portano alla piscina.",
+      "caratteristiche": ["80 mq", "Fino a 5 ospiti", "Cucina privata", "2 camini", "Patio", "Vista piscina"],
+      "foto": "/uploads/trulli-camino.webp",
+      "alt": "Il soggiorno del trullo con il camino in pietra e le poltrone bianche",
+      "galleria": ["/uploads/trulli-alcova.webp", "/uploads/trulli-tavola.webp", "/uploads/trulli-cucina.webp", "/uploads/trulli-01.webp", "/uploads/trulli-02.webp", "/uploads/trulli-03.webp", "/uploads/trulli-04.webp", "/uploads/trulli-05.webp", "/uploads/trulli-06.webp", "/uploads/trulli-08.webp", "/uploads/trulli-10.webp", "/uploads/trulli-11.webp", "/uploads/trulli-13.webp", "/uploads/trulli-14.webp", "/uploads/trulli-15.webp", "/uploads/trulli-16.webp", "/uploads/trulli-17.webp", "/uploads/trulli-18.webp", "/uploads/trulli-19.webp"]
+    },
+    {
+      "id": "fiori-di-campo",
+      "nome": "Cummersa Fiori di Campo",
+      "etichetta": "La cummersa sul giardino",
+      "titolo": "Fiori di Campo:",
+      "titolo_corsivo": "il fascino di una cummersa con vista.",
+      "testo": "Comfort, arredi sobri e gli ampi spazi esterni che si aprono sul giardino mediterraneo e conducono alla piscina. La suite ha una camera da letto, un grande open space con divano letto matrimoniale e un bagno completo con cabina doccia.\n\nIl tetto a spiovente della cummersa, tipico di Locorotondo, tiene la casa fresca d’estate.",
+      "caratteristiche": ["80 mq", "Fino a 4 ospiti", "Camera + open space", "Patio", "Vista piscina"],
+      "foto": "/uploads/fiori-soggiorno.webp",
+      "alt": "Il soggiorno della Cummersa Fiori di Campo: travi in legno, poltrone bianche, tappeto rosso",
+      "galleria": ["/uploads/fiori-letto.webp", "/uploads/fiori-finestra.webp", "/uploads/fiori-pranzo.webp", "/uploads/fiori-01.webp", "/uploads/fiori-05.webp", "/uploads/fiori-06.webp", "/uploads/fiori-07.webp", "/uploads/fiori-08.webp", "/uploads/fiori-09.webp", "/uploads/fiori-10.webp", "/uploads/fiori-11.webp", "/uploads/fiori-12.webp"]
+    },
+    {
+      "id": "luce-di-luna",
+      "nome": "Cummersa Luce di Luna",
+      "etichetta": "La cummersa con il terrazzo",
+      "titolo": "Luce di Luna:",
+      "titolo_corsivo": "il cielo in una stanza.",
+      "testo": "Ingresso privato, terrazzo attrezzato e una vista spettacolare su Locorotondo e sulla piscina. Dall’abbaino, la notte, filtra la luce della luna: chi preferisce il buio lo oscura con un gesto.\n\nUn letto e un divano letto matrimoniali, la tv a schermo piatto, il bagno con cabina doccia.",
+      "caratteristiche": ["80 mq", "Fino a 4 ospiti", "Terrazzo", "Vista su Locorotondo", "Abbaino"],
+      "foto": "/uploads/luna-camera.webp",
+      "alt": "La camera mansardata della Cummersa Luce di Luna con il parquet e il divano",
+      "galleria": ["/uploads/terrazza.webp", "/uploads/luna-letto.webp", "/uploads/luna-bagno.webp", "/uploads/luna-01.webp", "/uploads/luna-03.webp", "/uploads/luna-04.webp", "/uploads/luna-06.webp", "/uploads/luna-07.webp", "/uploads/luna-08.webp", "/uploads/luna-10.webp", "/uploads/luna-11.webp"]
+    }
+  ],
+  "servizi": {
+    "titolo": "In ogni dimora,",
+    "titolo_corsivo": "sempre.",
+    "elenco": [
+      { "titolo": "Colazione fatta in casa", "testo": "Le torte, le marmellate dell’azienda, i prodotti dell’orto." },
+      { "titolo": "Cena su richiesta", "testo": "Nello spirito delle table d’hôtes, con noi a tavola." },
+      { "titolo": "Piscina e giardino", "testo": "La piscina tra i campi, il salotto sotto i pini." },
+      { "titolo": "Ingresso privato", "testo": "Ogni casa ha il suo, con patio o terrazzo." },
+      { "titolo": "Lavanderia", "testo": "On demand, quando serve." },
+      { "titolo": "Accappatoi e cortesia", "testo": "Con il nostro nome ricamato." },
+      { "titolo": "Wi-Fi e parcheggio", "testo": "In tutta la masseria, gratuiti." },
+      { "titolo": "Consigli di casa", "testo": "Cosa vedere, dove mangiare, quando andare al mare." }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "nome": "Masseria Battaglini",
+  "url": "https://alessiochirenti.github.io/masseria-battaglini/",
+  "logo": "/uploads/logo.png",
+  "indicizza": false,
+  "descrizione": "Masseria Battaglini, Martina Franca: la maison d’hôtes in un’azienda agricola biologica della Valle d’Itria. Un trullo con sette coni, due cummerse, Giuseppe e Giovannella a farvi gli onori di casa.",
+  "menu": {
+    "racconto": "Il racconto",
+    "dimore": "Le dimore",
+    "esperienze": "Esperienze",
+    "contatti": "Contatti",
+    "cta": "Richiedi disponibilità"
+  },
+  "contatti": {
+    "ragione_sociale": "Azienda Agricola Masseria Battaglini",
+    "indirizzo": "Strada Giuseppe Battaglini Zona A, 74015 Martina Franca",
+    "email": "info@masseriabattaglini.it",
+    "telefono": "+39 392 5833330",
+    "whatsapp": "393925833330",
+    "instagram": "https://www.instagram.com/masseriabattaglini",
+    "facebook": "https://www.facebook.com/masseriabattaglini"
+  },
+  "form": {
+    "titolo": "Diteci quando,",
+    "titolo_corsivo": "al resto pensiamo noi.",
+    "bottone": "Richiedi disponibilità",
+    "nota": "Rispondiamo entro un giorno.",
+    "interessi": ["Cena in masseria", "Cooking class", "Massaggi e benessere", "Escursioni"],
+    "grazie": "Grazie, richiesta ricevuta.",
+    "grazie_riga2": "Vi rispondiamo entro un giorno."
+  }
+}

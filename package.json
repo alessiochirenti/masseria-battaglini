@@ -1,0 +1,10 @@
+{
+  "name": "masseria-battaglini",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sito di Masseria Battaglini con pannello di gestione (Sveltia CMS).",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

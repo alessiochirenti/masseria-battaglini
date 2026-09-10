@@ -1,0 +1,59 @@
+{
+  "titolo_pagina": "Il racconto",
+  "descrizione": "Il racconto di Masseria Battaglini: Giuseppe e Giovannella, due vite che si incontrano nella Valle d’Itria, una casa bianca vista il 3 di maggio e la cura come modo di stare al mondo.",
+  "hero": {
+    "foto": "/uploads/campagna.webp",
+    "alt": "I campi verdi della masseria tra i pini e le agavi, sotto un cielo con le nuvole",
+    "titolo": "Il racconto",
+    "sottotitolo": "Comincia con un fiore di maggio."
+  },
+  "sezioni": [
+    {
+      "id": "luoghi",
+      "titolo": "Il senso",
+      "titolo_corsivo": "dei luoghi.",
+      "testo": "Il senso dei luoghi, il sentimento dei luoghi, l’anima dei luoghi si costruiscono nel loro sovrasenso emotivo in relazione ad angoli di mondo inseriti in un tempo dato, in un paesaggio cangiante, in una storia.",
+      "citazione": "«La nostra storia ha incrociato le radici profonde e resistenti di un ciliegio, che a un terreno si adattano perlustrandone la profondità. Bisogna saper cogliere le opportunità che la vita offre e poi, come per ogni pianta, ogni essere vivente, averne cura. E la cura è pazienza.»",
+      "foto": "/uploads/albero.webp",
+      "alt": "Un albero solitario in mezzo al campo verde della masseria",
+      "didascalia": "Il campo dietro casa, dove tutto è cominciato"
+    },
+    {
+      "id": "due-vite",
+      "frase_prima": "E la cura",
+      "frase_prima_corsivo": "è pazienza.",
+      "titolo": "Due vite che",
+      "titolo_corsivo": "non s’incontrano subito.",
+      "testo": "Giovannella nasce a Napoli e Giuseppe a Locorotondo, ma ci vorrà del tempo perché le loro vite si incontrino, ritrovandosi nelle verdi campagne della Valle d’Itria. A quel punto sono sogni e necessità che hanno bisogno di farsi spazio: quando Giuseppe si domanda dove ritrovare sé stesso dopo una vita da ingegnere giramondo, la Valle d’Itria è la risposta.\n\nÈ l’irresistibile richiamo delle radici in un uomo che da piantina vuol diventare albero e lasciare un’impronta. Ed è così che quella bianca costruzione che ha colpito Giuseppe il 3 di maggio diventerà la Masseria Battaglini. Giovannella, a sua volta, si lega progressivamente a questa terra dove si sente accolta, amata e al sicuro, e ricambia il sentimento ritrovando il meglio di sé da offrire.",
+      "foto": "/uploads/proprietari.webp",
+      "alt": "Giuseppe e Giovannella, ritratto in bianco e nero",
+      "didascalia": "Giuseppe e Giovannella"
+    },
+    {
+      "id": "cura",
+      "titolo": "La cura",
+      "titolo_corsivo": "è amore che accetta.",
+      "citazione": "«È un rapporto molto intenso quello che vivo: è la traduzione di un sogno e l’applicazione del forte senso di famiglia che ho.»",
+      "citazione_prima": true,
+      "testo": "Giovannella è suo padre nella vita lavorativa che era, sua madre nella gioia per la cucina, sua nonna nel saper raccontare e le sue figlie nell’accogliere. Con Giuseppe scopre che la cosa che le riesce meglio è prendersi cura dell’altro.\n\nCura è una parola densa di significato: sollecitudine, premura, attenzione, riguardo, amore. Ha un senso vivo anche nella sfera pratica, nel rapporto tra l’uomo e le piante, tra l’uomo e gli animali, tra l’uomo e il cibo nel mondo che dividono. Cura significa avere attenzione per le persone, per i rapporti, per i legami. Cura è anche saper fare i conti con il dolore.",
+      "galleria": ["/uploads/marmellate.webp", "/uploads/cane.webp"]
+    },
+    {
+      "id": "non-finisce",
+      "frase_prima": "Ci piace il poco che c’è,",
+      "frase_prima_corsivo": "questo scorrere lento.",
+      "titolo": "La nostra storia",
+      "titolo_corsivo": "non finisce con noi.",
+      "testo": "Questa nostra storia di radici e di terra non è stata semplice, un cammino tortuoso, ma abbiamo combattuto per conquistarci quest’angolo di paradiso e renderlo tale per l’ospite. Il nostro è un luogo che ne racconta altri: siamo i luoghi in cui siamo nati e cresciuti, i luoghi che abbiamo abitato, sognati e desiderati, e anche quelli da cui siamo fuggiti.\n\nMasseria Battaglini è un insieme di relazioni, tra noi e chi desidera trovare rifugio e sorriso. È il luogo dove la vita lenta scandisce il ritmo della felicità, donandoci il tempo di coltivarla e poi offrirla. L’amore è come una piccola pianta: va curata ogni giorno. L’abbiamo imparato tra noi ed è qui che l’abbiamo reso concreto.",
+      "foto": "/uploads/salotto-giardino.webp",
+      "alt": "Il salotto di vimini sotto i pini del giardino",
+      "didascalia": "La nostra storia parla e continua con voi",
+      "link": "Scoprite le dimore",
+      "link_url": "camere.html"
+    }
+  ],
+  "contatti": {
+    "titolo": "Venite a sentirlo",
+    "titolo_corsivo": "di persona."
+  }
+}

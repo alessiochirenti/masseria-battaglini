@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+{{> head-sub}}
+  <title>{{esperienze.titolo_pagina}} · {{site.nome}}</title>
+  <meta name="description" content="{{esperienze.descrizione}}">
+  <meta property="og:title" content="{{esperienze.titolo_pagina}}, {{site.nome}}">
+  <meta property="og:description" content="{{esperienze.hero.sottotitolo}}">
+  <meta property="og:url" content="{{site.url}}esperienze.html">
+</head>
+<body class="page-sub">
+{{> silhouette-sub}}
+{{> nav}}
+
+  <main id="track">
+
+    <section class="s-photo page-hero" id="hero">
+      <figure class="photo-full">
+        <img src="{{esperienze.hero.foto}}" alt="{{esperienze.hero.alt}}" loading="eager" fetchpriority="high">
+        <figcaption>
+          <span class="photo-kicker">{{site.nome}} · {{home.hero.kicker}}</span>
+          <em>{{esperienze.hero.titolo}}</em>
+          <span class="photo-sub">{{esperienze.hero.sottotitolo}}</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    {{#each esperienze.sezioni}}
+    {{#if frase_prima}}<section class="s-station" aria-hidden="true">
+      <div class="stage station">
+        <p class="station-text"><span class="st-in">{{frase_prima}}</span><br><em class="st-in">{{frase_prima_corsivo}}</em></p>
+      </div>
+    </section>{{/if}}
+    <section class="s-panel" id="{{id}}">
+      <div class="panel wide">
+        <h2 class="reveal">{{titolo}} <em>{{titolo_corsivo}}</em></h2>
+        <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
+        {{#if intro}}<p class="copy reveal" style="text-align:center">{{intro}}</p>{{/if}}
+        {{#each voci}}
+        <article class="feature {{flip}} reveal">
+          <figure><img src="{{foto}}" alt="{{alt}}" loading="lazy"></figure>
+          <div>
+            {{#if etichetta}}<span class="f-n">{{etichetta}}</span>{{/if}}
+            <h3>{{titolo}} <em>{{titolo_corsivo}}</em></h3>
+            {{#paragrafi testo}}<p>{{.}}</p>
+            {{/paragrafi}}
+            {{#if caratteristiche}}<ul class="chips">{{#each caratteristiche}}<li>{{.}}</li>{{/each}}</ul>{{/if}}
+          </div>
+        </article>
+        {{/each}}
+        {{#if galleria}}<div class="gal gal-2 reveal">
+          {{#each galleria}}<img src="{{.}}" alt="" loading="lazy">
+          {{/each}}
+        </div>{{/if}}
+      </div>
+    </section>
+    {{/each}}
+
+    <section class="s-cta" id="contatti">
+      <div class="cta-inner">
+        <h2 class="reveal">{{esperienze.contatti.titolo}} <em>{{esperienze.contatti.titolo_corsivo}}</em></h2>
+{{> form}}
+      </div>
+{{> footer}}
+    </section>
+
+  </main>
+
+  <script type="module" src="js/page.js"></script>
+</body>
+</html>

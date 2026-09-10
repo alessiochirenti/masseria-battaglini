@@ -1,0 +1,479 @@
+/* ============================================================
+   Masseria Battaglini: aggiunte al tema masseria. Logo, menu,
+   schede delle dimore, blocchi foto + testo, sottopagina statica.
+   ============================================================ */
+
+/* nav: logo vero al posto del wordmark */
+.brand-logo { display: flex; align-items: center; letter-spacing: 0; }
+.brand-logo img {
+  height: 54px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 14px rgba(6, 8, 18, .55));
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* link editoriale in fondo a un pannello */
+.panel-link { margin-top: 28px; }
+.panel-link a {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 21px;
+  color: #8a6d3f;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, #8a6d3f 40%, transparent);
+  transition: border-color .3s;
+}
+.panel-link a:hover { border-color: #8a6d3f; }
+
+/* pannello largo per le griglie */
+.panel.wide { width: min(1120px, 100%); }
+
+/* citazione nel racconto */
+.quote {
+  max-width: 600px;
+  margin: 4px auto 22px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(21px, 2.2vw, 26px);
+  line-height: 1.4;
+  color: var(--paper-ink);
+  text-wrap: balance;
+}
+
+/* sommario delle dimore */
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 26px;
+}
+.jump a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--paper-ink);
+  text-decoration: none;
+  padding: 11px 18px;
+  border: 1px solid color-mix(in srgb, #8a6d3f 45%, transparent);
+  border-radius: 999px;
+  transition: background .3s, border-color .3s;
+}
+.jump a:hover { background: #efe6d4; border-color: #8a6d3f; }
+
+/* ---------- servizi: card chiare ---------- */
+.servizi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+  text-align: center;
+}
+.serv {
+  background: #fff;
+  border-radius: 16px;
+  padding: 26px 18px 24px;
+  box-shadow: 0 12px 34px rgba(42, 33, 24, .08);
+}
+.serv h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--paper-ink);
+  margin-bottom: 8px;
+}
+.serv p { font-size: 13.5px; line-height: 1.6; color: var(--paper-ink-soft); }
+.servizi-8 .serv { padding: 22px 14px 20px; }
+
+/* ---------- galleria in fondo a una dimora ---------- */
+.gal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 22px;
+}
+.gal.gal-2 { grid-template-columns: repeat(2, 1fr); margin-top: 30px; }
+.gal img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 12px 34px rgba(42, 33, 24, .10);
+}
+.dimora .panel { padding-top: clamp(36px, 5vw, 64px); padding-bottom: clamp(36px, 5vw, 64px); }
+.page-sub .s-panel.dimora { padding-top: 4vh; padding-bottom: 4vh; }
+
+.chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.chips li {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: #efe6d4;
+  color: #6b5f50;
+}
+
+/* ---------- card della sera con le foto vere ---------- */
+a.card { text-decoration: none; color: inherit; }
+.card-dimore {
+  background:
+    url('../assets/trulli-sala.webp') center / cover no-repeat,
+    linear-gradient(168deg, #d9c9ad 0%, #b09067 48%, #6f5334 100%);
+}
+.card-tavola {
+  background:
+    url('../assets/cena.webp') center / cover no-repeat,
+    linear-gradient(160deg, #3b3a55 0%, #23233a 55%, #12121f 100%);
+}
+.card-escursioni {
+  background:
+    url('../assets/ebike.webp') center / cover no-repeat,
+    linear-gradient(165deg, #79b6b4 0%, #33707e 52%, #123844 100%);
+}
+.card-benessere {
+  background:
+    url('../assets/massaggio.webp') center / cover no-repeat,
+    linear-gradient(170deg, #9aa77a 0%, #5c6b45 55%, #2d3620 100%);
+}
+
+/* ---------- sottopagina: cielo fermo all’ora blu ---------- */
+.sky-static {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, #060a1c 0%, #0f1b3c 42%, #2a2946 72%, #5e4448 100%);
+}
+.page-sub main { padding-top: 0; }
+.page-hero { padding: 0 0 4vh; }
+.page-hero .photo-full { height: 82vh; height: 82svh; }
+.page-hero .photo-full img { object-position: center 42%; }
+.page-hero .photo-full em { font-size: clamp(44px, 6vw, 92px); }
+.photo-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.35;
+  max-width: 560px;
+  opacity: .92;
+}
+.page-sub .s-panel { padding-top: 10vh; padding-bottom: 6vh; }
+.page-sub .s-cta { min-height: 80vh; }
+
+/* nav "lontano dal hero": barra scura leggera, così menu e logo restano leggibili sui pannelli chiari */
+.nav { transition: background .5s, padding .5s, backdrop-filter .5s; }
+.nav.away {
+  background: linear-gradient(to bottom, rgba(6, 8, 18, .82), rgba(6, 8, 18, .6));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.nav.away .brand-logo img { height: 42px; }
+
+/* il ritorno: la masseria la sera, inquadratura centrata */
+#ritorno .photo-full img { object-position: 50% 55%; }
+
+/* ---------- blocchi foto + testo alternati ---------- */
+.feature {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(22px, 4vw, 48px);
+  align-items: center;
+  text-align: left;
+  margin-top: 44px;
+}
+.feature:first-of-type { margin-top: 36px; }
+.dimora .feature:first-of-type { margin-top: 0; }
+.feature.flip { grid-template-columns: 1fr 1.15fr; }
+.feature.flip figure { order: 2; }
+.feature figure { margin: 0; }
+.feature img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px rgba(42, 33, 24, .14);
+}
+.feature .f-n {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  color: #8a6d3f;
+}
+.feature h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  color: var(--paper-ink);
+  margin: 6px 0 12px;
+  text-wrap: balance;
+}
+.feature h3 em { font-style: italic; }
+.feature p { font-size: 15px; line-height: 1.75; color: #4a4034; margin-bottom: 10px; }
+.feature p:last-of-type { margin-bottom: 0; }
+.feature .chips { margin-top: 14px; }
+
+/* ---------- mobile ---------- */
+@media (max-width: 900px) {
+  .servizi-grid { grid-template-columns: repeat(2, 1fr); }
+  .gal { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+}
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .nav-cta { display: inline-block; }
+  .brand-logo img { height: 42px; }
+  .page-hero .photo-full { height: 70vh; }
+  .feature, .feature.flip { grid-template-columns: 1fr; }
+  .feature.flip figure { order: 0; }
+  .gal, .gal.gal-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- menu mobile: hamburger + overlay ---------- */
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.nav-burger {
+  display: none;
+  width: 44px; height: 44px;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  background: rgba(6, 8, 18, .35);
+  border: 1px solid color-mix(in srgb, var(--ink) 45%, transparent);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0;
+  position: relative; z-index: 40;
+}
+.nav-burger span {
+  display: block; width: 18px; height: 1.5px;
+  background: var(--ink);
+  transition: transform .3s, opacity .3s;
+}
+.nav.open .nav-burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav.open .nav-burger span:nth-child(2) { opacity: 0; }
+.nav.open .nav-burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 720px) {
+  .nav-burger { display: flex; }
+  .nav-cta { padding: 9px 14px; font-size: 11px; }
+  .nav-links { display: none; }
+  .nav.open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgba(6, 8, 18, .96);
+    font-size: 15px;
+    letter-spacing: .2em;
+  }
+  .nav.open .nav-links a { text-shadow: none; }
+  .nav.open .nav-links a::after {
+    content: '';
+    display: block;
+    width: 22px; height: 1px;
+    margin: 12px auto 0;
+    background: color-mix(in srgb, var(--gold) 55%, transparent);
+  }
+  .nav.open .nav-links a:last-child::after { display: none; }
+}
+
+/* ---------- foto a tutto schermo: velatura dietro le didascalie ---------- */
+.photo-full::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(6, 8, 18, .78) 0%, rgba(6, 8, 18, .42) 30%, rgba(6, 8, 18, 0) 62%);
+}
+#ritorno .photo-full::after {
+  background: linear-gradient(to bottom, rgba(6, 8, 18, .78) 0%, rgba(6, 8, 18, .42) 32%, rgba(6, 8, 18, 0) 62%);
+}
+.photo-full figcaption {
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .65), 0 8px 40px rgba(8, 6, 3, .85);
+}
+.photo-full .photo-kicker { opacity: .95; }
+
+/* ---------- ritocchi dopo la prima verifica ---------- */
+/* logo più presente: è il loro marchio, deve leggersi */
+.brand-logo img { height: 72px; }
+.nav.away .brand-logo img { height: 52px; }
+@media (max-width: 720px) { .brand-logo img { height: 58px; } .nav.away .brand-logo img { height: 48px; } }
+
+/* sottopagine: velatura in alto sulla foto d'apertura, così il menu resta leggibile anche sulla pietra chiara */
+.page-sub .nav:not(.away) {
+  background: linear-gradient(to bottom, rgba(6, 8, 18, .62), rgba(6, 8, 18, 0));
+  padding-bottom: 34px;
+}
+
+/* titolo del filmstrip sotto la barra del menu */
+.strip-head { top: max(15vh, 140px); }
+
+/* filmstrip: le card scendono sotto il titolo, che vive sotto la barra del menu */
+.s-strip .stage { padding-top: 16vh; }
+.card { height: min(54vh, 520px); }
+@media (max-width: 720px) { .card { height: 52vh; } }
+
+/* ============================================================
+   Sottopagine vive: stelle, stazioni, parole che affiorano,
+   foto che si svelano, galleria a tutto schermo.
+   ============================================================ */
+
+/* cielo stellato sopra il gradiente fisso */
+.stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+/* stazione narrativa a schermo intero (come alba/notte in home) */
+.s-station { height: 140vh; }
+.s-station .stage { position: sticky; top: 0; height: 100svh; }
+.reduced .s-station { height: auto; }
+.reduced .s-station .stage { position: static; min-height: 50vh; padding: 8vh 0; }
+.reduced .s-station .st-in { opacity: 1; }
+
+/* parole animabili: il contenitore taglia, la parola scorre */
+.w { display: inline-block; }
+.photo-full em .w { overflow: hidden; vertical-align: bottom; padding-bottom: .08em; margin-bottom: -.08em; }
+.photo-full em .w > span { display: inline-block; }
+.js .page-sub h2.reveal .w, .js .page-sub .quote.reveal .w { will-change: transform, opacity; }
+
+/* le foto dei blocchi scorrono dentro la cornice: la cornice taglia */
+.feature figure, .ph-clip { overflow: hidden; border-radius: 12px; }
+.ph-clip { border-radius: 3px; }
+.feature img, .panel-photo img { transform-origin: center; will-change: transform; }
+.feature img { transform: scale(1.06); }
+.panel-photo img { transform: scale(1.1); }
+
+/* anteprime cliccabili */
+.gal img { cursor: zoom-in; transition: transform .6s cubic-bezier(.2, .7, .2, 1), box-shadow .6s; }
+@media (hover: hover) { .gal img:hover { transform: translateY(-4px); box-shadow: 0 22px 44px rgba(42, 33, 24, .18); } }
+.gal-open {
+  display: inline-block;
+  margin-top: 22px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+  color: #8a6d3f;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, #8a6d3f 40%, transparent);
+  padding: 0 0 2px;
+  cursor: pointer;
+  transition: border-color .3s;
+}
+.gal-open:hover { border-color: #8a6d3f; }
+.gal-open small { font-family: var(--font-sans); font-style: normal; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--paper-ink-soft); margin-left: 8px; }
+
+/* ---------- galleria a tutto schermo ---------- */
+.lb {
+  position: fixed; inset: 0; z-index: 200;
+  display: grid;
+  grid-template-columns: 64px 1fr 64px;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  background: rgba(6, 8, 18, .96);
+  opacity: 0;
+  transition: opacity .35s;
+  touch-action: pan-y;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.lb.is-open { opacity: 1; }
+.lb[hidden] { display: none; }
+.lb-fig {
+  grid-column: 2; grid-row: 1;
+  margin: 0;
+  height: calc(100svh - 96px);
+  display: flex; align-items: center; justify-content: center;
+}
+.lb-fig img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .6);
+  transition: opacity .3s, transform .45s cubic-bezier(.2, .7, .2, 1);
+}
+.lb-fig.is-swapping img { opacity: 0; transform: translateX(calc(var(--dir, 0) * 24px)); }
+.lb-prev, .lb-next, .lb-close {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--ink) 40%, transparent);
+  background: rgba(242, 237, 222, .06);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .3s, border-color .3s;
+  touch-action: manipulation;
+}
+.lb-prev:hover, .lb-next:hover, .lb-close:hover { background: rgba(242, 237, 222, .16); border-color: var(--gold); }
+.lb-prev, .lb-next { grid-row: 1; justify-self: center; }
+.lb-prev { grid-column: 1; }
+.lb-next { grid-column: 3; }
+.lb-prev svg, .lb-next svg { width: 22px; height: 22px; }
+.lb-close { position: absolute; top: 18px; right: 18px; }
+.lb-close span { position: absolute; width: 18px; height: 1.5px; background: var(--ink); }
+.lb-close span:first-child { transform: rotate(45deg); }
+.lb-close span:last-child { transform: rotate(-45deg); }
+.lb-cap {
+  grid-column: 1 / -1; grid-row: 2;
+  text-align: center;
+  padding: 14px 20px 22px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.lb-cap em {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+@media (max-width: 720px) {
+  .lb { grid-template-columns: 1fr; grid-template-rows: 1fr auto auto; }
+  .lb-fig { grid-column: 1; height: calc(100svh - 150px); padding: 0 12px; }
+  .lb-prev, .lb-next { grid-row: 2; grid-column: 1; margin: 8px 0 0; }
+  .lb-prev { justify-self: start; margin-left: 20px; }
+  .lb-next { justify-self: end; margin-right: 20px; }
+  .lb-cap { grid-row: 3; }
+}
+
+/* didascalie: respiro tra foto e testo */
+.panel-photo figcaption { margin-top: 24px; }
+
+/* stazioni: le parole si compongono con lo scroll, un po' più di respiro per il taglio delle righe */
+.s-station .station-text .w { will-change: transform, opacity, filter; }
+.s-station { height: 150vh; }

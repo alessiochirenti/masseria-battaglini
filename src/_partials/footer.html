@@ -1,0 +1,6 @@
+      <footer class="footer">
+        <span>{{site.contatti.ragione_sociale}} · {{site.contatti.indirizzo}}</span>
+        <span>{{site.contatti.email}} · {{site.contatti.telefono}}</span>
+        {{#if site.contatti.instagram}}<span><a href="{{site.contatti.instagram}}">Instagram</a>{{#if site.contatti.facebook}} · <a href="{{site.contatti.facebook}}">Facebook</a>{{/if}}</span>{{/if}}
+        {{#if is_home}}{{else}}<span><a href="index.html">Torna alla home</a></span>{{/if}}
+      </footer>

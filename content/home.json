@@ -1,0 +1,87 @@
+{
+  "hero": {
+    "kicker": "Valle d’Itria · Martina Franca",
+    "riga1": "Masseria",
+    "riga2": "Battaglini",
+    "tagline": "La maison d’hôtes in un’azienda agricola biologica.",
+    "hint": "scorri, la notte finisce"
+  },
+  "alba": {
+    "riga1": "Il racconto comincia",
+    "riga2": "con un fiore di maggio."
+  },
+  "arrivo": {
+    "foto": "/uploads/arrivo.webp",
+    "alt": "Masseria Battaglini: la casa bianca, i coni dei trulli e la palma nel cortile",
+    "parola": "Eccola."
+  },
+  "storia": {
+    "kicker": "Giuseppe e Giovannella",
+    "titolo": "Qui trovate sempre",
+    "titolo_corsivo": "i padroni di casa.",
+    "testo": "Una masseria con trulli e cummerse, ricavata in una dimora di carattere e ristrutturata nel rispetto delle tradizioni del luogo. La differenza rispetto a un albergo è semplice: qui ci siamo noi. Vi accogliamo, vi consigliamo cosa vedere e cosa fare, vi prepariamo la colazione in casa e, se volete, anche la cena, nello spirito delle table d’hôtes.\n\nNon vi proponiamo qualcosa di finto, di costruito. Vi proponiamo la nostra dimora, una parte della quale è dedicata alla nostra vita familiare, e viviamo la giornata per e con gli ospiti.",
+    "foto": "/uploads/facciata.webp",
+    "alt": "La facciata in pietra della masseria con il salottino di vimini e i gerani",
+    "didascalia": "Il salottino davanti casa, dove si fa colazione quando c’è il sole",
+    "link": "Leggete il racconto"
+  },
+  "terra": {
+    "titolo": "Un trullo, due cummerse,",
+    "titolo_corsivo": "un solo orizzonte.",
+    "numeri": [
+      { "valore": "3", "etichetta": "dimore indipendenti" },
+      { "valore": "7", "etichetta": "coni del trullo" },
+      { "valore": "80", "etichetta": "metri quadri ciascuna" },
+      { "valore": "1", "etichetta": "famiglia ad accogliervi" }
+    ],
+    "testo": "Attorno alla casa, la campagna di Martina Franca: i campi coltivati, i pini, le agavi, i muretti a secco e la vista che arriva fino a Locorotondo. In mezzo, il giardino mediterraneo, il salotto di vimini sotto i pini e i sentieri che portano alla piscina. Il mare è a mezz’ora, ma da qui si parte sempre più tardi del previsto.",
+    "foto": "/uploads/giardino.webp",
+    "alt": "Il giardino della masseria visto dall’alto: ghiaia bianca, la palma, i campi verdi",
+    "didascalia": "Il giardino, i campi e la Valle d’Itria fino all’orizzonte",
+    "link": "Scoprite le dimore"
+  },
+  "benessere": {
+    "titolo": "Il tempo per",
+    "titolo_corsivo": "prendersi cura.",
+    "intro": "Cura è una parola densa: premura, attenzione, riguardo. Qui vale per le piante, per la tavola e per chi arriva stanco.",
+    "servizi": [
+      { "titolo": "Massaggi e trattamenti", "testo": "Corpo e viso, all’ombra degli ulivi o nella vostra dimora." },
+      { "titolo": "Yoga", "testo": "Sul prato, la mattina presto, con i trulli davanti." },
+      { "titolo": "Ginnastica posturale", "testo": "All’aperto, a piccoli gruppi o da soli." },
+      { "titolo": "Respirazione", "testo": "Percorsi di gestione dell’ansia attraverso il respiro." }
+    ],
+    "foto": "/uploads/massaggio.webp",
+    "alt": "Il lettino da massaggio all’ombra degli ulivi, con i trulli sullo sfondo",
+    "didascalia": "Il lettino sotto gli ulivi, la mattina presto",
+    "link": "Tutte le esperienze"
+  },
+  "mezzogiorno": {
+    "frase": "Un posto lento",
+    "sottotitolo": "Mezzogiorno. In silenzio. Nient’altro."
+  },
+  "sera": {
+    "kicker": "Verso sera",
+    "titolo": "Quello che vi aspetta",
+    "card": [
+      { "titolo": "Le dimore", "testo": "Il trullo con sette coni e due cummerse: tre case indipendenti, ciascuna con il suo ingresso, il suo patio e la sua vista.", "foto": "/uploads/trulli-sala.webp", "link": "camere.html" },
+      { "titolo": "La tavola", "testo": "Colazioni preparate in casa, le marmellate dell’azienda, la cena su richiesta e le cooking class con Giovannella.", "foto": "/uploads/cena.webp", "link": "esperienze.html#tavola" },
+      { "titolo": "Le escursioni", "testo": "In e-bike tra i muretti a secco, a cavallo in campagna o in riva al mare. Partite da qui, vi diciamo noi dove.", "foto": "/uploads/ebike.webp", "link": "esperienze.html#escursioni" },
+      { "titolo": "Il benessere", "testo": "Massaggi, yoga, ginnastica posturale all’aperto, respirazione. Il tempo per prendersi cura di sé.", "foto": "/uploads/massaggio.webp", "link": "esperienze.html#benessere" }
+    ]
+  },
+  "notte": {
+    "riga1": "Poi torna la notte.",
+    "riga2": "E la luna entra dall’abbaino."
+  },
+  "ritorno": {
+    "foto": "/uploads/notte.webp",
+    "alt": "Masseria Battaglini la sera: le finestre accese, i coni dei trulli contro il cielo blu",
+    "kicker": "Le finestre sono accese",
+    "parola": "Bentornati."
+  },
+  "contatti": {
+    "titolo": "Una notte,",
+    "titolo_corsivo": "o una vita lenta.",
+    "nota": "Diteci quando e quanti siete. Al resto pensiamo noi."
+  }
+}

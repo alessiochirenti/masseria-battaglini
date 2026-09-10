@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050817">
+  <title>{{site.nome}} · {{home.hero.kicker}}</title>
+  <meta name="description" content="{{site.descrizione}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{site.nome}}">
+  <meta property="og:title" content="{{site.nome}}">
+  <meta property="og:description" content="{{home.hero.tagline}}">
+  <meta property="og:url" content="{{site.url}}">
+  <meta property="og:image" content="{{site.url}}og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  {{{site.robots}}}
+  <script>document.documentElement.classList.add('js')</script>
+
+  <link rel="preload" href="fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/villa.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <!-- Cielo persistente: notte → alba → mezzogiorno → tramonto → notte -->
+  <canvas id="gl" aria-hidden="true"></canvas>
+
+  <!-- Terra persistente: ulivi, muretti a secco e un trullo, silhouette in primo piano -->
+  <div class="silhouette" aria-hidden="true">
+    <svg class="sil-layer sil-back" viewBox="0 0 1600 220" preserveAspectRatio="xMidYMax slice">
+      <g fill="currentColor">
+        <path d="M0 220 L0 196 Q200 188 420 193 Q700 199 940 191 Q1240 184 1600 194 L1600 220 Z"/>
+        <g class="tree sway-a" transform="translate(180 0)">
+          <rect x="-4" y="150" width="8" height="50" rx="2"/>
+          <ellipse cx="0" cy="132" rx="52" ry="30"/>
+          <ellipse cx="-34" cy="146" rx="30" ry="18"/>
+          <ellipse cx="36" cy="148" rx="26" ry="16"/>
+        </g>
+        <g transform="translate(760 0)">
+          <path d="M-46 196 L-46 168 L0 112 L46 168 L46 196 Z"/>
+          <rect x="-4" y="104" width="8" height="10" rx="2"/>
+          <circle cx="0" cy="102" r="5"/>
+        </g>
+        <g class="tree sway-a" transform="translate(1320 0)">
+          <rect x="-4" y="152" width="8" height="48" rx="2"/>
+          <ellipse cx="-2" cy="134" rx="48" ry="28"/>
+          <ellipse cx="34" cy="148" rx="26" ry="15"/>
+        </g>
+      </g>
+    </svg>
+    <svg class="sil-layer sil-front" viewBox="0 0 1600 220" preserveAspectRatio="xMidYMax slice">
+      <g fill="currentColor">
+        <path d="M0 220 L0 204 Q260 196 560 201 Q860 207 1140 199 Q1400 193 1600 201 L1600 220 Z"/>
+        <g opacity="0.95">
+          <rect x="470" y="186" width="34" height="16" rx="3"/>
+          <rect x="506" y="184" width="30" height="18" rx="3"/>
+          <rect x="538" y="187" width="36" height="15" rx="3"/>
+          <rect x="576" y="185" width="28" height="17" rx="3"/>
+          <rect x="486" y="172" width="32" height="14" rx="3"/>
+          <rect x="520" y="170" width="30" height="15" rx="3"/>
+          <rect x="552" y="173" width="30" height="13" rx="3"/>
+        </g>
+        <g class="tree sway-b" transform="translate(80 0)">
+          <rect x="-5" y="128" width="10" height="76" rx="3"/>
+          <ellipse cx="4" cy="104" rx="64" ry="36"/>
+          <ellipse cx="-44" cy="122" rx="34" ry="20"/>
+          <ellipse cx="48" cy="126" rx="30" ry="18"/>
+        </g>
+        <g class="tree sway-a" transform="translate(1480 0)">
+          <rect x="-5" y="120" width="11" height="84" rx="3"/>
+          <ellipse cx="-6" cy="96" rx="70" ry="40"/>
+          <ellipse cx="50" cy="118" rx="34" ry="20"/>
+          <ellipse cx="-56" cy="120" rx="30" ry="18"/>
+        </g>
+        <g transform="translate(1060 0)">
+          <ellipse cx="0" cy="192" rx="14" ry="18"/>
+          <ellipse cx="-12" cy="176" rx="10" ry="14" transform="rotate(-24 -12 176)"/>
+          <ellipse cx="13" cy="174" rx="11" ry="15" transform="rotate(22 13 174)"/>
+          <ellipse cx="2" cy="162" rx="9" ry="12"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+{{> nav}}
+
+  <main id="track">
+
+    <section class="s-hero" id="hero">
+      <div class="stage">
+        <div class="hero-inner">
+          <p class="kicker rl rl-1">{{home.hero.kicker}}</p>
+          <h1 class="title">
+            <span class="line rl rl-2">{{home.hero.riga1}}</span>
+            <span class="line em rl rl-3">{{home.hero.riga2}}</span>
+          </h1>
+          <p class="tagline rl rl-4">{{home.hero.tagline}}</p>
+        </div>
+        <div class="hint rl rl-5"><span class="hint-line"></span><span>{{home.hero.hint}}</span></div>
+      </div>
+    </section>
+
+    <section class="s-alba" id="alba">
+      <div class="stage station">
+        <p class="station-text"><span class="st-in">{{home.alba.riga1}}</span><br><em class="st-in">{{home.alba.riga2}}</em></p>
+      </div>
+    </section>
+
+    <section class="s-photo" id="arrivo">
+      <figure class="photo-full">
+        <img src="{{home.arrivo.foto}}" alt="{{home.arrivo.alt}}" loading="lazy">
+        <figcaption><em>{{home.arrivo.parola}}</em></figcaption>
+      </figure>
+    </section>
+
+    <section class="s-panel" id="storia">
+      <div class="panel">
+        {{#if home.storia.kicker}}<p class="kicker ink reveal">{{home.storia.kicker}}</p>{{/if}}
+        <h2 class="reveal">{{home.storia.titolo}} <em>{{home.storia.titolo_corsivo}}</em></h2>
+        <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
+        {{#paragrafi home.storia.testo}}<p class="copy reveal">{{.}}</p>
+        {{/paragrafi}}
+        {{#if home.storia.foto}}<figure class="panel-photo reveal">
+          <img src="{{home.storia.foto}}" alt="{{home.storia.alt}}" loading="lazy">
+          {{#if home.storia.didascalia}}<figcaption>{{home.storia.didascalia}}</figcaption>{{/if}}
+        </figure>{{/if}}
+        {{#if home.storia.link}}<p class="panel-link reveal"><a href="racconto.html">{{home.storia.link}}</a></p>{{/if}}
+      </div>
+    </section>
+
+    <section class="s-panel" id="terra">
+      <div class="panel">
+        <h2 class="reveal">{{home.terra.titolo}} <em>{{home.terra.titolo_corsivo}}</em></h2>
+        {{#if home.terra.numeri}}<div class="numbers reveal">
+          {{#each home.terra.numeri}}<div class="num"><strong>{{valore}}</strong><span>{{etichetta}}</span></div>
+          {{/each}}
+        </div>{{/if}}
+        {{#paragrafi home.terra.testo}}<p class="copy reveal">{{.}}</p>
+        {{/paragrafi}}
+        {{#if home.terra.foto}}<figure class="panel-photo reveal">
+          <img src="{{home.terra.foto}}" alt="{{home.terra.alt}}" loading="lazy">
+          {{#if home.terra.didascalia}}<figcaption>{{home.terra.didascalia}}</figcaption>{{/if}}
+        </figure>{{/if}}
+        {{#if home.terra.link}}<p class="panel-link reveal"><a href="camere.html">{{home.terra.link}}</a></p>{{/if}}
+      </div>
+    </section>
+
+    <section class="s-panel" id="benessere">
+      <div class="panel">
+        <h2 class="reveal">{{home.benessere.titolo}} <em>{{home.benessere.titolo_corsivo}}</em></h2>
+        <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
+        {{#if home.benessere.intro}}<p class="copy reveal" style="text-align:center">{{home.benessere.intro}}</p>{{/if}}
+        <div class="servizi-grid">
+          {{#each home.benessere.servizi}}<article class="serv reveal"><h3>{{titolo}}</h3><p>{{testo}}</p></article>
+          {{/each}}
+        </div>
+        {{#if home.benessere.foto}}<figure class="panel-photo reveal">
+          <img src="{{home.benessere.foto}}" alt="{{home.benessere.alt}}" loading="lazy">
+          {{#if home.benessere.didascalia}}<figcaption>{{home.benessere.didascalia}}</figcaption>{{/if}}
+        </figure>{{/if}}
+        {{#if home.benessere.link}}<p class="panel-link reveal"><a href="esperienze.html">{{home.benessere.link}}</a></p>{{/if}}
+      </div>
+    </section>
+
+    <section class="s-climax" id="mezzogiorno" aria-label="{{home.mezzogiorno.frase}}">
+      <div class="stage">
+        <p class="big-claim" aria-hidden="true">{{home.mezzogiorno.frase}}</p>
+        <p class="climax-caption">{{home.mezzogiorno.sottotitolo}}</p>
+      </div>
+    </section>
+
+    <section class="s-strip" id="esperienze">
+      <div class="stage">
+        <div class="strip-head">
+          {{#if home.sera.kicker}}<p class="kicker">{{home.sera.kicker}}</p>{{/if}}
+          <h2>{{home.sera.titolo}}</h2>
+        </div>
+        <div class="track-h">
+          {{#each home.sera.card}}<a class="card" href="{{link}}" style="background: url('{{foto}}') center / cover no-repeat, linear-gradient(168deg, #3b3a55 0%, #23233a 55%, #12121f 100%)">
+            <h3>{{titolo}}</h3>
+            <p>{{testo}}</p>
+          </a>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+
+    <section class="s-notte" id="notte">
+      <div class="stage station">
+        <p class="station-text"><span class="st-in">{{home.notte.riga1}}</span><br><em class="st-in">{{home.notte.riga2}}</em></p>
+      </div>
+    </section>
+
+    <section class="s-photo" id="ritorno">
+      <figure class="photo-full">
+        <img src="{{home.ritorno.foto}}" alt="{{home.ritorno.alt}}" loading="lazy">
+        <figcaption class="cap-sky">
+          {{#if home.ritorno.kicker}}<span class="photo-kicker">{{home.ritorno.kicker}}</span>{{/if}}
+          <em>{{home.ritorno.parola}}</em>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="s-cta" id="contatti">
+      <div class="cta-inner">
+        <h2 class="reveal">{{home.contatti.titolo}} <em>{{home.contatti.titolo_corsivo}}</em></h2>
+        {{#if home.contatti.nota}}<p class="cta-note reveal">{{home.contatti.nota}}</p>{{/if}}
+{{> form}}
+      </div>
+{{> footer}}
+    </section>
+
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

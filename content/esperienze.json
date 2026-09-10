@@ -1,0 +1,50 @@
+{
+  "titolo_pagina": "Esperienze",
+  "descrizione": "Benessere, tavola ed escursioni a Masseria Battaglini: massaggi e trattamenti, yoga e ginnastica posturale all’aperto, respirazione, cooking class, cena in masseria, e-bike e passeggiate a cavallo in campagna e in riva al mare.",
+  "hero": {
+    "foto": "/uploads/yoga.webp",
+    "alt": "Lezione di yoga sul prato all’alba, con i trulli e gli ulivi davanti",
+    "titolo": "Esperienze",
+    "sottotitolo": "Un posto lento, in silenzio. Il tempo per prendersi cura di sé, della tavola e della strada."
+  },
+  "sezioni": [
+    {
+      "id": "benessere",
+      "titolo": "Il benessere,",
+      "titolo_corsivo": "all’aperto.",
+      "intro": "«C’è un legame stretto tra lentezza e memoria, tra velocità e oblio», scriveva Kundera. Qui il benessere non è una spa: è il prato la mattina presto, l’ombra degli ulivi, il respiro che rallenta.",
+      "voci": [
+        { "etichetta": "Massaggi e trattamenti", "titolo": "Corpo e viso,", "titolo_corsivo": "sotto gli ulivi.", "testo": "Un lettino all’ombra, la lavanda del giardino, il silenzio della campagna. Massaggi rilassanti e decontratturanti, trattamenti viso e corpo con operatori professionisti, nella vostra dimora o all’aperto, su prenotazione.", "caratteristiche": ["Su prenotazione", "In dimora o all’aperto", "Corpo e viso"], "foto": "/uploads/massaggio.webp", "alt": "Il lettino da massaggio con il lenzuolo bianco all’ombra degli ulivi" },
+        { "etichetta": "Yoga e ginnastica posturale", "titolo": "Il prato, l’alba,", "titolo_corsivo": "i trulli davanti.", "testo": "Corsi di yoga e ginnastica posturale all’aperto, a piccoli gruppi o da soli, guidati da insegnanti della zona. La mattina presto, quando la luce è bassa e la campagna è ancora fresca, il prato davanti ai trulli diventa la sala migliore che ci sia.", "caratteristiche": ["Yoga", "Posturale", "All’aperto", "Piccoli gruppi"], "foto": "/uploads/yoga.webp", "alt": "Tre persone in meditazione sul prato all’alba, davanti ai trulli" },
+        { "etichetta": "Respirazione", "titolo": "Gestire l’ansia", "titolo_corsivo": "attraverso il respiro.", "testo": "Un percorso di pochi incontri per imparare a usare il respiro quando la testa corre: tecniche semplici, da portare a casa, praticate sulla terrazza o sotto il fico. Per chi arriva stanco e vuole ripartire più leggero.", "caratteristiche": ["Percorso breve", "Individuale o in coppia", "Tecniche da portare a casa"], "foto": "/uploads/respiro.webp", "alt": "Una donna a occhi chiusi sulla terrazza di pietra, con le mani sul ventre" }
+      ]
+    },
+    {
+      "id": "tavola",
+      "frase_prima": "Tra lentezza e memoria,",
+      "frase_prima_corsivo": "tra velocità e oblio.",
+      "titolo": "Cucinare",
+      "titolo_corsivo": "è come amare.",
+      "intro": "Giovannella è sua madre nella gioia per la cucina e sua nonna nel saper raccontare. Le colazioni sono fatte in casa, le marmellate sono dell’azienda, la cena si prepara su richiesta e si mangia insieme.",
+      "voci": [
+        { "etichetta": "Cooking class", "titolo": "Le vere", "titolo_corsivo": "polpette di pane.", "testo": "In cucina con Giovannella, come da tradizione: il pane raffermo, il pecorino, il prezzemolo, le mani in pasta. Si impara una ricetta di famiglia, si mangia quello che si è cucinato, si torna a casa con il quaderno pieno.", "caratteristiche": ["2-3 ore", "Ricette di famiglia", "Si mangia insieme"], "foto": "/uploads/cucina.webp", "alt": "Le mani che formano le polpette di pane sul tavolo di legno infarinato" },
+        { "etichetta": "Colazione e cena", "titolo": "La tavola sotto i pini,", "titolo_corsivo": "con noi.", "testo": "La colazione ogni mattina: torte, marmellate, uova e verdure dell’azienda biologica. La cena, su richiesta, nello spirito delle table d’hôtes: un menù solo, quello del giorno, e i padroni di casa seduti con voi.", "caratteristiche": ["Colazione inclusa", "Cena su richiesta", "Prodotti dell’azienda"], "foto": "/uploads/cena.webp", "alt": "La tavola apparecchiata in giardino al tramonto, sotto i pini, con le lanterne accese" }
+      ],
+      "galleria": ["/uploads/marmellate.webp", "/uploads/salotto-giardino.webp"]
+    },
+    {
+      "id": "escursioni",
+      "titolo": "Partite da qui,",
+      "titolo_corsivo": "tornate per cena.",
+      "intro": "Locorotondo, Martina Franca, Cisternino e Alberobello sono a pochi chilometri, il mare a mezz’ora. Vi diciamo noi dove andare e a che ora: l’organizzazione la facciamo insieme, la mattina a colazione.",
+      "voci": [
+        { "etichetta": "E-bike tour", "titolo": "Tra i muretti a secco,", "titolo_corsivo": "senza fatica.", "testo": "Le stradine bianche della Valle d’Itria, i trulli in mezzo ai campi, le soste nei paesi. Con la pedalata assistita si va lontano senza sudare: mezza giornata o tutto il giorno, con guida o con la mappa che vi prepariamo noi.", "caratteristiche": ["Mezza o intera giornata", "Con guida", "Bici a noleggio"], "foto": "/uploads/ebike.webp", "alt": "Due persone in e-bike sulla stradina tra i muretti a secco e i trulli" },
+        { "etichetta": "A cavallo", "titolo": "In campagna", "titolo_corsivo": "o in riva al mare.", "testo": "Passeggiate a cavallo con i maneggi della zona: tra gli ulivi e i campi attorno alla masseria, oppure sulla spiaggia, all’ora in cui il sole si abbassa. Adatte anche a chi non è mai salito in sella.", "caratteristiche": ["Campagna", "Spiaggia", "Anche per principianti"], "foto": "/uploads/cavalli.webp", "alt": "Due cavalieri a passo sulla battigia al tramonto" }
+      ]
+    }
+  ],
+  "contatti": {
+    "titolo": "Diteci cosa vi piacerebbe,",
+    "titolo_corsivo": "al resto pensiamo noi."
+  }
+}

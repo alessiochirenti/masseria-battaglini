@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="it">
+<head>
+{{> head-sub}}
+  <title>{{racconto.titolo_pagina}} · {{site.nome}}</title>
+  <meta name="description" content="{{racconto.descrizione}}">
+  <meta property="og:title" content="{{racconto.titolo_pagina}}, {{site.nome}}">
+  <meta property="og:description" content="{{racconto.hero.sottotitolo}}">
+  <meta property="og:url" content="{{site.url}}racconto.html">
+</head>
+<body class="page-sub">
+{{> silhouette-sub}}
+{{> nav}}
+
+  <main id="track">
+
+    <section class="s-photo page-hero" id="hero">
+      <figure class="photo-full">
+        <img src="{{racconto.hero.foto}}" alt="{{racconto.hero.alt}}" loading="eager" fetchpriority="high">
+        <figcaption>
+          <span class="photo-kicker">{{site.nome}} · {{home.hero.kicker}}</span>
+          <em>{{racconto.hero.titolo}}</em>
+          <span class="photo-sub">{{racconto.hero.sottotitolo}}</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    {{#each racconto.sezioni}}
+    {{#if frase_prima}}<section class="s-station" aria-hidden="true">
+      <div class="stage station">
+        <p class="station-text"><span class="st-in">{{frase_prima}}</span><br><em class="st-in">{{frase_prima_corsivo}}</em></p>
+      </div>
+    </section>{{/if}}
+    <section class="s-panel" id="{{id}}">
+      <div class="panel">
+        <h2 class="reveal">{{titolo}} <em>{{titolo_corsivo}}</em></h2>
+        <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
+        {{#if citazione_prima}}{{#if citazione}}<blockquote class="quote reveal">{{citazione}}</blockquote>{{/if}}{{/if}}
+        {{#paragrafi testo}}<p class="copy reveal">{{.}}</p>
+        {{/paragrafi}}
+        {{#if citazione_prima}}{{else}}{{#if citazione}}<blockquote class="quote reveal">{{citazione}}</blockquote>{{/if}}{{/if}}
+        {{#if foto}}<figure class="panel-photo reveal">
+          <img src="{{foto}}" alt="{{alt}}" loading="lazy">
+          {{#if didascalia}}<figcaption>{{didascalia}}</figcaption>{{/if}}
+        </figure>{{/if}}
+        {{#if galleria}}<div class="gal gal-2 reveal">
+          {{#each galleria}}<img src="{{.}}" alt="" loading="lazy">
+          {{/each}}
+        </div>{{/if}}
+        {{#if link}}<p class="panel-link reveal"><a href="{{link_url}}">{{link}}</a></p>{{/if}}
+      </div>
+    </section>
+    {{/each}}
+
+    <section class="s-cta" id="contatti">
+      <div class="cta-inner">
+        <h2 class="reveal">{{racconto.contatti.titolo}} <em>{{racconto.contatti.titolo_corsivo}}</em></h2>
+{{> form}}
+      </div>
+{{> footer}}
+    </section>
+
+  </main>
+
+  <script type="module" src="js/page.js"></script>
+</body>
+</html>

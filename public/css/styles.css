@@ -1,0 +1,778 @@
+/* ============================================================
+   Template masseria: un giorno intero, dall'alba alla notte
+   Tipografia: Cormorant Garamond (display, self-hosted) + Outfit (testo)
+   ============================================================ */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url('../fonts/outfit.woff2') format('woff2');
+}
+
+:root {
+  /* testo sopra il cielo: sempre crema, la fascia alta del cielo è
+     la più scura in ogni fase del giorno */
+  --ink: #f2edde;
+  --ink-soft: rgba(242, 237, 222, 0.74);
+  /* variabili pilotate da JS lungo il ciclo del giorno */
+  --sil-back: #0c1024;     /* silhouette ulivi, layer lontano */
+  --sil-front: #060812;    /* silhouette ulivi, layer vicino */
+  --glow: 0;               /* glow del claim al climax */
+
+  /* costanti di palette */
+  --paper: #f6f1e5;        /* calce */
+  --paper-ink: #2a2118;    /* inchiostro su calce */
+  --paper-ink-soft: #6b5f50;
+  --gold: #c99a4b;
+
+  --font-serif: 'Cormorant Garamond', 'Cormorant', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Outfit', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scrollbar-width: thin; scrollbar-color: rgba(201, 154, 75, .5) transparent; }
+/* niente scroll-behavior: smooth, confligge con Lenis */
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+body {
+  background: #050817; /* notte: primo paint coerente col cielo WebGL */
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(201, 154, 75, .35); }
+
+/* focus visibile su tutto ciò che si può attivare da tastiera */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ---------- layer fissi ---------- */
+
+#gl {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.silhouette {
+  position: fixed;
+  inset: auto 0 0 0;
+  height: 24vh;
+  min-height: 150px;
+  z-index: 1;
+  pointer-events: none;
+}
+.sil-layer {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.sil-back  { color: var(--sil-back); opacity: .85; }
+.sil-front { color: var(--sil-front); }
+
+.tree { transform-box: fill-box; transform-origin: 50% 100%; }
+.sway-a { animation: sway 9.3s ease-in-out infinite alternate; }
+.sway-b { animation: sway 12.7s ease-in-out infinite alternate -4s; }
+@keyframes sway {
+  from { transform: rotate(-0.5deg); }
+  to   { transform: rotate(0.6deg); }
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* ---------- nav ---------- */
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px clamp(20px, 4vw, 48px);
+}
+.nav a {
+  color: var(--ink);
+  text-shadow: 0 1px 18px rgba(8, 10, 20, .45);
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.nav a:hover { opacity: .7; }
+.brand {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+.nav-cta {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in srgb, var(--ink) 45%, transparent);
+  border-radius: 999px;
+  padding: 10px 20px;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------- struttura sezioni ---------- */
+
+main { position: relative; z-index: 5; }
+
+section { position: relative; }
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+}
+
+/* ---------- tipografia comune ---------- */
+
+.kicker {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.kicker.ink { color: var(--paper-ink-soft); }
+
+h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(42px, 5.8vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+h2 em { font-style: italic; font-weight: 500; }
+
+/* ---------- hero ---------- */
+
+.s-hero { height: 170vh; }
+.s-hero .stage { padding-bottom: 9vh; }
+.hero-inner { text-align: center; padding: 0 20px; }
+
+.s-hero .kicker { margin-bottom: 3vh; }
+
+.title {
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink);
+}
+.title .line {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(15px, 1.9vw, 24px);
+  letter-spacing: .5em;
+  text-transform: uppercase;
+  text-indent: .5em; /* compensa il letter-spacing per centrare */
+  opacity: .92;
+}
+.title .em {
+  font-family: var(--font-serif);
+  font-size: clamp(72px, 13.5vw, 190px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.1;          /* i discendenti (g, p, q) non vengono tagliati */
+  padding-bottom: .04em;
+  letter-spacing: -.015em;
+  text-transform: none;
+  text-indent: 0;
+  margin-top: 1vh;
+  text-wrap: balance;
+  text-shadow: 0 0 60px rgba(242, 237, 222, .18);
+}
+
+.tagline {
+  margin-top: 3vh;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(20px, 2.2vw, 29px);
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+
+.hint {
+  /* centrato con left/right, NON con translateX: GSAP anima translateY
+     sul reveal e sovrascriverebbe il transform di centraggio */
+  position: absolute;
+  bottom: max(21vh, 150px);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.hint-line {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, transparent, var(--ink));
+  transform-origin: top;
+  animation: hintPulse 2.4s ease-in-out infinite;
+}
+@keyframes hintPulse {
+  0%   { transform: scaleY(.2); opacity: 0; }
+  40%  { transform: scaleY(1);  opacity: 1; }
+  100% { transform: scaleY(1) translateY(18px); opacity: 0; }
+}
+
+/* reveal al load del hero */
+.js .rl { opacity: 0; transform: translateY(26px); filter: blur(6px); }
+
+/* ---------- stazioni narrative (alba / notte) ---------- */
+
+.s-alba  { height: 220vh; }
+.s-notte { height: 200vh; }
+
+.station-text {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(34px, 5vw, 66px);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  text-align: center;
+  text-wrap: balance;
+  color: var(--ink);
+  padding: 0 24px;
+  text-shadow: 0 2px 40px rgba(5, 8, 23, .25);
+}
+.station-text em { font-style: italic; font-weight: 500; }
+
+/* ---------- pannelli editoriali (giorno) ---------- */
+
+.s-panel {
+  display: flex;
+  justify-content: center;
+  padding: 16vh clamp(16px, 4vw, 48px);
+}
+.panel {
+  width: min(880px, 100%);
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  color: var(--paper-ink);
+  padding: clamp(44px, 7vw, 96px) clamp(28px, 6vw, 88px);
+  border-radius: 3px;
+  box-shadow: 0 30px 80px rgba(10, 8, 4, .18);
+  text-align: center;
+}
+.panel .kicker { margin-bottom: 22px; }
+.panel h2 { color: var(--paper-ink); }
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 30px auto;
+  color: var(--gold);
+}
+.ornament span { display: block; width: 60px; height: 1px; background: color-mix(in srgb, var(--gold) 55%, transparent); }
+.ornament i { font-style: normal; font-size: 12px; }
+
+.copy {
+  max-width: 560px;
+  margin: 0 auto 20px;
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: #4a4034;
+  text-align: left;
+}
+.copy:last-child { margin-bottom: 0; }
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 44px 0;
+}
+.num strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(38px, 4.4vw, 60px);
+  font-variant-numeric: lining-nums tabular-nums; /* Cormorant ha cifre old-style di default */
+  color: var(--gold);
+  line-height: 1;
+}
+.num span {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--paper-ink-soft);
+}
+
+/* stato iniziale dei reveal (solo con JS attivo) */
+.js .reveal { opacity: 0; transform: translateY(28px); }
+.js.reduced .reveal, .js.reduced .rl { opacity: 1; transform: none; filter: none; }
+
+/* ---------- sezioni fotografiche full-bleed (arrivo / ritorno) ---------- */
+
+.s-photo { padding: 10vh 0; }
+
+.photo-full {
+  position: relative;
+  height: 94vh;
+  height: 94svh;
+  overflow: clip;
+  /* sfuma i bordi sul cielo WebGL dietro */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 9%, #000 91%, transparent);
+}
+.photo-full img {
+  width: 100%;
+  height: 116%; /* margine per il parallax scrub */
+  object-fit: cover;
+  object-position: center 55%;
+  display: block;
+  will-change: transform;
+}
+.photo-full figcaption {
+  position: absolute;
+  left: clamp(24px, 7vw, 90px);
+  bottom: clamp(48px, 13vh, 130px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #f6f1e4;
+  text-shadow: 0 2px 30px rgba(8, 6, 3, .65);
+}
+.photo-kicker {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+.photo-full em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(48px, 7vw, 104px);
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+
+/* variante: didascalia centrata in alto, sul cielo */
+.photo-full figcaption.cap-sky {
+  /* centrata con left/right, non con translateX: GSAP anima il transform */
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: clamp(44px, 12vh, 120px);
+  margin-inline: auto;
+  width: fit-content;
+  align-items: center;
+  text-align: center;
+}
+
+/* il ritorno inquadra il portale acceso (lato destro della foto) */
+#ritorno .photo-full img { object-position: 72% 55%; }
+
+/* fotografie dentro i pannelli editoriali */
+.panel-photo {
+  margin: 40px auto 4px;
+  max-width: 560px;
+}
+.panel-photo img {
+  width: 100%;
+  height: clamp(300px, 48vh, 460px);
+  object-fit: cover;
+  display: block;
+  border-radius: 3px;
+}
+.panel-photo figcaption {
+  margin-top: 12px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--paper-ink-soft);
+}
+
+/* ---------- climax: mezzogiorno ---------- */
+
+.s-climax { height: 320vh; }
+
+.big-claim {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(64px, 12.5vw, 210px);
+  line-height: 1.1;
+  letter-spacing: -.015em;
+  white-space: nowrap;
+  color: #fdf8ec;
+  will-change: transform;
+  text-shadow:
+    0 0 calc(var(--glow) * 26px) rgba(255, 242, 214, .9),
+    0 0 calc(var(--glow) * 90px) rgba(255, 214, 150, .55);
+}
+
+.climax-caption {
+  position: absolute;
+  bottom: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #4b545c; /* fisso scuro: vive sull'orizzonte chiaro di mezzogiorno */
+  white-space: nowrap;
+}
+
+/* ---------- filmstrip esperienze (tramonto) ---------- */
+
+.s-strip { height: 420vh; }
+.s-strip .stage { justify-content: center; align-items: stretch; }
+
+.strip-head {
+  position: absolute;
+  top: 10vh;
+  left: clamp(20px, 6vw, 80px);
+  z-index: 2;
+}
+.strip-head .kicker { margin-bottom: 10px; }
+.strip-head h2 {
+  font-size: clamp(34px, 4vw, 56px);
+  color: var(--ink);
+  text-shadow: 0 2px 30px rgba(20, 12, 30, .5);
+}
+
+.track-h {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 4vw, 56px);
+  height: 100%;
+  padding-left: clamp(20px, 8vw, 110px);
+  padding-right: 12vw;
+  will-change: transform;
+  width: max-content;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(280px, 40vw, 520px);
+  height: min(60vh, 560px);
+  border-radius: 6px;
+  padding: clamp(24px, 3vw, 44px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(8, 5, 2, .35);
+  transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+}
+@media (hover: hover) {
+  .card:hover { transform: translateY(-10px); }
+}
+
+.card::after { /* velo di profondità sul piede della card (leggibilità sulle foto) */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12, 8, 4, .66), rgba(12, 8, 4, .18) 45%, transparent 62%);
+  pointer-events: none;
+}
+.card > * { position: relative; z-index: 1; }
+
+.card h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.2vw, 46px);
+  color: #fbf5e8;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  margin-bottom: 12px;
+}
+.card p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: rgba(250, 243, 228, .84);
+  max-width: 40ch;
+}
+.card-icon {
+  position: absolute;
+  top: clamp(22px, 3vw, 40px);
+  right: clamp(22px, 3vw, 40px);
+  width: clamp(44px, 5vw, 68px);
+  height: auto;
+  color: rgba(252, 246, 232, .65);
+  z-index: 1;
+}
+
+/* mondi delle card: fotografia AI sopra, gradiente come placeholder di load */
+.card-stanze {
+  background:
+    url('../assets/stanze.webp') center / cover no-repeat,
+    linear-gradient(168deg, #d9c9ad 0%, #b09067 48%, #6f5334 100%);
+}
+.card-tavola {
+  background:
+    url('../assets/tavola.webp') center / cover no-repeat,
+    linear-gradient(160deg, #c67b4e 0%, #93472c 55%, #4c2314 100%);
+}
+.card-piscina {
+  background:
+    url('../assets/piscina.webp') center / cover no-repeat,
+    linear-gradient(165deg, #79b6b4 0%, #33707e 52%, #123844 100%);
+}
+.card-frantoio {
+  background:
+    url('../assets/frantoio.webp') center / cover no-repeat,
+    linear-gradient(170deg, #3c2c1c 0%, #241a10 55%, #120c06 100%);
+}
+
+/* ---------- CTA finale + form di richiesta (sul cielo notturno) ---------- */
+
+.s-cta {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  text-align: center;
+  padding: 20vh 24px 0;
+}
+.cta-inner { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.s-cta h2 { color: var(--ink); margin-bottom: 2.5vh; }
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 20px 46px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  background: rgba(201, 154, 75, .08);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .4s, box-shadow .4s;
+}
+.btn:hover {
+  background: rgba(201, 154, 75, .18);
+  box-shadow: 0 0 44px rgba(201, 154, 75, .28);
+}
+.btn span { display: inline-block; }
+
+.cta-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.contact-form {
+  width: min(760px, 100%);
+  margin: 4vh auto 0;
+  text-align: left;
+}
+.contact-form [hidden] { display: none !important; }
+.cf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+}
+.cf-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.cf-grid .cf-full { grid-column: 1 / -1; }
+.cf-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; }
+.cf-grid input, .cf-grid select, .cf-grid textarea {
+  width: 100%;
+  min-height: 46px;
+  font: 400 15px/1.4 var(--font-sans);
+  color: var(--ink);
+  background: rgba(242, 237, 222, .06);
+  border: 1px solid rgba(242, 237, 222, .28);
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color .3s, background .3s;
+  color-scheme: dark;
+}
+.cf-grid input::placeholder, .cf-grid textarea::placeholder { color: rgba(242, 237, 222, .38); }
+.cf-grid input:focus, .cf-grid select:focus, .cf-grid textarea:focus {
+  border-color: var(--gold);
+  background: rgba(242, 237, 222, .1);
+}
+.cf-grid select option { color: #222; background: #fff; }
+.cf-grid textarea { resize: vertical; min-height: 110px; }
+.cf-check {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 10px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 400 !important;
+  font-size: 13.5px !important;
+  min-height: 44px;
+}
+.cf-check input { width: 18px; height: 18px; min-height: 0; accent-color: var(--gold); flex: 0 0 auto; }
+.cf-actions { display: flex; flex-direction: column; align-items: center; margin-top: 26px; }
+.cf-note {
+  margin-top: 18px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--ink-soft);
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.cf-ok {
+  margin: 30px auto 0;
+  padding: 26px 30px;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  border-radius: 12px;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ink);
+  max-width: 560px;
+}
+
+.cta-alt {
+  margin-top: 26px;
+  font-size: 13.5px;
+  letter-spacing: .04em;
+  color: var(--ink-soft);
+  overflow-wrap: anywhere;
+}
+.cta-alt a, .footer a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+}
+
+.footer {
+  margin-top: 18vh;
+  padding: 26px 24px calc(24vh + 26px); /* lascia respiro sopra la silhouette */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 34px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+.foot-demo { opacity: .65; }
+
+/* ---------- mobile ---------- */
+
+@media (max-width: 720px) {
+  .nav-cta { display: none; }
+  .s-hero .kicker { font-size: 10px; letter-spacing: .16em; }
+  .hint { font-size: 10px; letter-spacing: .12em; }
+  .numbers { grid-template-columns: repeat(2, 1fr); gap: 26px 12px; }
+  .s-alba { height: 180vh; }
+  .s-climax { height: 260vh; }
+  .s-strip { height: 380vh; }
+  .card { width: 78vw; height: 56vh; }
+  .climax-caption { bottom: 26vh; }
+  .hint { bottom: max(23vh, 150px); }
+  .photo-full { height: 72vh; }
+  .photo-full em { font-size: clamp(40px, 11.5vw, 60px); }
+  .copy { font-size: 15.5px; }
+  .cf-grid { grid-template-columns: 1fr; }
+  .s-cta { padding-top: 14vh; }
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .sway-a, .sway-b, .hint-line { animation: none; }
+}
+.reduced .s-hero, .reduced .s-alba, .reduced .s-notte,
+.reduced .s-climax, .reduced .s-strip { height: auto; }
+.reduced .stage { position: static; height: auto; min-height: 70vh; padding: 12vh 0; }
+.reduced .track-h {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  gap: 28px;
+}
+.reduced .card { width: min(520px, 92vw); }
+.reduced .big-claim { white-space: normal; text-align: center; font-size: clamp(44px, 9vw, 120px); }

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="it">
+<head>
+{{> head-sub}}
+  <title>{{dimore.titolo_pagina}} · {{site.nome}}</title>
+  <meta name="description" content="{{dimore.descrizione}}">
+  <meta property="og:title" content="{{dimore.titolo_pagina}}, {{site.nome}}">
+  <meta property="og:description" content="{{dimore.hero.sottotitolo}}">
+  <meta property="og:url" content="{{site.url}}camere.html">
+</head>
+<body class="page-sub">
+{{> silhouette-sub}}
+{{> nav}}
+
+  <main id="track">
+
+    <section class="s-photo page-hero" id="hero">
+      <figure class="photo-full">
+        <img src="{{dimore.hero.foto}}" alt="{{dimore.hero.alt}}" loading="eager" fetchpriority="high">
+        <figcaption>
+          <span class="photo-kicker">{{site.nome}} · {{home.hero.kicker}}</span>
+          <em>{{dimore.hero.titolo}}</em>
+          <span class="photo-sub">{{dimore.hero.sottotitolo}}</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="s-panel" id="intro">
+      <div class="panel">
+        <h2 class="reveal">{{dimore.intro.titolo}} <em>{{dimore.intro.titolo_corsivo}}</em></h2>
+        <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
+        <p class="copy reveal" style="text-align:center">{{dimore.intro.testo}}</p>
+        <nav class="jump reveal" aria-label="Le dimore">
+          {{#each dimore.elenco}}<a href="#{{id}}" data-scroll-to="#{{id}}">{{nome}}</a>
+          {{/each}}
+        </nav>
+      </div>
+    </section>
+
+    {{#if dimore.stazione.riga1}}<section class="s-station" aria-hidden="true">
+      <div class="stage station">
+        <p class="station-text"><span class="st-in">{{dimore.stazione.riga1}}</span><br><em class="st-in">{{dimore.stazione.riga2}}</em></p>
+      </div>
+    </section>{{/if}}
+
+    {{#each dimore.elenco}}
+    <section class="s-panel dimora" id="{{id}}">
+      <div class="panel wide">
+        <article class="feature {{flip}} reveal">
+          <figure><img src="{{foto}}" alt="{{alt}}" loading="lazy"></figure>
+          <div>
+            {{#if etichetta}}<span class="f-n">{{etichetta}}</span>{{/if}}
+            <h3>{{titolo}} <em>{{titolo_corsivo}}</em></h3>
+            {{#paragrafi testo}}<p>{{.}}</p>
+            {{/paragrafi}}
+            {{#if caratteristiche}}<ul class="chips">{{#each caratteristiche}}<li>{{.}}</li>{{/each}}</ul>{{/if}}
+          </div>
+        </article>
+        {{#if galleria}}
+        <div class="gal reveal" data-gallery="{{id}}" data-title="{{nome}}" data-photos='{{{galleria_json}}}'>
+          {{#each anteprime}}<img src="{{foto}}" alt="{{nome}}, foto {{@n}}" loading="lazy" data-i="{{i}}">
+          {{/each}}
+        </div>
+        <p class="reveal"><button class="gal-open" type="button" data-gallery-open="{{id}}">Guardate tutte le foto<small>{{n_foto}} foto</small></button></p>
+        {{/if}}
+      </div>
+    </section>
+    {{/each}}
+
+    {{#if dimore.servizi.elenco}}<section class="s-panel" id="servizi">
+      <div class="panel">
+        <h2 class="reveal">{{dimore.servizi.titolo}} <em>{{dimore.servizi.titolo_corsivo}}</em></h2>
+        <div class="servizi-grid servizi-8">
+          {{#each dimore.servizi.elenco}}<article class="serv reveal"><h3>{{titolo}}</h3><p>{{testo}}</p></article>
+          {{/each}}
+        </div>
+      </div>
+    </section>{{/if}}
+
+    <section class="s-cta" id="contatti">
+      <div class="cta-inner">
+        <h2 class="reveal">{{site.form.titolo}} <em>{{site.form.titolo_corsivo}}</em></h2>
+{{> form}}
+      </div>
+{{> footer}}
+    </section>
+
+  </main>
+
+  <script type="module" src="js/page.js"></script>
+</body>
+</html>
