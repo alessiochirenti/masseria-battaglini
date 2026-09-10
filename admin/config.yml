@@ -14,12 +14,12 @@ backend:
     uploadMedia: "Pannello: caricata foto {{path}}"
     deleteMedia: "Pannello: eliminata foto {{path}}"
 
-site_url: https://alessiochirenti.github.io/masseria-battaglini/
-display_url: https://alessiochirenti.github.io/masseria-battaglini/
-logo_url: https://alessiochirenti.github.io/masseria-battaglini/uploads/logo.png
+site_url: "https://alessiochirenti.github.io/masseria-battaglini/"
+display_url: "https://alessiochirenti.github.io/masseria-battaglini/"
+logo_url: "https://alessiochirenti.github.io/masseria-battaglini/uploads/logo.png"
 
-media_folder: /public/uploads
-public_folder: /uploads
+media_folder: "/public/uploads"
+public_folder: "/uploads"
 
 # Le foto caricate dal telefono vengono convertite in webp e ridotte a 2048 px prima del salvataggio.
 media_libraries:
@@ -36,306 +36,322 @@ media_libraries:
 
 collections:
   - name: contenuti
-    label: Il sito
-    description: Testi, foto e contatti del sito. Scegliete una pagina, modificate, poi "Salva": in un paio di minuti è online.
+    label: "Il sito"
+    description: "Testi, foto e contatti del sito. Scegliete una pagina, modificate, poi Salva: in un paio di minuti è online."
     editor:
       preview: false
     files:
       - name: site
-        label: Dati generali e contatti
+        label: "Dati generali e contatti"
         file: content/site.json
         fields:
-          - { name: nome, label: Nome della struttura, widget: string }
-          - { name: logo, label: Logo (su sfondo scuro), widget: image, required: false }
-          - { name: descrizione, label: Descrizione per Google e social, widget: text, hint: "Una o due frasi. Compare nei risultati di ricerca e quando il link viene condiviso." }
-          - { name: indicizza, label: Sito visibile su Google, widget: boolean, default: false, hint: "Lasciate spento finché il sito non è ufficiale." }
-          - { name: url, label: Indirizzo del sito, widget: string, hint: "Lo imposta chi sviluppa il sito." }
+          - { name: nome, label: "Nome della struttura", widget: string }
+          - { name: logo, label: "Logo (su sfondo scuro)", widget: image, required: false }
+          - { name: descrizione, label: "Descrizione per Google e social", widget: text, hint: "Una o due frasi. Compare nei risultati di ricerca e quando il link viene condiviso." }
+          - { name: indicizza, label: "Sito visibile su Google", widget: boolean, default: false, hint: "Lasciate spento finché il sito non è ufficiale." }
+          - { name: url, label: "Indirizzo del sito", widget: string, hint: "Lo imposta chi sviluppa il sito." }
           - name: menu
-            label: Voci del menu
+            label: "Voci del menu"
             widget: object
             fields:
-              - { name: racconto, label: Voce "Il racconto", widget: string }
-              - { name: dimore, label: Voce "Le dimore", widget: string }
-              - { name: esperienze, label: Voce "Esperienze", widget: string }
-              - { name: contatti, label: Voce "Contatti", widget: string }
-              - { name: cta, label: Bottone in alto a destra, widget: string }
+              - { name: racconto, label: "Voce del racconto", widget: string }
+              - { name: dimore, label: "Voce delle dimore", widget: string }
+              - { name: esperienze, label: "Voce delle esperienze", widget: string }
+              - { name: contatti, label: "Voce dei contatti", widget: string }
+              - { name: cta, label: "Bottone in alto a destra", widget: string }
           - name: contatti
-            label: Contatti
+            label: "Contatti"
             widget: object
             fields:
-              - { name: ragione_sociale, label: Ragione sociale, widget: string }
-              - { name: indirizzo, label: Indirizzo, widget: string }
-              - { name: email, label: Email, widget: string }
-              - { name: telefono, label: Telefono (come lo si legge), widget: string }
-              - { name: whatsapp, label: WhatsApp (solo cifre, con 39 davanti), widget: string, hint: "Es. 393925833330" }
-              - { name: instagram, label: Pagina Instagram, widget: string, required: false }
-              - { name: facebook, label: Pagina Facebook, widget: string, required: false }
+              - { name: ragione_sociale, label: "Ragione sociale", widget: string }
+              - { name: indirizzo, label: "Indirizzo", widget: string }
+              - { name: email, label: "Email", widget: string }
+              - { name: telefono, label: "Telefono (come lo si legge)", widget: string }
+              - { name: whatsapp, label: "WhatsApp (solo cifre, con 39 davanti)", widget: string, hint: "Es. 393925833330" }
+              - { name: instagram, label: "Pagina Instagram", widget: string, required: false }
+              - { name: facebook, label: "Pagina Facebook", widget: string, required: false }
           - name: form
-            label: Modulo di richiesta
+            label: "Modulo di richiesta"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: bottone, label: Testo del bottone, widget: string }
-              - { name: nota, label: Nota sotto il bottone, widget: string }
-              - { name: interessi, label: Opzioni "Vi interessa", widget: list, field: { name: voce, label: Voce, widget: string } }
-              - { name: grazie, label: Messaggio dopo l'invio, widget: string }
-              - { name: grazie_riga2, label: Messaggio dopo l'invio, seconda riga, widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: bottone, label: "Testo del bottone", widget: string }
+              - { name: nota, label: "Nota sotto il bottone", widget: string }
+              - { name: interessi, label: "Opzioni del campo Vi interessa", widget: list, field: { name: voce, label: "Voce", widget: string } }
+              - { name: grazie, label: "Messaggio dopo l'invio", widget: string }
+              - { name: grazie_riga2, label: "Messaggio dopo l'invio, seconda riga", widget: string }
 
       - name: home
-        label: Home
+        label: "Home"
         file: content/home.json
         fields:
           - name: hero
-            label: Apertura (la notte)
+            label: "Apertura (la notte)"
             widget: object
             fields:
-              - { name: kicker, label: Riga piccola sopra il nome, widget: string }
-              - { name: riga1, label: Nome, prima riga, widget: string }
-              - { name: riga2, label: Nome, riga grande in corsivo, widget: string }
-              - { name: tagline, label: Frase sotto il nome, widget: string }
-              - { name: hint, label: Invito a scorrere, widget: string }
+              - { name: kicker, label: "Riga piccola sopra il nome", widget: string }
+              - { name: riga1, label: "Nome, prima riga", widget: string }
+              - { name: riga2, label: "Nome, riga grande in corsivo", widget: string }
+              - { name: tagline, label: "Frase sotto il nome", widget: string }
+              - { name: hint, label: "Invito a scorrere", widget: string }
           - name: alba
-            label: Frase dell'alba
+            label: "Frase dell'alba"
             widget: object
             fields:
-              - { name: riga1, label: Prima riga, widget: string }
-              - { name: riga2, label: Seconda riga, in corsivo, widget: string }
+              - { name: riga1, label: "Prima riga", widget: string }
+              - { name: riga2, label: "Seconda riga, in corsivo", widget: string }
           - name: arrivo
-            label: Foto dell'arrivo
+            label: "Foto dell'arrivo"
             widget: object
             fields:
-              - { name: foto, label: Foto a tutto schermo, widget: image }
-              - { name: alt, label: Descrizione della foto (per chi non vede), widget: string }
-              - { name: parola, label: Parola sulla foto, widget: string }
+              - { name: foto, label: "Foto a tutto schermo", widget: image }
+              - { name: alt, label: "Descrizione della foto (per chi non vede)", widget: string }
+              - { name: parola, label: "Parola sulla foto", widget: string }
           - name: storia
-            label: Pannello "chi siamo"
+            label: "Pannello chi siamo"
             widget: object
             fields:
-              - { name: kicker, label: Riga piccola sopra il titolo, widget: string, required: false }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: testo, label: Testo, widget: text, hint: "Una riga vuota separa i paragrafi. Le *parole tra asterischi* vengono in corsivo." }
-              - { name: foto, label: Foto, widget: image, required: false }
-              - { name: alt, label: Descrizione della foto, widget: string, required: false }
-              - { name: didascalia, label: Didascalia, widget: string, required: false }
-              - { name: link, label: Testo del link al racconto, widget: string, required: false }
+              - { name: kicker, label: "Riga piccola sopra il titolo", widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: testo, label: "Testo", widget: text, hint: "Una riga vuota separa i paragrafi. Le *parole tra asterischi* vengono in corsivo." }
+              - { name: foto, label: "Foto", widget: image, required: false }
+              - { name: alt, label: "Descrizione della foto", widget: string, required: false }
+              - { name: didascalia, label: "Didascalia", widget: string, required: false }
+              - { name: link, label: "Testo del link al racconto", widget: string, required: false }
           - name: terra
-            label: Pannello "la campagna"
+            label: "Pannello la campagna"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
               - name: numeri
-                label: I quattro numeri
+                label: "I quattro numeri"
                 widget: list
                 max: 4
                 fields:
-                  - { name: valore, label: Numero, widget: string }
-                  - { name: etichetta, label: Etichetta, widget: string }
-              - { name: testo, label: Testo, widget: text }
-              - { name: foto, label: Foto, widget: image, required: false }
-              - { name: alt, label: Descrizione della foto, widget: string, required: false }
-              - { name: didascalia, label: Didascalia, widget: string, required: false }
-              - { name: link, label: Testo del link alle dimore, widget: string, required: false }
+                  - { name: valore, label: "Numero", widget: string }
+                  - { name: etichetta, label: "Etichetta", widget: string }
+              - { name: testo, label: "Testo", widget: text }
+              - { name: foto, label: "Foto", widget: image, required: false }
+              - { name: alt, label: "Descrizione della foto", widget: string, required: false }
+              - { name: didascalia, label: "Didascalia", widget: string, required: false }
+              - { name: link, label: "Testo del link alle dimore", widget: string, required: false }
           - name: benessere
-            label: Pannello "benessere"
+            label: "Pannello benessere"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: intro, label: Frase introduttiva, widget: text, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: intro, label: "Frase introduttiva", widget: text, required: false }
               - name: servizi
-                label: Le quattro schede
+                label: "Le quattro schede"
                 widget: list
                 max: 4
                 fields:
-                  - { name: titolo, label: Titolo, widget: string }
-                  - { name: testo, label: Testo, widget: string }
-              - { name: foto, label: Foto, widget: image, required: false }
-              - { name: alt, label: Descrizione della foto, widget: string, required: false }
-              - { name: didascalia, label: Didascalia, widget: string, required: false }
-              - { name: link, label: Testo del link alle esperienze, widget: string, required: false }
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: testo, label: "Testo", widget: string }
+              - { name: foto, label: "Foto", widget: image, required: false }
+              - { name: alt, label: "Descrizione della foto", widget: string, required: false }
+              - { name: didascalia, label: "Didascalia", widget: string, required: false }
+              - { name: link, label: "Testo del link alle esperienze", widget: string, required: false }
           - name: mezzogiorno
-            label: Frase di mezzogiorno
+            label: "Frase di mezzogiorno"
             widget: object
             fields:
-              - { name: frase, label: Frase grande che attraversa lo schermo, widget: string, hint: "Tre o quattro parole al massimo." }
-              - { name: sottotitolo, label: Riga piccola, widget: string }
+              - { name: frase, label: "Frase grande che attraversa lo schermo", widget: string, hint: "Tre o quattro parole al massimo." }
+              - { name: sottotitolo, label: "Riga piccola", widget: string }
           - name: sera
-            label: Le schede della sera
+            label: "Le schede della sera"
             widget: object
             fields:
-              - { name: kicker, label: Riga piccola, widget: string, required: false }
-              - { name: titolo, label: Titolo, widget: string }
+              - { name: kicker, label: "Riga piccola", widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
               - name: card
-                label: Schede
+                label: "Schede"
                 widget: list
                 max: 5
                 fields:
-                  - { name: titolo, label: Titolo, widget: string }
-                  - { name: testo, label: Testo, widget: text }
-                  - { name: foto, label: Foto di sfondo, widget: image }
-                  - { name: link, label: Pagina di destinazione, widget: select, options: [ { label: "Le dimore", value: camere.html }, { label: "Esperienze", value: esperienze.html }, { label: "Esperienze: benessere", value: "esperienze.html#benessere" }, { label: "Esperienze: la tavola", value: "esperienze.html#tavola" }, { label: "Esperienze: escursioni", value: "esperienze.html#escursioni" }, { label: "Il racconto", value: racconto.html } ] }
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: testo, label: "Testo", widget: text }
+                  - { name: foto, label: "Foto di sfondo", widget: image }
+                  - name: link
+                    label: "Pagina di destinazione"
+                    widget: select
+                    options:
+                      - { label: "Le dimore", value: "camere.html" }
+                      - { label: "Esperienze", value: "esperienze.html" }
+                      - { label: "Esperienze, benessere", value: "esperienze.html#benessere" }
+                      - { label: "Esperienze, la tavola", value: "esperienze.html#tavola" }
+                      - { label: "Esperienze, escursioni", value: "esperienze.html#escursioni" }
+                      - { label: "Il racconto", value: "racconto.html" }
           - name: notte
-            label: Frase della notte
+            label: "Frase della notte"
             widget: object
             fields:
-              - { name: riga1, label: Prima riga, widget: string }
-              - { name: riga2, label: Seconda riga, in corsivo, widget: string }
+              - { name: riga1, label: "Prima riga", widget: string }
+              - { name: riga2, label: "Seconda riga, in corsivo", widget: string }
           - name: ritorno
-            label: Foto del ritorno (la sera)
+            label: "Foto del ritorno (la sera)"
             widget: object
             fields:
-              - { name: foto, label: Foto a tutto schermo, widget: image }
-              - { name: alt, label: Descrizione della foto, widget: string }
-              - { name: kicker, label: Riga piccola, widget: string, required: false }
-              - { name: parola, label: Parola sulla foto, widget: string }
+              - { name: foto, label: "Foto a tutto schermo", widget: image }
+              - { name: alt, label: "Descrizione della foto", widget: string }
+              - { name: kicker, label: "Riga piccola", widget: string, required: false }
+              - { name: parola, label: "Parola sulla foto", widget: string }
           - name: contatti
-            label: Chiusura e modulo
+            label: "Chiusura e modulo"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: nota, label: Frase sotto il titolo, widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: nota, label: "Frase sotto il titolo", widget: string, required: false }
 
       - name: racconto
-        label: Il racconto
+        label: "Il racconto"
         file: content/racconto.json
         fields:
-          - { name: titolo_pagina, label: Titolo della pagina, widget: string }
-          - { name: descrizione, label: Descrizione per Google e social, widget: text }
+          - { name: titolo_pagina, label: "Titolo della pagina", widget: string }
+          - { name: descrizione, label: "Descrizione per Google e social", widget: text }
           - name: hero
-            label: Apertura
+            label: "Apertura"
             widget: object
             fields:
-              - { name: foto, label: Foto a tutto schermo, widget: image }
-              - { name: alt, label: Descrizione della foto, widget: string }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: sottotitolo, label: Sottotitolo, widget: string }
+              - { name: foto, label: "Foto a tutto schermo", widget: image }
+              - { name: alt, label: "Descrizione della foto", widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: sottotitolo, label: "Sottotitolo", widget: string }
           - name: sezioni
-            label: Capitoli
-            label_singular: Capitolo
+            label: "Capitoli"
+            label_singular: "Capitolo"
             widget: list
             fields:
-              - { name: id, label: Nome tecnico (senza spazi), widget: string, pattern: ['^[a-z0-9-]+$', 'Solo lettere minuscole, numeri e trattini'] }
-              - { name: frase_prima, label: Frase a schermo intero prima del capitolo, prima riga, widget: string, required: false, hint: "Lasciate vuoto se non volete la frase." }
-              - { name: frase_prima_corsivo, label: Frase a schermo intero, seconda riga in corsivo, widget: string, required: false }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: testo, label: Testo, widget: text, hint: "Una riga vuota separa i paragrafi." }
-              - { name: citazione, label: Citazione, widget: text, required: false }
-              - { name: citazione_prima, label: Citazione prima del testo, widget: boolean, default: false, required: false }
-              - { name: foto, label: Foto, widget: image, required: false }
-              - { name: alt, label: Descrizione della foto, widget: string, required: false }
-              - { name: didascalia, label: Didascalia, widget: string, required: false }
-              - { name: galleria, label: Due foto affiancate, widget: image, multiple: true, required: false, max: 2 }
-              - { name: link, label: Testo del link in fondo, widget: string, required: false }
-              - { name: link_url, label: Destinazione del link, widget: select, required: false, options: [ { label: "Le dimore", value: camere.html }, { label: "Esperienze", value: esperienze.html }, { label: "Home", value: index.html } ] }
+              - { name: id, label: "Nome tecnico (senza spazi)", widget: string, pattern: ["^[a-z0-9-]+$", "Solo lettere minuscole, numeri e trattini"] }
+              - { name: frase_prima, label: "Frase a schermo intero prima del capitolo, prima riga", widget: string, required: false, hint: "Lasciate vuoto se non volete la frase." }
+              - { name: frase_prima_corsivo, label: "Frase a schermo intero, seconda riga in corsivo", widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: testo, label: "Testo", widget: text, hint: "Una riga vuota separa i paragrafi." }
+              - { name: citazione, label: "Citazione", widget: text, required: false }
+              - { name: citazione_prima, label: "Citazione prima del testo", widget: boolean, default: false, required: false }
+              - { name: foto, label: "Foto", widget: image, required: false }
+              - { name: alt, label: "Descrizione della foto", widget: string, required: false }
+              - { name: didascalia, label: "Didascalia", widget: string, required: false }
+              - { name: galleria, label: "Due foto affiancate", widget: image, multiple: true, required: false, max: 2 }
+              - { name: link, label: "Testo del link in fondo", widget: string, required: false }
+              - name: link_url
+                label: "Destinazione del link"
+                widget: select
+                required: false
+                options:
+                  - { label: "Le dimore", value: "camere.html" }
+                  - { label: "Esperienze", value: "esperienze.html" }
+                  - { label: "Home", value: "index.html" }
           - name: contatti
-            label: Chiusura
+            label: "Chiusura"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
 
       - name: dimore
-        label: Le dimore
+        label: "Le dimore"
         file: content/dimore.json
         fields:
-          - { name: titolo_pagina, label: Titolo della pagina, widget: string }
-          - { name: descrizione, label: Descrizione per Google e social, widget: text }
+          - { name: titolo_pagina, label: "Titolo della pagina", widget: string }
+          - { name: descrizione, label: "Descrizione per Google e social", widget: text }
           - name: hero
-            label: Apertura
+            label: "Apertura"
             widget: object
             fields:
-              - { name: foto, label: Foto a tutto schermo, widget: image }
-              - { name: alt, label: Descrizione della foto, widget: string }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: sottotitolo, label: Sottotitolo, widget: string }
+              - { name: foto, label: "Foto a tutto schermo", widget: image }
+              - { name: alt, label: "Descrizione della foto", widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: sottotitolo, label: "Sottotitolo", widget: string }
           - name: intro
-            label: Introduzione
+            label: "Introduzione"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: testo, label: Testo, widget: text }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: testo, label: "Testo", widget: text }
           - name: stazione
-            label: Frase a schermo intero
+            label: "Frase a schermo intero"
             widget: object
             fields:
-              - { name: riga1, label: Prima riga, widget: string, required: false }
-              - { name: riga2, label: Seconda riga, in corsivo, widget: string, required: false }
+              - { name: riga1, label: "Prima riga", widget: string, required: false }
+              - { name: riga2, label: "Seconda riga, in corsivo", widget: string, required: false }
           - name: elenco
-            label: Le dimore
-            label_singular: Dimora
+            label: "Le dimore"
+            label_singular: "Dimora"
             widget: list
             fields:
-              - { name: id, label: Nome tecnico (senza spazi), widget: string, pattern: ['^[a-z0-9-]+$', 'Solo lettere minuscole, numeri e trattini'] }
-              - { name: nome, label: Nome, widget: string, hint: "Compare nel menu della pagina e nel modulo di richiesta." }
-              - { name: etichetta, label: Riga piccola sopra il titolo, widget: string, required: false }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: testo, label: Descrizione, widget: text, hint: "Una riga vuota separa i paragrafi." }
-              - { name: caratteristiche, label: Etichette (mq, ospiti, dotazioni), widget: list, field: { name: voce, label: Etichetta, widget: string } }
-              - { name: foto, label: Foto principale, widget: image }
-              - { name: alt, label: Descrizione della foto principale, widget: string, required: false }
-              - { name: galleria, label: Galleria, widget: image, multiple: true, hint: "Le prime tre sono le anteprime. Trascinate per riordinare." }
+              - { name: id, label: "Nome tecnico (senza spazi)", widget: string, pattern: ["^[a-z0-9-]+$", "Solo lettere minuscole, numeri e trattini"] }
+              - { name: nome, label: "Nome", widget: string, hint: "Compare nel menu della pagina e nel modulo di richiesta." }
+              - { name: etichetta, label: "Riga piccola sopra il titolo", widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: testo, label: "Descrizione", widget: text, hint: "Una riga vuota separa i paragrafi." }
+              - { name: caratteristiche, label: "Etichette (mq, ospiti, dotazioni)", widget: list, field: { name: voce, label: "Etichetta", widget: string } }
+              - { name: foto, label: "Foto principale", widget: image }
+              - { name: alt, label: "Descrizione della foto principale", widget: string, required: false }
+              - { name: galleria, label: "Galleria", widget: image, multiple: true, hint: "Le prime tre sono le anteprime. Trascinate per riordinare." }
           - name: servizi
-            label: Incluso in ogni dimora
+            label: "Incluso in ogni dimora"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
               - name: elenco
-                label: Schede
+                label: "Schede"
                 widget: list
                 max: 8
                 fields:
-                  - { name: titolo, label: Titolo, widget: string }
-                  - { name: testo, label: Testo, widget: string }
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: testo, label: "Testo", widget: string }
 
       - name: esperienze
-        label: Esperienze
+        label: "Esperienze"
         file: content/esperienze.json
         fields:
-          - { name: titolo_pagina, label: Titolo della pagina, widget: string }
-          - { name: descrizione, label: Descrizione per Google e social, widget: text }
+          - { name: titolo_pagina, label: "Titolo della pagina", widget: string }
+          - { name: descrizione, label: "Descrizione per Google e social", widget: text }
           - name: hero
-            label: Apertura
+            label: "Apertura"
             widget: object
             fields:
-              - { name: foto, label: Foto a tutto schermo, widget: image }
-              - { name: alt, label: Descrizione della foto, widget: string }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: sottotitolo, label: Sottotitolo, widget: string }
+              - { name: foto, label: "Foto a tutto schermo", widget: image }
+              - { name: alt, label: "Descrizione della foto", widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: sottotitolo, label: "Sottotitolo", widget: string }
           - name: sezioni
-            label: Sezioni
-            label_singular: Sezione
+            label: "Sezioni"
+            label_singular: "Sezione"
             widget: list
             fields:
-              - { name: id, label: Nome tecnico (senza spazi), widget: string, pattern: ['^[a-z0-9-]+$', 'Solo lettere minuscole, numeri e trattini'] }
-              - { name: frase_prima, label: Frase a schermo intero prima della sezione, prima riga, widget: string, required: false }
-              - { name: frase_prima_corsivo, label: Frase a schermo intero, seconda riga in corsivo, widget: string, required: false }
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-              - { name: intro, label: Frase introduttiva, widget: text, required: false }
+              - { name: id, label: "Nome tecnico (senza spazi)", widget: string, pattern: ["^[a-z0-9-]+$", "Solo lettere minuscole, numeri e trattini"] }
+              - { name: frase_prima, label: "Frase a schermo intero prima della sezione, prima riga", widget: string, required: false }
+              - { name: frase_prima_corsivo, label: "Frase a schermo intero, seconda riga in corsivo", widget: string, required: false }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+              - { name: intro, label: "Frase introduttiva", widget: text, required: false }
               - name: voci
-                label: Esperienze
-                label_singular: Esperienza
+                label: "Esperienze"
+                label_singular: "Esperienza"
                 widget: list
                 fields:
-                  - { name: etichetta, label: Riga piccola sopra il titolo, widget: string, required: false }
-                  - { name: titolo, label: Titolo, widget: string }
-                  - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
-                  - { name: testo, label: Testo, widget: text }
-                  - { name: caratteristiche, label: Etichette, widget: list, required: false, field: { name: voce, label: Etichetta, widget: string } }
-                  - { name: foto, label: Foto, widget: image }
-                  - { name: alt, label: Descrizione della foto, widget: string, required: false }
-              - { name: galleria, label: Due foto in fondo alla sezione, widget: image, multiple: true, required: false, max: 2 }
+                  - { name: etichetta, label: "Riga piccola sopra il titolo", widget: string, required: false }
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+                  - { name: testo, label: "Testo", widget: text }
+                  - { name: caratteristiche, label: "Etichette", widget: list, required: false, field: { name: voce, label: "Etichetta", widget: string } }
+                  - { name: foto, label: "Foto", widget: image }
+                  - { name: alt, label: "Descrizione della foto", widget: string, required: false }
+              - { name: galleria, label: "Due foto in fondo alla sezione", widget: image, multiple: true, required: false, max: 2 }
           - name: contatti
-            label: Chiusura
+            label: "Chiusura"
             widget: object
             fields:
-              - { name: titolo, label: Titolo, widget: string }
-              - { name: titolo_corsivo, label: Titolo, parte in corsivo, widget: string }
+              - { name: titolo, label: "Titolo", widget: string }
+              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
