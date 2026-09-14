@@ -279,7 +279,7 @@ h2 em { font-style: italic; font-weight: 500; }
 
 /* ---------- stazioni narrative (alba / notte) ---------- */
 
-.s-alba  { height: 220vh; }
+.s-alba  { height: 290vh; height: 290svh; }
 .s-notte { height: 200vh; }
 
 .station-text {
@@ -295,6 +295,25 @@ h2 em { font-style: italic; font-weight: 500; }
   text-shadow: 0 2px 40px rgba(5, 8, 23, .25);
 }
 .station-text em { font-style: italic; font-weight: 500; }
+
+/* The actual lilac passes in front of the first narrative line. */
+#alba .station-text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0 9vw;
+  text-align: left;
+  font-size: clamp(40px, 6.4vw, 92px);
+  line-height: 1.13;
+}
+.lilac-layer { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+#lilac-canvas { width: 100%; height: 100%; display: block; opacity: 0; }
+.lilac-fallback {
+  position: absolute; width: auto; height: 72svh; max-width: 38vw;
+  right: 16vw; top: 50%; transform: translateY(-50%);
+  opacity: 1; object-fit: contain;
+}
+.lilac-ready .lilac-fallback { display: none; }
 
 /* ---------- pannelli editoriali (giorno) ---------- */
 
@@ -746,7 +765,7 @@ h2 em { font-style: italic; font-weight: 500; }
   .s-hero .kicker { font-size: 10px; letter-spacing: .16em; }
   .hint { font-size: 10px; letter-spacing: .12em; }
   .numbers { grid-template-columns: repeat(2, 1fr); gap: 26px 12px; }
-  .s-alba { height: 180vh; }
+  .s-alba { height: 240vh; height: 240svh; }
   .s-climax { height: 260vh; }
   .s-strip { height: 380vh; }
   .card { width: 78vw; height: 56vh; }
@@ -759,6 +778,15 @@ h2 em { font-style: italic; font-weight: 500; }
   .s-cta { padding-top: 14vh; }
 }
 
+@media (max-width: 720px), (max-aspect-ratio: 9/10) {
+  #alba .station-text {
+    position: absolute; top: 62%; padding: 0 22px;
+    text-align: center; font-size: clamp(31px, 8.8vw, 52px);
+    line-height: 1.17;
+  }
+  .lilac-fallback { width: auto; height: 45svh; max-width: 78vw; right: 50%; top: 35%; transform: translate(50%, -50%); }
+}
+
 /* ---------- reduced motion ---------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -767,6 +795,10 @@ h2 em { font-style: italic; font-weight: 500; }
 .reduced .s-hero, .reduced .s-alba, .reduced .s-notte,
 .reduced .s-climax, .reduced .s-strip { height: auto; }
 .reduced .stage { position: static; height: auto; min-height: 70vh; padding: 12vh 0; }
+.reduced #alba .stage { position: relative; height: 100svh; min-height: 620px; padding: 0; }
+.reduced #alba .stage::before { content: ''; position: absolute; inset: 0; background: rgba(5, 8, 23, .66); }
+.reduced #alba .station-text { opacity: 1; }
+.reduced #lilac-canvas { opacity: 1; }
 .reduced .track-h {
   flex-direction: column;
   align-items: center;

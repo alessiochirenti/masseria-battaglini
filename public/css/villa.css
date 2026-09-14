@@ -323,6 +323,13 @@ a.card { text-decoration: none; color: inherit; }
 }
 .photo-full .photo-kicker { opacity: .95; }
 
+/* La didascalia d’arrivo è ora una frase, composta in tre righe. */
+#arrivo .photo-full figcaption { right: clamp(24px, 7vw, 90px); }
+#arrivo .photo-full em { font-size: clamp(32px, 4.8vw, 68px); line-height: 1.13; }
+@media (max-width: 720px) {
+  #arrivo .photo-full em { font-size: clamp(29px, 7.8vw, 44px); }
+}
+
 /* ---------- ritocchi dopo la prima verifica ---------- */
 /* logo più presente: è il loro marchio, deve leggersi */
 .brand-logo img { height: 72px; }

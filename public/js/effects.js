@@ -9,7 +9,7 @@ export function initEffects() {
 
   heroEntrance()
   heroScrub()
-  station('#alba')
+  // #alba shares one progress driver with the botanical 3D scene in lilac.js.
   station('#notte')
   climax()
   filmstrip()

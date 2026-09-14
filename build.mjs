@@ -110,6 +110,8 @@ function render(nodes, ctxs, partials) {
 
 // ─── dati derivati, comodi per i template ────────────────────────────────────
 const data = loadContent()
+const guestbook = JSON.parse(readFileSync(join(ROOT, 'public/uploads/guestbook/manifest.json'), 'utf8'))
+data.guestbook = { pages: guestbook.pages.map(p => ({ image: rel(p.url), title: p.title, transcript: p.transcription, lang: p.language })) }
 data.anno = new Date().getFullYear()
 data.site.robots = data.site.indicizza ? '' : '<meta name="robots" content="noindex,nofollow">'
 for (const [i, d] of (data.dimore.elenco || []).entries()) {

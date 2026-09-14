@@ -6,6 +6,7 @@ import { initScroll } from './scroll.js'
 import { computeAnchors } from './daycycle.js'
 import { initSky, updateSky } from './sky.js'
 import { initEffects } from './effects.js'
+import { initLilac, updateLilac } from './lilac.js'
 
 initInput()
 
@@ -21,16 +22,26 @@ if (state.reduced) document.documentElement.classList.add('reduced')
 
 initScroll()
 computeAnchors()
-initSky()
+let skyReady = false
+try { initSky(); skyReady = true } catch (error) {
+  document.documentElement.classList.add('no-webgl')
+  console.warn('Il cielo 3D non è disponibile su questo dispositivo.', error)
+}
 initEffects()
+initLilac()
 
 if (state.reduced) {
   // scena statica all'ora d'oro: un render al load e a ogni resize
-  updateSky()
-  addEventListener('resize', () => requestAnimationFrame(updateSky), { passive: true })
+  if (skyReady) updateSky()
+  addEventListener('resize', () => { if (skyReady) updateSky() }, { passive: true })
 } else {
   // il render 3D vive nel ticker GSAP: UN solo rAF in tutto il progetto
-  gsap.ticker.add(() => { updateSky() })
+  gsap.ticker.add((time, dtMs) => {
+    if (!document.hidden) {
+      if (skyReady) updateSky()
+      updateLilac(time, dtMs)
+    }
+  })
 
   // le ancore del ciclo del giorno dipendono dal layout: riallineale
   // quando ScrollTrigger ricalcola (font caricati, resize, refresh)
@@ -40,13 +51,6 @@ if (state.reduced) {
   document.fonts?.ready.then(() => ScrollTrigger.refresh())
 }
 
-// menu: barra scura appena si lascia il hero (i pannelli sotto sono chiari)
-{
-  const nav = document.querySelector('.nav')
-  const upd = () => nav.classList.toggle('away', window.scrollY > innerHeight * 0.7)
-  addEventListener('scroll', upd, { passive: true })
-  upd()
-}
 
 // form di contatto: nella demo non invia nulla, mostra solo la conferma
 document.querySelectorAll('.contact-form').forEach((f) => {
@@ -57,22 +61,3 @@ document.querySelectorAll('.contact-form').forEach((f) => {
     f.querySelector('.cf-ok').hidden = false
   })
 })
-
-// menu mobile: l'hamburger apre le voci a tutto schermo; i link lo richiudono
-{
-  const nav = document.querySelector('.nav')
-  const burger = nav?.querySelector('.nav-burger')
-  const setOpen = (v) => {
-    nav.classList.toggle('open', v)
-    burger.setAttribute('aria-expanded', String(v))
-    burger.setAttribute('aria-label', v ? 'Chiudi il menu' : 'Apri il menu')
-    const l = window.__lenis
-    if (l) v ? l.stop() : l.start()
-    document.documentElement.style.overflow = v ? 'hidden' : ''
-  }
-  if (burger) {
-    burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')))
-    nav.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => setOpen(false)))
-    addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false) })
-  }
-}

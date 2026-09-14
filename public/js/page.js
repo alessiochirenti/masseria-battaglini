@@ -172,13 +172,6 @@ if (!state.reduced) {
   document.fonts?.ready.then(() => ScrollTrigger.refresh())
 }
 
-// menu: barra scura appena si lascia la foto d'apertura
-{
-  const nav = document.querySelector('.nav')
-  const upd = () => nav.classList.toggle('away', window.scrollY > innerHeight * 0.6)
-  addEventListener('scroll', upd, { passive: true })
-  upd()
-}
 
 // form di richiesta: nella demo non invia nulla, mostra solo la conferma
 document.querySelectorAll('.contact-form').forEach((f) => {
@@ -190,22 +183,3 @@ document.querySelectorAll('.contact-form').forEach((f) => {
     ScrollTrigger.refresh()
   })
 })
-
-// menu mobile: l'hamburger apre le voci a tutto schermo; i link lo richiudono
-{
-  const nav = document.querySelector('.nav')
-  const burger = nav?.querySelector('.nav-burger')
-  const setOpen = (v) => {
-    nav.classList.toggle('open', v)
-    burger.setAttribute('aria-expanded', String(v))
-    burger.setAttribute('aria-label', v ? 'Chiudi il menu' : 'Apri il menu')
-    const l = window.__lenis
-    if (l) v ? l.stop() : l.start()
-    document.documentElement.style.overflow = v ? 'hidden' : ''
-  }
-  if (burger) {
-    burger.addEventListener('click', () => setOpen(!nav.classList.contains('open')))
-    nav.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => setOpen(false)))
-    addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false) })
-  }
-}

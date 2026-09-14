@@ -33,6 +33,23 @@ node build.mjs      # genera dist/
 Per vedere il sito in locale serve un server statico qualsiasi che punti a `dist/`
 (le pagine usano moduli ES, non si aprono da file://).
 
+## Libro degli ospiti
+
+La home include `src/_partials/ospiti.html` prima dei contatti. Le recensioni
+Google e le fonti sono in `content/recensioni.json`: valutazione verificata il
+14 settembre 2026, da aggiornare manualmente (non è un feed live).
+
+Il libro usa la copertina e sette pagine estratte dal PDF dei titolari.
+Scansioni, ordine, provenienza e trascrizioni sono in
+`public/uploads/guestbook/manifest.json`; `build.mjs` deriva i contenuti
+accessibili da questo manifest. Gli originali WebP sono nella stessa cartella.
+Il motore PageFlip 2.0.7 è incluso localmente con licenza MIT in `public/js/vendor`.
+Il PDF sorgente rimane sul Desktop e non viene distribuito per intero.
+
+La verifica locale include mouse, swipe touch emulato, tastiera, zoom e
+larghezze 375, 390, 768, 1024 e 1440 px. Un telefono fisico rimane utile per
+la verifica conclusiva delle sensazioni tattili e del pinch.
+
 ## Pubblicazione
 
 GitHub Actions (`.github/workflows/deploy.yml`) ricostruisce e pubblica su GitHub Pages a ogni

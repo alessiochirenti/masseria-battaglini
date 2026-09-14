@@ -1,0 +1,212 @@
+{
+  "sourcePdf": "2026-09-14_124921.pdf",
+  "sourcePageCount": 30,
+  "assetCount": 8,
+  "totalBytes": 2559414,
+  "preparation": "Original embedded page photographs extracted directly from the owner-provided PDF. Whole page preserved. Proportional downscale only when larger than 2000px; no upscaling. Centered on a 2000px square white canvas. WebP quality 95. No handwritten content edited, retouched or generated.",
+  "transcriptionNote": "Manual transcriptions checked against original page images. Letter case and line breaks normalized for readability; uncertain readings explicitly bracketed. Images remain the authoritative source.",
+  "cover": {
+    "file": "cover.webp",
+    "url": "/uploads/guestbook/cover.webp",
+    "sourcePage": 1,
+    "sourceImageWidth": 2028,
+    "sourceImageHeight": 1992,
+    "width": 2000,
+    "height": 2000,
+    "contentBounds": [
+      0,
+      18,
+      2000,
+      1982
+    ],
+    "bytes": 434998,
+    "alt": "Copertina originale bianca, con trama di tela e scritta calligrafica grigia Guest Book.",
+    "transcription": "Guest Book"
+  },
+  "pages": [
+    {
+      "sourcePage": 3,
+      "title": "Il tempo che rallenta",
+      "author": "Francesca, Susanna, Doriano e Tiziano",
+      "date": "7-17 agosto 2020",
+      "language": "it",
+      "alt": "Pensiero scritto a mano in stampatello blu sul tempo lento, la Valle d’Itria e l’ospitalità.",
+      "excerpt": "Assaporare la tradizione affidata a mani sapienti e cuori gentili.",
+      "transcription": "7-17 agosto 2020\n\nGuardare il tempo che rallenta\nnel vento che all’ombra sussurra\nall’ozio desiderato che noia non diventa\n\nCamminare tra la stoppia [parola non leggibile]\ndanzare con gli occhi seguendo eleganti farfalle\nviaggiare sulle dolci asperità della valle\ndi terra rossa e piante varie\ndi case antiche dai tetti a punta e piatte dimore\ndi bianchi paesi arroccati e genti colorite\n\nAssaporare la tradizione\naffidata a mani sapienti e cuori gentili\n\nIn tutta questa assenza\nincantevole\nci siamo ritrovati\n\nFrancesca, Susanna, Doriano, Tiziano",
+      "uncertainties": [
+        "La parola dopo “stoppia” non è leggibile con certezza e non è stata ricostruita."
+      ],
+      "file": "page-01.webp",
+      "url": "/uploads/guestbook/page-01.webp",
+      "sourceImageWidth": 2028,
+      "sourceImageHeight": 2028,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        0,
+        0,
+        2000,
+        2000
+      ],
+      "bytes": 355160,
+      "index": 1
+    },
+    {
+      "sourcePage": 7,
+      "title": "La cornice perfetta",
+      "author": "Giulia e gli altri ospiti",
+      "date": "23 agosto 2021",
+      "language": "it",
+      "alt": "Dedica in inchiostro azzurro: il paesaggio pugliese e il suono dei grilli ricordati dagli ospiti.",
+      "excerpt": "Il nostro sguardo si perdeva nell’incantevole campagna pugliese e il suono dei grilli è stata la cornice perfetta del nostro soggiorno.",
+      "transcription": "23.08.2021\n\nGrazie per la fantastica accoglienza e ospitalità: una location meravigliosa ed unica, indimenticabili tramonti. Il nostro sguardo si perdeva nell’incantevole campagna pugliese e il suono dei grilli è stata la cornice perfetta del nostro soggiorno.\nUn grazie speciale alla meravigliosa Susan!\n\nGiulia [altre firme non tutte leggibili]",
+      "uncertainties": [
+        "Le altre tre firme non sono tutte leggibili con certezza; non sono state ricostruite."
+      ],
+      "file": "page-02.webp",
+      "url": "/uploads/guestbook/page-02.webp",
+      "sourceImageWidth": 2052,
+      "sourceImageHeight": 2004,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        0,
+        23,
+        2000,
+        1976
+      ],
+      "bytes": 199798,
+      "index": 2
+    },
+    {
+      "sourcePage": 9,
+      "title": "A wonderful week",
+      "author": "Joris & Ilona",
+      "date": "16 luglio 2022",
+      "language": "en",
+      "alt": "Lettera manoscritta di Joris e Ilona, con due piccoli fiori disegnati agli angoli.",
+      "excerpt": "This was the perfect rest we were looking for.",
+      "transcription": "16-07-2022\n\nComing from the busy city-life in Olanda, this was the perfect rest we were looking for.\nA wonderful week, thanks to your good care, Giovanella & Giuseppe! The breakfast was overwhelming, and we are grateful for the ever new vegetarian options you presented. Everything was so well taken care of, all the people who work here are friendly & helpful!\n\nWe will miss the conversations about nature, the environment, the birds and the plants, and certainly hope to come back one day!\n\nVery warm regards, also to Albus & Hagrid,\nJoris & Ilona",
+      "uncertainties": [],
+      "file": "page-03.webp",
+      "url": "/uploads/guestbook/page-03.webp",
+      "sourceImageWidth": 2040,
+      "sourceImageHeight": 2004,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        0,
+        17,
+        2000,
+        1982
+      ],
+      "bytes": 320576,
+      "index": 3
+    },
+    {
+      "sourcePage": 21,
+      "title": "A lovely home",
+      "author": "Family Schley",
+      "date": null,
+      "language": "en",
+      "alt": "Dedica della famiglia Schley, accompagnata dal disegno della famiglia e dei cani Hagrid e Albus.",
+      "excerpt": "You are very kind-hearted people, that made us feel welcome at all times.",
+      "transcription": "From: Family Schley\n\nDear Giovanella, Susan & Giuseppe,\n\nWe had an amazing time at your lovely home. It was an incredible opportunity to stay at this beautiful Masseria, taste your local foods, and experience country life in Italy.\nOur highlight was the dinner you prepared for us. Not only the food, but your sense of humor was amazing. You are very kind-hearted people, that made us feel welcome at all times.\nThank you for gifting us this quality time with the family. Also thank you to Hagrid & Albus for giving us so much love and joy.\nWe hope to come back one day, stay the way you are. [cuore]\n\n[Disegno della famiglia e dei due cani; alcune piccole didascalie dei nomi non sono leggibili con certezza.]",
+      "uncertainties": [
+        "La pagina non riporta una data.",
+        "Alcuni nomi nelle piccole didascalie sotto il disegno non sono leggibili con certezza."
+      ],
+      "file": "page-04.webp",
+      "url": "/uploads/guestbook/page-04.webp",
+      "sourceImageWidth": 1884,
+      "sourceImageHeight": 1848,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        58,
+        76,
+        1942,
+        1924
+      ],
+      "bytes": 297454,
+      "index": 4
+    },
+    {
+      "sourcePage": 22,
+      "title": "Sentirsi di casa",
+      "author": "Silvia, Riccardo e un altro ospite",
+      "date": "21 luglio 2025",
+      "language": "it",
+      "alt": "Lettera di ringraziamento in italiano per l’accoglienza, la cucina e il sentirsi di casa.",
+      "excerpt": "Grazie per averci fatto sentire di casa.",
+      "transcription": "21-07-2025\n\nGiovannella, Susan e Giuseppe,\n\nVi ringraziamo per l’ospitalità e l’accoglienza che ci avete riservato aprendoci le porte della Vostra masseria e delle esperienze che ci avete consigliato.\nCi avete presentato i sapori della Vostra terra attraverso la Vostra magnifica cucina.\nVi ringraziamo per questi bellissimi giorni, è un’esperienza che consiglieremo ai nostri amici e conoscenti.\nCi farebbe molto piacere ripetere questa esperienza con voi.\nGrazie per averci fatto sentire di casa.\nCon affetto e stima.\n\nSilvia, Riccardo [terza firma non leggibile con certezza]",
+      "uncertainties": [
+        "La terza firma non è leggibile con certezza."
+      ],
+      "file": "page-05.webp",
+      "url": "/uploads/guestbook/page-05.webp",
+      "sourceImageWidth": 1992,
+      "sourceImageHeight": 1944,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        4,
+        28,
+        1996,
+        1972
+      ],
+      "bytes": 253168,
+      "index": 5
+    },
+    {
+      "sourcePage": 27,
+      "title": "An unforgettable experience",
+      "author": "Baby Noah, Cristhian & Michelle",
+      "date": "4 giugno 2026",
+      "language": "en",
+      "alt": "Lettera con disegni originali di cornetto, pane, latte, mare, pasta e trulli, dedicata alla cucina pugliese.",
+      "excerpt": "Thank you for an unforgettable experience!",
+      "transcription": "Jun 4/2026\n\nWe had a wonderful stay and learned so much about authentic Apulian cuisine with an amazing teacher Giovanella, the cooking experience was truly memorable.\nSusan made us feel right at home, every detail was thoughtfully taken care of, and both she and Giovanella went above and beyond to make our stay comfortable and enjoyable!\n\nThank you for an unforgettable experience!\n\nLooking forward to come back...\nBaby Noah, Cristhian & Michelle\n\nGrazie mille!!\nMasseria Battaglini!\n\n[A destra, disegni originali di colazione, mare, pasta e trulli, con cuori e un fiore.]",
+      "uncertainties": [],
+      "file": "page-06.webp",
+      "url": "/uploads/guestbook/page-06.webp",
+      "sourceImageWidth": 1824,
+      "sourceImageHeight": 1788,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        88,
+        106,
+        1912,
+        1894
+      ],
+      "bytes": 402242,
+      "index": 6
+    },
+    {
+      "sourcePage": 28,
+      "title": "Our lovely trullo",
+      "author": "Jana & Peter",
+      "date": "6 giugno 2026",
+      "language": "en",
+      "alt": "Dedica di Jana e Peter, scritta a mano in inglese, con un ringraziamento finale in ceco.",
+      "excerpt": "Thank you for making our stay so special.",
+      "transcription": "June 6, 2026\n\nDear Giovanella & Giuseppe,\nThank you for a wonderful stay in your lovely trullo. It was a unique experience, and we enjoyed every moment. Everything was perfect.\nWe truly enjoyed the authentic atmosphere, the beautiful surroundings and the delicious breakfast prepared with much love.\nThank you for making our stay so special.\nWe hope to return in the future!\n\nLove\nJana & Peter\n[cuore e viso sorridente]\n\nPS: Děkujeme za krásný čas u vás!",
+      "uncertainties": [],
+      "file": "page-07.webp",
+      "url": "/uploads/guestbook/page-07.webp",
+      "sourceImageWidth": 1896,
+      "sourceImageHeight": 1836,
+      "width": 2000,
+      "height": 2000,
+      "contentBounds": [
+        52,
+        82,
+        1948,
+        1918
+      ],
+      "bytes": 296018,
+      "index": 7
+    }
+  ]
+}

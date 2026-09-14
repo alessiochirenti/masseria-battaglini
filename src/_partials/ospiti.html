@@ -1,0 +1,83 @@
+    <section class="s-memories" id="ospiti" aria-labelledby="reviews-title">
+      <div class="memories-inner">
+        <div class="reviews-heading">
+          <h2 id="reviews-title">Cosa dicono <em>di noi.</em></h2>
+          <div class="reviews-google">
+            <p><span class="google-word" translate="no">Google</span> <span class="review-stars" aria-label="Valutazione {{recensioni.rating}} su 5">★★★★★</span> <strong>{{recensioni.rating}}<small> / 5</small></strong></p>
+            <a href="{{recensioni.url}}" target="_blank" rel="noopener noreferrer">Tutte le recensioni su Google <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="reviews-carousel" role="region" aria-roledescription="carosello" aria-label="Recensioni Google degli ospiti">
+          <div class="reviews-viewport">
+            <div class="reviews-quotes" id="reviews-track">
+              {{#each recensioni.reviews}}<figure class="review-quote" role="group" aria-roledescription="recensione" aria-label="{{@n}} di 5">
+                <blockquote>“{{quote}}”</blockquote>
+                <p class="review-rating" role="img" aria-label="{{rating}} stelle su 5"><span aria-hidden="true">★★★★★</span></p>
+                <figcaption><span>{{author}}</span><a class="review-source" href="{{source}}" target="_blank" rel="noopener noreferrer" aria-label="Leggi la recensione Google di {{author}}">Recensione Google</a></figcaption>
+                {{#if translated}}<p class="review-translation">Traduzione di Google</p>{{/if}}
+              </figure>{{/each}}
+            </div>
+          </div>
+          <div class="reviews-controls" hidden>
+            <button type="button" class="reviews-pause" aria-pressed="false">Pausa</button>
+            <div class="reviews-navigation">
+              <button type="button" class="reviews-prev" aria-label="Recensione precedente" aria-controls="reviews-track">←</button>
+              <span class="reviews-count">1 / 5</span>
+              <button type="button" class="reviews-next" aria-label="Recensione successiva" aria-controls="reviews-track">→</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="guestbook" id="guestbook" data-guestbook>
+          <header class="guestbook-heading">
+            <p class="guestbook-eyebrow">Il libro degli ospiti</p>
+            <h2>Ci sono parole <em>che restano.</em></h2>
+            <p>Prima di partire, un pensiero sulla carta.<br>Sette pagine del nostro libro, con la voce e la calligrafia di chi è stato qui.</p>
+          </header>
+
+          <div class="gb-stage" aria-label="Libro degli ospiti sfogliabile" aria-describedby="gb-instructions" tabindex="0">
+            <div class="gb-position" data-state="closed">
+              <div class="gb-book" id="guestbook-pages" aria-hidden="true">
+                <div class="gb-page gb-cover" data-density="hard">
+                  <img src="uploads/guestbook/cover.webp" width="2000" height="2000" alt="" loading="lazy" decoding="async" draggable="false">
+                </div>
+                {{#each guestbook.pages}}<div class="gb-page gb-manuscript" data-entry="{{@index}}">
+                  <img data-src="{{image}}" width="2000" height="2000" alt="" decoding="async" draggable="false">
+                </div>{{/each}}
+                <div class="gb-page gb-flyleaf">
+                  <div class="gb-flyleaf-inner"><span>Masseria Battaglini</span><p>La prossima pagina<br><em>potrebbe essere vostra.</em></p><small>Vi aspettiamo.</small></div>
+                </div>
+                <div class="gb-page gb-back" data-density="hard">
+                  <div class="gb-flyleaf-inner"><span>Masseria Battaglini</span><p><em>Il libro degli ospiti</em></p><small>Gli incontri restano.</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="gb-actions" hidden>
+            <button class="gb-open" type="button">Apri il libro <span aria-hidden="true">↗</span></button>
+            <div class="gb-navigation" hidden>
+              <button class="gb-prev gb-arrow" type="button" aria-label="Pagina precedente" aria-controls="guestbook-pages">←</button>
+              <span class="gb-counter" role="status" aria-live="polite" aria-atomic="true"></span>
+              <button class="gb-next gb-arrow" type="button" aria-label="Pagina successiva" aria-controls="guestbook-pages">→</button>
+            </div>
+            <div class="gb-reading-actions" hidden>
+              <button class="gb-read" type="button">Leggi da vicino <span aria-hidden="true">↗</span></button>
+              <button class="gb-close" type="button">Chiudi il libro</button>
+            </div>
+            <p id="gb-instructions" class="gb-instructions">Apri la copertina, poi trascina l’angolo per sfogliare.</p>
+          </div>
+
+          <details class="gb-accessible">
+            <summary>Le pagine e i pensieri, da leggere</summary>
+            <div class="gb-transcripts">
+              {{#each guestbook.pages}}<article lang="{{lang}}">
+                <h3>{{title}}</h3>
+                <p>{{transcript}}</p>
+                <a href="{{image}}" lang="it" target="_blank" rel="noopener">Guarda la pagina originale <span aria-hidden="true">↗</span></a>
+              </article>{{/each}}
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>

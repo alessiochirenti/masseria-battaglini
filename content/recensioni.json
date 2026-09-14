@@ -1,0 +1,47 @@
+{
+  "rating": "4,8",
+  "count": 61,
+  "verified": "2026-09-14",
+  "url": "https://www.google.com/maps/place/@40.738301,17.300083,17z/data=!4m10!3m9!1s0x134652cb07d425fb:0x213b4efd43ae12b3!5m2!4m1!1i2!8m2!3d40.738301!4d17.300083!9m1!1b1",
+  "reviews": [
+    {
+      "author": "Erika Gennari",
+      "quote": "Location da favola e trulli restaurati con grazia.",
+      "rating": 5,
+      "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUQ4ZzhXV2Z3EAE!2m1!1s0x134652cb07d425fb:0x213b4efd43ae12b3!3m1!1s2"
+    },
+    {
+      "author": "Michele M.",
+      "quote": "Per gli amanti della tranquillità è un posto veramente magico.",
+      "rating": 5,
+      "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNScDlEeVJ3EAE!2m1!1s0x134652cb07d425fb:0x213b4efd43ae12b3!3m1!1s2"
+    },
+    {
+      "author": "Sduefy",
+      "quote": "La qualità di un hotel di lusso con la sensazione di essere ospiti in una casa meravigliosa.",
+      "rating": 5,
+      "translated": true,
+      "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNDcDgzRGZnEAE!2m1!1s0x134652cb07d425fb:0x213b4efd43ae12b3!3m1!1s2"
+    },
+    {
+      "author": "Valentina Rosa",
+      "quote": "Tutto è ben organizzato e curato, il cibo è squisito e le porzioni abbondanti.",
+      "rating": 5,
+      "translated": true,
+      "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUMycjZDQmZ3EAE!2m1!1s0x134652cb07d425fb:0x213b4efd43ae12b3!3m1!1s2"
+    },
+    {
+      "author": "Rosie Thompson",
+      "quote": "Il miglior pasto casalingo che abbia mai mangiato in Italia.",
+      "rating": 5,
+      "translated": true,
+      "source": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUMwcUszNWdnRRAB!2m1!1s0x134652cb07d425fb:0x213b4efd43ae12b3!3m1!1s2"
+    }
+  ],
+  "provenance": {
+    "google": "https://www.google.it/travel/hotels/entity/ChkIs6W4ndTf050hGg0vZy8xMWJ5eDgydHdmEAE?rp=OAHCAhwiGg0AAMhCEhMIi7OU5JT2lQMVMBOICR3qGjWl&ts=CAEaBAoCGgAqBAoAGgA",
+    "reviewMirror": "https://wanderlog.com/place/details/589409/azienda-agricola-masseria-battaglini",
+    "officialMaps": "https://maps.app.goo.gl/JbLYjYkuwDNVSFXu5",
+    "note": "Snapshot, not a live feed. Aggregate rating/count and Erika text verified via indexed Google Hotels; Michele text and individual 5/5 ratings via Wanderlog's Google review mirror. Sduefy (formerly Stefano M), Valentina Rosa and Rosie Thompson: author, five-star rating and Italian Google translation checked directly in their individual Google Maps review pages on 2026-09-14. Translated excerpts explicitly labelled in UI. Maps review permalinks extracted from mirror."
+  }
+}
