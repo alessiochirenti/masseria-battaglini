@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="it">
+<html lang="{{locale}}">
 <head>
 {{> head-sub}}
   <title>{{dimore.titolo_pagina}} · {{site.nome}}</title>
   <meta name="description" content="{{dimore.descrizione}}">
   <meta property="og:title" content="{{dimore.titolo_pagina}}, {{site.nome}}">
   <meta property="og:description" content="{{dimore.hero.sottotitolo}}">
-  <meta property="og:url" content="{{site.url}}camere.html">
+  <meta property="og:url" content="{{canonical}}">
 </head>
 <body class="page-sub">
 {{> silhouette-sub}}
@@ -30,7 +30,7 @@
         <h2 class="reveal">{{dimore.intro.titolo}} <em>{{dimore.intro.titolo_corsivo}}</em></h2>
         <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
         <p class="copy reveal" style="text-align:center">{{dimore.intro.testo}}</p>
-        <nav class="jump reveal" aria-label="Le dimore">
+        <nav class="jump reveal" aria-label="{{dimore.titolo_pagina}}">
           {{#each dimore.elenco}}<a href="#{{id}}" data-scroll-to="#{{id}}">{{nome}}</a>
           {{/each}}
         </nav>
@@ -46,22 +46,20 @@
     {{#each dimore.elenco}}
     <section class="s-panel dimora" id="{{id}}">
       <div class="panel wide">
-        <article class="feature {{flip}} reveal">
-          <figure><img src="{{foto}}" alt="{{alt}}" loading="lazy"></figure>
-          <div>
-            {{#if etichetta}}<span class="f-n">{{etichetta}}</span>{{/if}}
-            <h3>{{titolo}} <em>{{titolo_corsivo}}</em></h3>
-            {{#paragrafi testo}}<p>{{.}}</p>
-            {{/paragrafi}}
-            {{#if caratteristiche}}<ul class="chips">{{#each caratteristiche}}<li>{{.}}</li>{{/each}}</ul>{{/if}}
-          </div>
-        </article>
-        {{#if galleria}}
-        <div class="gal reveal" data-gallery="{{id}}" data-title="{{nome}}" data-photos='{{{galleria_json}}}'>
-          {{#each anteprime}}<img src="{{foto}}" alt="{{nome}}, foto {{@n}}" loading="lazy" data-i="{{i}}">
-          {{/each}}
-        </div>
-        <p class="reveal"><button class="gal-open" type="button" data-gallery-open="{{id}}">Guardate tutte le foto<small>{{n_foto}} foto</small></button></p>
+        {{#if piani}}
+        <header class="cummersa-intro">
+          <h2 class="reveal">{{titolo}} <em>{{titolo_corsivo}}</em></h2>
+          <p class="copy reveal">{{testo}}</p>
+        </header>
+        <dl class="soggiorno-scelte reveal" aria-label="{{ui.cummersaChoices}}">
+          {{#each configurazioni}}<div><dt>{{nome}}</dt><dd>{{testo}}</dd></div>{{/each}}
+        </dl>
+        <p class="cummersa-esclusiva reveal">{{esclusiva}}</p>
+        {{#each piani}}<section class="cummersa-piano" id="{{id}}" aria-label="{{nome}}">
+{{> dimora}}
+        </section>{{/each}}
+        {{else}}
+{{> dimora}}
         {{/if}}
       </div>
     </section>
@@ -87,6 +85,6 @@
 
   </main>
 
-  <script type="module" src="js/page.js?v=20260914-nav"></script>
+  <script type="module" src="js/page.js?v=20260916-i18n"></script>
 </body>
 </html>

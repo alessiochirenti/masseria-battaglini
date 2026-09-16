@@ -31,6 +31,7 @@ export function computeAnchors() {
   const alba = $('#alba')
   const climax = $('#mezzogiorno')
   const strip = $('#esperienze')
+  const tramonti = $('#tramonti-foto')
   const notte = $('#notte')
   const vh = innerHeight
   const maxScroll = Math.max(document.documentElement.scrollHeight - vh, 1)
@@ -42,6 +43,7 @@ export function computeAnchors() {
     [docTop(climax), 1.88],                              // mattino che sale
     [docTop(climax) + climax.offsetHeight - vh, 2.14],   // mezzogiorno, quasi fermo
     [docTop(strip) + strip.offsetHeight - vh, 3.0],      // fine esperienze = tramonto pieno
+    ...(tramonti ? [[docTop(tramonti) + tramonti.offsetHeight, 3.0]] : []), // pausa al tramonto fino all'ultima foto
     [docTop(notte) + notte.offsetHeight * 0.55, 3.75],   // il buio cala
     [maxScroll, 4],
   ]

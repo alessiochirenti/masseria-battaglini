@@ -16,19 +16,11 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, readdirSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { languages, loadSource, dictionaries, mapContent } from './scripts/i18n.mjs'
 
 const ROOT = dirname(fileURLToPath(import.meta.url))
 const SRC = join(ROOT, 'src')
 const DIST = join(ROOT, 'dist')
-
-// ─── contenuti ───────────────────────────────────────────────────────────────
-function loadContent() {
-  const data = {}
-  for (const f of readdirSync(join(ROOT, 'content'))) {
-    if (f.endsWith('.json')) data[f.replace('.json', '')] = JSON.parse(readFileSync(join(ROOT, 'content', f), 'utf8'))
-  }
-  return data
-}
 
 // ─── testo: escape + markup minimo ───────────────────────────────────────────
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -56,15 +48,23 @@ function parseTpl(tpl) {
     const top = stack[stack.length - 1]
     if (m.index > last) target(top).push({ type: 'text', value: tpl.slice(last, m.index) })
     last = m.index + m[0].length
-    if (m[1] != null) { target(top).push({ type: 'raw', path: m[1].trim() }); continue }
+    if (m[1] != null) {
+      if (!/^[\w@.]+$/.test(m[1].trim())) throw Error('Espressione del template non valida: '+m[0])
+      target(top).push({ type: 'raw', path: m[1].trim() }); continue
+    }
     const kind = m[2], arg = m[3].trim()
+    if ((!kind || kind.startsWith('#')) && !/^[\w@.]+$/.test(arg)) throw Error('Espressione del template non valida: '+m[0])
     if (!kind) target(top).push({ type: 'var', path: arg })
     else if (kind === '>') target(top).push({ type: 'partial', name: arg })
     else if (kind.startsWith('#')) { const node = { type: kind.slice(1), path: arg, children: [], alt: [] }; target(top).push(node); stack.push(node) }
     else if (kind === 'else') top.inAlt = true
-    else if (kind.startsWith('/')) stack.pop()
+    else if (kind.startsWith('/')) {
+      if (top.type !== kind.slice(1)) throw Error('Blocco del template non bilanciato: '+m[0])
+      stack.pop()
+    }
   }
   if (last < tpl.length) target(root).push({ type: 'text', value: tpl.slice(last) })
+  if (stack.length !== 1) throw Error('Blocco del template non chiuso')
   return root
 }
 
@@ -108,41 +108,57 @@ function render(nodes, ctxs, partials) {
   return out
 }
 
-// ─── dati derivati, comodi per i template ────────────────────────────────────
-const data = loadContent()
+// All languages are validated before touching the previous build.
+const source = loadSource()
+const catalogs = dictionaries(source)
 const guestbook = JSON.parse(readFileSync(join(ROOT, 'public/uploads/guestbook/manifest.json'), 'utf8'))
-data.guestbook = { pages: guestbook.pages.map(p => ({ image: rel(p.url), title: p.title, transcript: p.transcription, lang: p.language })) }
-data.anno = new Date().getFullYear()
-data.site.robots = data.site.indicizza ? '' : '<meta name="robots" content="noindex,nofollow">'
-for (const [i, d] of (data.dimore.elenco || []).entries()) {
-  d.flip = i % 2 === 1 ? 'flip' : ''
-  d.anteprime = (d.galleria || []).slice(0, 3).map((foto, i) => ({ foto, i }))
-  d.galleria_json = JSON.stringify((d.galleria || []).map(rel))
-  d.n_foto = (d.galleria || []).length
+function prepare(data, locale) {
+  data.guestbook.pages = data.guestbook.pages.map((p,i) => ({...p,image:rel(guestbook.pages[i].url),lang:locale}))
+  data.anno = new Date().getFullYear()
+  data.home.terra.numeri.forEach(n => {
+    if (/^\d+(,\d+)?$/.test(n.valore)) n.valore = Number(n.valore.replace(',','.')).toLocaleString(locale)
+  })
+  data.site.robots = data.site.indicizza ? '' : '<meta name="robots" content="noindex,nofollow">'
+  function prepareDimora(d,i) {
+    d.flip=i%2===1?'flip':''
+    d.anteprime=(d.galleria||[]).slice(0,3).map((foto,i)=>({foto,i}))
+    d.galleria_json=JSON.stringify((d.galleria||[]).map(rel));d.n_foto=(d.galleria||[]).length
+    ;(d.piani||[]).forEach((p,j)=>prepareDimora(p,j+1))
+  }
+  ;(data.dimore.elenco||[]).forEach(prepareDimora)
+  data.dimore.scelte_richiesta=data.dimore.elenco.flatMap(d=>d.configurazioni?.length?d.configurazioni.map(c=>d.nome+': '+c.nome):[d.nome])
+  for(const section of data.esperienze.sezioni)for(const [i,v]of(section.voci||[]).entries())v.flip=i%2===1?'flip':''
+  if(locale!=='it') {
+    data.recensioni.rating=Number(source.recensioni.rating.replace(',','.')).toLocaleString(locale)
+    data.recensioni.reviews.forEach(r=>{r.translated=true})
+    data.ui.googleTranslation=data.ui.translatedExcerpt
+  }
+  return data
 }
-for (const s of data.esperienze.sezioni || []) {
-  for (const [i, v] of (s.voci || []).entries()) v.flip = i % 2 === 1 ? 'flip' : ''
+const partials={}
+for(const f of readdirSync(join(SRC,'_partials')))partials[f.replace('.html','')]=parseTpl(readFileSync(join(SRC,'_partials',f),'utf8'))
+// DIST is a fixed child of this repository, never a user-supplied deletion path.
+rmSync(DIST,{recursive:true,force:true});mkdirSync(DIST,{recursive:true})
+cpSync(join(ROOT,'public'),DIST,{recursive:true});cpSync(join(ROOT,'admin'),join(DIST,'admin'),{recursive:true})
+writeFileSync(join(DIST,'.nojekyll'),'')
+let pages=0
+const base=source.site.url.replace(/\/?$/,'/')
+for(const language of languages){
+ const locale=language.code, prefix=locale==='it'?'':'../', folder=locale==='it'?'':locale+'/'
+ const data=prepare(mapContent(source,text=>locale==='it'?text:catalogs[locale][text]),locale)
+ const runtime=Object.fromEntries(Object.values(source.ui).map(text=>[text,locale==='it'?text:catalogs[locale][text]]))
+ const ui_json=JSON.stringify(runtime).replace(/</g,'\\u003c')
+ mkdirSync(join(DIST,folder),{recursive:true})
+ for(const f of readdirSync(SRC).filter(f=>f.endsWith('.html'))){
+  const page=f.slice(0,-5)
+  const ctx={...data,locale,language_name:language.name,og_locale:{it:'it_IT',en:'en_GB',fr:'fr_FR',de:'de_DE',es:'es_ES'}[locale],ui_json,page,is_home:page==='index',
+    canonical:base+folder+(page==='index'?'':f),
+    alternate_languages:[...languages.map(l=>({code:l.code,url:base+(l.code==='it'?'':l.code+'/')+(page==='index'?'':f)})),{code:'x-default',url:base+(page==='index'?'':f)}],
+    language_links:languages.map(l=>({...l,current:l.code===locale,href:prefix+(l.code==='it'?'':l.code+'/')+f}))}
+  let html=render(parseTpl(readFileSync(join(SRC,f),'utf8')).children,[{value:ctx,n:0}],partials)
+  html=html.replace(/(["'(])((?:uploads|css|js|fonts)\/)/g,(_,q,path)=>q+prefix+path)
+  if(/\{\{[^}]*\}\}/.test(html))throw Error('Unresolved template: '+folder+f)
+  writeFileSync(join(DIST,folder,f),html,'utf8');pages++
+ }
 }
-
-// ─── build ───────────────────────────────────────────────────────────────────
-const partials = {}
-for (const f of readdirSync(join(SRC, '_partials'))) partials[f.replace('.html', '')] = parseTpl(readFileSync(join(SRC, '_partials', f), 'utf8'))
-
-rmSync(DIST, { recursive: true, force: true })
-mkdirSync(DIST, { recursive: true })
-cpSync(join(ROOT, 'public'), DIST, { recursive: true })
-cpSync(join(ROOT, 'admin'), join(DIST, 'admin'), { recursive: true })
-writeFileSync(join(DIST, '.nojekyll'), '')
-
-let pages = 0
-for (const f of readdirSync(SRC)) {
-  if (!f.endsWith('.html')) continue
-  const page = f.replace('.html', '')
-  const ctx = { ...data, is_home: page === 'index', page }
-  const html = render(parseTpl(readFileSync(join(SRC, f), 'utf8')).children, [{ value: ctx, n: 0 }], partials)
-  const residui = [...new Set(html.match(/\{\{[^}]*\}\}/g) || [])]
-  if (residui.length) console.warn(`⚠ ${f}: token non risolti ${residui.join(' ')}`)
-  writeFileSync(join(DIST, f), html, 'utf8')
-  pages++
-}
-console.log(`✔ ${pages} pagine generate in dist/`)
+console.log('✔ '+pages+' pagine generate in cinque lingue, asset condivisi.')

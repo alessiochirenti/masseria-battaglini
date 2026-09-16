@@ -57,7 +57,6 @@ collections:
               - { name: racconto, label: "Voce del racconto", widget: string }
               - { name: dimore, label: "Voce delle dimore", widget: string }
               - { name: esperienze, label: "Voce delle esperienze", widget: string }
-              - { name: contatti, label: "Voce dei contatti", widget: string }
               - { name: cta, label: "Bottone in alto a destra", widget: string }
           - name: contatti
             label: "Contatti"
@@ -138,24 +137,6 @@ collections:
               - { name: alt, label: "Descrizione della foto", widget: string, required: false }
               - { name: didascalia, label: "Didascalia", widget: string, required: false }
               - { name: link, label: "Testo del link alle dimore", widget: string, required: false }
-          - name: benessere
-            label: "Pannello benessere"
-            widget: object
-            fields:
-              - { name: titolo, label: "Titolo", widget: string }
-              - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
-              - { name: intro, label: "Frase introduttiva", widget: text, required: false }
-              - name: servizi
-                label: "Le quattro schede"
-                widget: list
-                max: 4
-                fields:
-                  - { name: titolo, label: "Titolo", widget: string }
-                  - { name: testo, label: "Testo", widget: string }
-              - { name: foto, label: "Foto", widget: image, required: false }
-              - { name: alt, label: "Descrizione della foto", widget: string, required: false }
-              - { name: didascalia, label: "Didascalia", widget: string, required: false }
-              - { name: link, label: "Testo del link alle esperienze", widget: string, required: false }
           - name: mezzogiorno
             label: "Frase di mezzogiorno"
             widget: object
@@ -176,6 +157,14 @@ collections:
                   - { name: titolo, label: "Titolo", widget: string }
                   - { name: testo, label: "Testo", widget: text }
                   - { name: foto, label: "Foto di sfondo", widget: image }
+                  - name: posizione_foto
+                    label: "Inquadratura della foto"
+                    widget: select
+                    required: false
+                    options:
+                      - { label: "Centrata", value: "center center" }
+                      - { label: "Privilegia la parte sinistra", value: "left center" }
+                      - { label: "Privilegia la parte destra", value: "right center" }
                   - name: link
                     label: "Pagina di destinazione"
                     widget: select
@@ -184,8 +173,33 @@ collections:
                       - { label: "Esperienze", value: "esperienze.html" }
                       - { label: "Esperienze, benessere", value: "esperienze.html#benessere" }
                       - { label: "Esperienze, la tavola", value: "esperienze.html#tavola" }
+                      - { label: "Esperienze, colazione", value: "esperienze.html#colazione" }
                       - { label: "Esperienze, escursioni", value: "esperienze.html#escursioni" }
                       - { label: "Il racconto", value: "racconto.html" }
+          - name: tramonti
+            label: "I nostri tramonti"
+            widget: object
+            fields:
+              - { name: domanda, label: "Domanda sul cielo", widget: string }
+              - { name: risposta, label: "Scritta sulle due foto", widget: string }
+              - name: panorama
+                label: "Foto a tutto schermo"
+                widget: object
+                fields:
+                  - { name: foto, label: "Foto", widget: image }
+                  - { name: alt, label: "Descrizione accessibile", widget: string }
+                  - { name: width, widget: hidden, default: 1672 }
+                  - { name: height, widget: hidden, default: 941 }
+              - name: dettagli
+                label: "Le due foto sotto"
+                widget: list
+                min: 2
+                max: 2
+                fields:
+                  - { name: foto, label: "Foto", widget: image }
+                  - { name: alt, label: "Descrizione accessibile", widget: string }
+                  - { name: width, widget: hidden, default: 1448 }
+                  - { name: height, widget: hidden, default: 1086 }
           - name: notte
             label: "Frase della notte"
             widget: object
@@ -288,17 +302,43 @@ collections:
             widget: list
             fields:
               - { name: id, label: "Nome tecnico (senza spazi)", widget: string, pattern: ["^[a-z0-9-]+$", "Solo lettere minuscole, numeri e trattini"] }
-              - { name: nome, label: "Nome", widget: string, hint: "Compare nel menu della pagina e nel modulo di richiesta." }
+              - { name: nome, label: "Nome", widget: string, hint: "Compare nel menu della pagina e nel modulo di richiesta. I piani della Cummersa vanno nella stessa dimora." }
               - { name: etichetta, label: "Riga piccola sopra il titolo", widget: string, required: false }
               - { name: titolo, label: "Titolo", widget: string }
               - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
               - { name: testo, label: "Descrizione", widget: text, hint: "Una riga vuota separa i paragrafi." }
-              - { name: caratteristiche, label: "Etichette (mq, ospiti, dotazioni)", widget: list, field: { name: voce, label: "Etichetta", widget: string } }
-              - { name: foto, label: "Foto principale", widget: image }
+              - { name: caratteristiche, label: "Etichette (mq, ospiti, dotazioni)", widget: list, required: false, field: { name: voce, label: "Etichetta", widget: string } }
+              - { name: foto, label: "Foto principale", widget: image, required: false }
               - { name: alt, label: "Descrizione della foto principale", widget: string, required: false }
-              - { name: galleria, label: "Galleria", widget: image, multiple: true, hint: "Le prime tre sono le anteprime. Trascinate per riordinare." }
+              - { name: galleria, label: "Galleria", widget: image, multiple: true, required: false, hint: "Le prime tre sono le anteprime. Trascinate per riordinare." }
+              - name: configurazioni
+                label: "Possibilità di soggiorno"
+                widget: list
+                required: false
+                hint: "Per la Cummersa: piano terra oppure entrambi i piani. Queste scelte compaiono anche nel modulo."
+                fields:
+                  - { name: nome, label: "Nome della scelta", widget: string }
+                  - { name: testo, label: "Descrizione e supplemento", widget: text }
+              - { name: esclusiva, label: "Nota sull’uso esclusivo", widget: text, required: false }
+              - name: piani
+                label: "Piani della stessa dimora"
+                widget: list
+                required: false
+                hint: "Fiori di Campo al piano terra, Luce di Luna al primo piano. Non sono dimore prenotabili separatamente."
+                fields:
+                  - { name: id, label: "Nome tecnico (conservare i link esistenti)", widget: string, pattern: ["^[a-z0-9-]+$", "Solo lettere minuscole, numeri e trattini"] }
+                  - { name: nome, label: "Nome del piano", widget: string }
+                  - { name: etichetta, label: "Indicazione del piano", widget: string }
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+                  - { name: testo, label: "Descrizione", widget: text }
+                  - { name: caratteristiche, label: "Dotazioni del piano", widget: list, field: { name: voce, label: "Etichetta", widget: string } }
+                  - { name: foto, label: "Foto principale", widget: image }
+                  - { name: alt, label: "Descrizione della foto", widget: string }
+                  - { name: galleria, label: "Galleria del piano", widget: image, multiple: true }
+          - { name: nota_richiesta, label: "Nota sulla Cummersa nel modulo di richiesta", widget: text }
           - name: servizi
-            label: "Incluso in ogni dimora"
+            label: "Servizi e attenzioni di casa"
             widget: object
             fields:
               - { name: titolo, label: "Titolo", widget: string }
@@ -336,19 +376,69 @@ collections:
               - { name: titolo, label: "Titolo", widget: string }
               - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
               - { name: intro, label: "Frase introduttiva", widget: text, required: false }
+              - { name: compatto, label: "Esperienze affiancate", widget: boolean, default: false, required: false }
+              - name: attenzioni
+                label: "Le attenzioni dei padroni di casa"
+                widget: list
+                required: false
+                fields:
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: testo, label: "Testo", widget: text }
               - name: voci
                 label: "Esperienze"
                 label_singular: "Esperienza"
                 widget: list
                 fields:
+                  - { name: ancora, label: "Collegamento diretto (facoltativo)", widget: string, required: false, pattern: ["^[a-z0-9-]+$", "Solo lettere minuscole, numeri e trattini"] }
                   - { name: etichetta, label: "Riga piccola sopra il titolo", widget: string, required: false }
                   - { name: titolo, label: "Titolo", widget: string }
                   - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
                   - { name: testo, label: "Testo", widget: text }
                   - { name: caratteristiche, label: "Etichette", widget: list, required: false, field: { name: voce, label: "Etichetta", widget: string } }
+                  - { name: foto, label: "Foto", widget: image, required: false }
+                  - { name: alt, label: "Descrizione della foto o del video", widget: string, required: false }
+                  - { name: video, label: "Video loop MP4", widget: file, required: false, hint: "Usare una clip già ottimizzata, breve e senza audio." }
+                  - { name: poster, label: "Immagine di anteprima del video", widget: image, required: false }
+                  - { name: placeholder, label: "Foto in arrivo", widget: boolean, default: false, required: false }
+                  - name: recensioni_cucina
+                    label: "Recensioni sull’esperienza"
+                    widget: object
+                    required: false
+                    fields:
+                      - { name: titolo, label: "Titolo", widget: string }
+                      - { name: nota, label: "Nota sugli estratti o sulle traduzioni", widget: string }
+                      - { name: fonte, label: "Piattaforma", widget: string }
+                      - { name: url, label: "Link alla fonte verificata", widget: string, pattern: ["^https://", "Usare un link HTTPS"] }
+                      - name: voci
+                        label: "Estratti"
+                        widget: list
+                        min: 2
+                        max: 3
+                        fields:
+                          - { name: testo, label: "Breve estratto verificato", widget: text }
+                          - { name: autore, label: "Autore come riportato nella fonte", widget: string }
+
+              - name: galleria
+                label: "Foto sotto l’esperienza"
+                widget: list
+                required: false
+                max: 3
+                fields:
                   - { name: foto, label: "Foto", widget: image }
-                  - { name: alt, label: "Descrizione della foto", widget: string, required: false }
-              - { name: galleria, label: "Due foto in fondo alla sezione", widget: image, multiple: true, required: false, max: 2 }
+                  - { name: alt, label: "Descrizione della foto", widget: string }
+              - name: conclusione
+                label: "Le attenzioni dei padroni di casa"
+                widget: object
+                required: false
+                fields:
+                  - { name: titolo, label: "Titolo", widget: string }
+                  - { name: titolo_corsivo, label: "Titolo, parte in corsivo", widget: string }
+                  - name: voci
+                    label: "Testi di approfondimento"
+                    widget: list
+                    fields:
+                      - { name: titolo, label: "Titolo", widget: string }
+                      - { name: testo, label: "Testo", widget: text, hint: "Una riga vuota separa i paragrafi." }
           - name: contatti
             label: "Chiusura"
             widget: object

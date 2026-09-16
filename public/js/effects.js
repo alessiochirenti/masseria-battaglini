@@ -13,9 +13,32 @@ export function initEffects() {
   station('#notte')
   climax()
   filmstrip()
+  sunsets()
   photoSections()
   reveals()
   magnetic()
+}
+
+// Il tramonto si ferma: domanda, panorama, due dettagli e ritorno al racconto.
+function sunsets() {
+  const intro = document.querySelector('#tramonti')
+  if (!intro) return
+  const title = intro.querySelector('.tramonti-domanda')
+  gsap.timeline({
+    scrollTrigger: { trigger: intro, start: 'top top', end: 'bottom bottom', scrub: true },
+  })
+    .fromTo(title, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .2, ease: 'none' }, 0)
+    .to(title, { opacity: 0, y: -24, duration: .2, ease: 'none' }, .8)
+
+  const panorama = document.querySelector('.tramonti-panorama')
+  gsap.fromTo(panorama.querySelector('img'), { scale: 1.035 }, {
+    scale: 1, ease: 'none',
+    scrollTrigger: { trigger: panorama, start: 'top bottom', end: 'bottom top', scrub: true },
+  })
+  gsap.fromTo('.tramonti-risposta', { opacity: 0, y: 24 }, {
+    opacity: 1, y: 0, ease: 'none',
+    scrollTrigger: { trigger: '.tramonti-dittico', start: 'top 80%', end: 'top 25%', scrub: true },
+  })
 }
 
 // --- full-bleed fotografici: parallax interno + didascalia che affiora ---

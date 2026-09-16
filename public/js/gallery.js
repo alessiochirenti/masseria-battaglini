@@ -1,3 +1,4 @@
+import { t } from './i18n.js'
 // Galleria a tutto schermo per le dimore: ogni blocco [data-gallery] porta in
 // data-photos l'elenco delle foto (JSON) che il cliente gestisce dal pannello.
 // Le anteprime aprono la foto giusta (data-i), il bottone "Guardate tutte le foto"
@@ -13,12 +14,12 @@ export function initGallery() {
   lb.hidden = true
   lb.setAttribute('role', 'dialog')
   lb.setAttribute('aria-modal', 'true')
-  lb.setAttribute('aria-label', 'Galleria fotografica')
+  lb.setAttribute('aria-label', t('Galleria fotografica'))
   lb.innerHTML = `
-    <button class="lb-close" type="button" aria-label="Chiudi la galleria"><span></span><span></span></button>
-    <button class="lb-prev" type="button" aria-label="Foto precedente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="lb-close" type="button" aria-label="${t('Chiudi la galleria')}"><span></span><span></span></button>
+    <button class="lb-prev" type="button" aria-label="${t('Foto precedente')}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <figure class="lb-fig"><img alt=""></figure>
-    <button class="lb-next" type="button" aria-label="Foto successiva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="lb-next" type="button" aria-label="${t('Foto successiva')}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <p class="lb-cap"><em class="lb-title"></em><span class="lb-n"></span></p>`
   document.body.appendChild(lb)
   const img = lb.querySelector('img')
@@ -38,7 +39,7 @@ export function initGallery() {
     const next = new Image()
     next.onload = () => {
       img.src = next.src
-      img.alt = `${cur.title}, foto ${cur.i + 1} di ${n}`
+      img.alt = t('%title%, foto %n% di %total%', {title:cur.title,n:cur.i+1,total:n})
       num.textContent = `${cur.i + 1} / ${n}`
       fig.style.setProperty('--dir', dir)
       requestAnimationFrame(() => fig.classList.remove('is-swapping'))
@@ -94,7 +95,7 @@ export function initGallery() {
       const i = Number(thumb.dataset.i ?? 0)
       thumb.setAttribute('role', 'button')
       thumb.setAttribute('tabindex', '0')
-      thumb.setAttribute('aria-label', `Apri la galleria: ${block.dataset.title}`)
+      thumb.setAttribute('aria-label', t('Apri la galleria: %title%', {title:block.dataset.title}))
       thumb.addEventListener('click', () => open(block, i))
       thumb.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(block, i) } })
     })

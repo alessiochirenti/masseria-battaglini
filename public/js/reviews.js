@@ -1,3 +1,4 @@
+import { t } from './i18n.js'
 // Five sourced excerpts, with a seamless loop and user-controlled autoplay.
 const root = document.querySelector('.reviews-carousel')
 if (root) {
@@ -31,7 +32,7 @@ if (root) {
     })
     counter.textContent = `${index % total + 1} / ${total}`
     root.dataset.review = String(index % total)
-    pause.textContent = userPaused ? 'Riprendi' : 'Pausa'
+    pause.textContent = userPaused ? t('Riprendi') : t('Pausa')
     pause.setAttribute('aria-pressed', String(userPaused))
   }
   function place(animate) {

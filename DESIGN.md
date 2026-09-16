@@ -1,5 +1,140 @@
 # Masseria Battaglini
 
+## Recensioni cucina e home essenziale (16 settembre 2026)
+
+Rimosso il pannello benessere «Il tempo per prendersi cura» dalla home.
+Il ciclo del giorno continua a misurare le ancore dal layout aggiornato.
+Sotto il testo della cooking class, due brevi recensioni Cesarine con autore,
+nota di traduzione e link alla fonte. Citazioni in corsivo, separate dal testo
+con una linea sottile; due colonne su desktop, una su telefono. Nessun widget
+o script aggiuntivo. Fonti documentate in ../output/recensioni-cooking-class-fonti.md.
+
+## Esperienze compatte, video e fotografie (16 settembre 2026)
+
+Linguaggio editoriale di ospitalità familiare; variazione 4, movimento 3,
+densità 3. Tre gruppi di contenuti, in quattro pannelli: cooking class;
+attenzioni di casa con olio e colazione; benessere ed escursioni in due
+pannelli distinti. Eliminata la lunga stazione di testo intermedia. Yoga,
+posturale e respiro condividono una voce; descrizioni sintetiche. Rimangono
+gli ancoraggi tavola, tavola-ospitalita, colazione, benessere ed escursioni;
+aggiunti ospitalita e olio. Testo Sublim’e e 163 ulivi ripreso dalla Home.
+Il placeholder dell’olio è esplicito e sostituibile dal CMS.
+
+Cooking class: testo breve e video verticale affiancati, tre foto sotto;
+su telefono testo, video e foto in colonna. Il filmato originale IMG_2420.MOV
+è tagliato da 18 a 24 secondi, 180 fotogrammi a 30 fps, senza audio, 540x960,
+H.264 SDR BT.709 con faststart, 1.414.437 byte. Convertito dall’originale
+HEVC HLG con tone mapping; nessuna generazione o interpolazione video.
+Scaricamento all’ingresso nello schermo, riproduzione da visibilità 25%,
+pausa fuori vista o scheda nascosta, comando manuale sempre disponibile.
+Movimento ridotto e risparmio dati mostrano il poster fino al clic.
+Nessuna nuova libreria, iframe o ticker. Senza JS restano poster e link.
+Le due nuove foto sono migliorate con imagegen; la foto bambina/Giovannella
+è quella già approvata per la Home. Master e prompt in ../output/foto/.
+
+Verificati ordine dei contenuti, link, immagini, assenza di overflow ed errori
+JavaScript a 1440/1024/768/375 px. Loop di sei secondi, pausa manuale
+persistente e arresto fuori vista verificati nel browser locale.
+Verificati inoltre poster e riproduzione manuale con movimento ridotto,
+risparmio dati, contenuto senza JavaScript e gestione della visibilità della
+scheda. Nessuna richiesta MP4 dal primo schermo alle quattro larghezze.
+In Chrome headless, un intervallo di riproduzione di 6,5 secondi dopo il
+caricamento registra 195 frame totali e 4 scartati; non è una certificazione
+di fluidità su telefono fisico. Nessun errore JS sulle pagine Dimore e Racconto
+dopo l’adattamento condiviso dei reveal ai contenuti senza immagine.
+
+## Pausa al tramonto (16 settembre 2026)
+
+Estensione del racconto editoriale per gli ospiti della Masseria: attesa,
+meraviglia del paesaggio, ritorno alla sera. Variazione 5, movimento 4,
+densità 1. Dopo le card, domanda centrata «I nostri tramonti?» sul cielo
+fermo alla fase 3. Segue la seconda foto fornita, panoramica a tutto schermo;
+la prima e la terza formano un dittico immediatamente sotto, con «Eccoli»
+al centro. Il dittico resta affiancato anche su telefono, come richiesto.
+
+La domanda affiora e sfuma nello stage sticky di 180svh; il panorama ha
+un avvicinamento minimo reversibile (scala 1,035 a 1), la risposta affiora
+con lo scroll. Si riusa il ticker GSAP/Lenis. La fase del cielo resta 3
+fino al termine delle fotografie, poi riprende il percorso verso la notte.
+Movimento ridotto: testi e fotografie statici, nessuna nuova animazione.
+
+Originali del cliente da 414px, migliorati con imagegen integrato:
+ricostruzione dei dettagli e ampliamento dell'inquadratura, non recupero
+documentale di dettagli originali. Nessuna nuova generazione video.
+Master, fonti e prompt sono conservati in ../output/foto/.
+
+Verifica: 1440, 1024, 768 e 375 px; ancore di fase 3 lungo tutta la nuova
+sequenza e 3,75 nella notte, scroll inverso, resize da mobile a desktop,
+movimento ridotto e contenuti senza JavaScript. Nessun overflow o errore
+JavaScript. Tre WebP per circa 875 KB complessivi, caricamento differito.
+Chrome locale: p95 8,3 ms su 159 intervalli durante lo scroll, zero oltre
+20 ms. Con CPU rallentata 4x, p95 25,1 ms (24 intervalli oltre 20 ms):
+il budget di 60 fps non è rispettato in quella prova di stress. Non è
+una misurazione su telefono fisico.
+
+## La tavola e l’attenzione dei padroni di casa
+
+Dopo la cooking class, colazione biologica fatta in casa e inclusa nel
+soggiorno; chiusura della cucina con due testi editoriali: pasti privati
+su richiesta e assistenza personale per ristoranti, prenotazioni e trasporti.
+Due colonne su desktop, una sotto 768 px, senza altre fotografie o card.
+Le immagini già presenti vengono riordinate: marmellate accanto alla
+colazione, tavola serale nella galleria. Testi basati sulle indicazioni
+dei proprietari riportate dal cliente, senza promessa di esaudire ogni
+richiesta. Pranzo e cena non inclusi, nessun servizio quotidiano di ristorazione.
+Allineati i richiami in Home, Dimore e nel modulo; nuovi testi editabili nel CMS.
+Verifica: build, 1440/768/375 px, movimento ridotto e animazioni normali,
+assenza di overflow ed errori JavaScript, controllo visivo dei due layout.
+
+## Menu ed esperienze (15 settembre 2026)
+
+Quattro voci su ogni pagina: Home, Il racconto, Le dimore, Esperienze.
+Contatti rimane raggiungibile dal pulsante di disponibilità. Su desktop,
+la griglia ha due colonne laterali uguali e una centrale larga quanto le
+voci: il centro del menu coincide con il centro della pagina, anche dopo
+lo scroll. Il menu mobile conserva apertura, focus ed Escape.
+
+Esperienze si apre con cucina e cooking class, poi colazione e cena,
+benessere e infine escursioni. Tono familiare, concreto, attento alla
+lentezza delle preparazioni. Stessa direzione editoriale e stessi asset;
+le fotografie saranno riviste con il cliente in un passaggio successivo.
+
+Fonti del testo: https://cesarine.com/it/about e profilo di Giovannella
+https://cesarine.com/es/h/giovannellar-martina-franca (consultati il 15/09/2026).
+Il profilo conferma l’appartenenza dal 2024 e la trasmissione delle ricette
+familiari. La denominazione «diplomata all’Accademia Italiana di Cucina» è
+stata richiesta esplicitamente dal cliente; non è verificata dal profilo.
+L’esempio dell’ammollo delle fave viene dal racconto del cliente. Il numero
+di 1.500 aderenti è presente in fonti del 2024, ma non viene usato come
+conteggio attuale. Nessun prezzo, programma fisso o durata promessa.
+
+Verifica a 1440, 1280, 1101, 1024, 768 e 375 px: ordine dei contenuti,
+menu mobile, nessun overflow o errore JavaScript. Centratura desktop prima
+e dopo lo scroll con scarto massimo di 0,008 px; verifica sulle altre tre
+pagine a 1440 px. Le prove non sostituiscono un controllo su telefono fisico.
+
+## Dimore: Cummersa su due piani (15 settembre 2026)
+
+Linguaggio editoriale per famiglie e amici che scelgono il proprio soggiorno.
+Variazione 4, densità 3; movimento esistente della pagina, senza nuovi effetti.
+Due dimore nel sommario: Trulli Battaglini e La Cummersa. Quest’ultima ha
+un’unica sezione con due possibilità di soggiorno affiancate, separate solo
+da spazio e filetti: piano terra oppure entrambi i piani con supplemento.
+Su mobile le possibilità si dispongono in colonna. La nota di uso esclusivo
+resta sempre visibile, prima delle fotografie e delle descrizioni dei piani.
+
+Fiori di Campo è il piano terra; Luce di Luna il primo piano da aggiungere.
+I piani non sono disponibili contemporaneamente a gruppi diversi. Restano
+le fotografie, le gallerie e gli ancoraggi esistenti dei due piani.
+Home, metadati e modulo condiviso riflettono questa struttura. Le opzioni
+del modulo derivano dalle configurazioni in content/dimore.json, editabili
+nel CMS insieme ai piani. Il modulo resta una demo senza invio o calendario:
+la regola di esclusività dovrà essere applicata anche alla futura disponibilità.
+
+Verifica: build delle quattro pagine, gallerie e scelta dei due piani,
+nessun errore JavaScript o overflow a 1440, 1024, 768 e 375 px, lettura con
+movimento ridotto e controllo visivo desktop/mobile.
+
 ## Direzione
 
 Leggo il sito come un racconto di ospitalità familiare e paesaggio pugliese,
@@ -146,7 +281,7 @@ Battaglini-05-fiore-di-maggio-trasparente.svg: architettura intrecciata al
 lillà, nome e dicitura Masseria. Solo posizione e scala dei gruppi cambiano.
 Sul cielo è monocromatico color avorio, sulla calce mantiene i colori originali.
 
-Fino a 1100 px: logo e comando Menu con etichetta, pannello color calce,
+Fino a 1280 px: logo e comando Menu con etichetta, pannello color calce,
 grandi voci serif, pulsante disponibilità e indicazione del luogo.
 Gestione indipendente dal 3D, contenuti sottostanti inerti durante l’apertura,
 focus contenuto nel menu, Escape e ripristino dello scroll anche al resize.
@@ -157,3 +292,27 @@ ispezione desktop e mobile, nessun overflow a 1101, 390 e 320 px; apertura,
 Escape, ciclo del focus, navigazione tra pagine, voce corrente e resize con
 menu aperto. Il pulsante disponibilità chiude il pannello, riattiva lo scroll
 e raggiunge il modulo. Nessun errore nella console della verifica browser.
+
+## Le cinque lingue · 16 settembre 2026
+
+Italiano principale, inglese, francese, tedesco e spagnolo. Il selettore si presenta
+come una breve pagina del racconto: «La stessa storia, nella vostra lingua.»,
+fondo calce, carattere Cormorant, corsivo lillà e sottili righe tra i nomi delle lingue.
+La lingua corrente appare per esteso, senza bandiere; il segno + diventa una piccola
+croce all’apertura. Il pannello segue la navigazione mobile e resta leggibile senza JavaScript.
+Le quattro voci principali rimangono esattamente al centro su desktop, con azioni a destra.
+
+Si conservano pagina e sezione nel cambio lingua. Le frasi mantengono il tono del racconto;
+titoli e paragrafi possono distribuirsi diversamente, senza altezze fisse sul testo.
+Il titolo dei tramonti ha una misura dedicata sui telefoni in tedesco, per contenere la
+parola Sonnenuntergänge. I sottotitoli di Esperienze restano su una riga da 1024 px.
+Le recensioni tradotte sono dichiarate; le scansioni mantengono le dediche originali,
+mentre le trascrizioni sono disponibili nella lingua scelta.
+
+Verifica multilingua: tutte le venti pagine a 1440 e 375 px; formati intermedi
+320, 768, 1024, 1280 e 1281 px sulle pagine Esperienze tradotte. Menu centrato,
+selettore da tastiera, Escape, lingua e ancora mantenute, navigazione senza JavaScript.
+Provati gallerie, video, messaggi di validazione e lettore del libro nelle cinque
+lingue. Controllate anche le animazioni delle quattro pagine in francese e tedesco,
+su desktop e mobile. Il controllo automatico verifica cataloghi, segnaposti,
+URL, ancore, immagini e metadati prima della pubblicazione.

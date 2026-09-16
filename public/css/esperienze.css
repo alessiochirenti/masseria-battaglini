@@ -1,0 +1,58 @@
+.page-esperienze .s-panel { padding-top: 5vh; padding-bottom: 2vh; }
+.page-esperienze .panel { padding-block: clamp(32px, 4vw, 56px); }
+.page-esperienze .feature { margin-top: 32px; }
+.page-esperienze .feature img { height: auto; }
+@media (min-width: 1024px) {
+  .page-esperienze .page-hero .photo-sub { max-width: none; white-space: nowrap; }
+}
+/* Mantiene intere confezioni ed etichette durante la parallasse condivisa. */
+.page-esperienze #olio img { transform: none !important; will-change: auto; }
+.page-esperienze .feature-video { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); }
+.feature-video .cooking-video { width: min(100%, 300px); justify-self: center; }
+.cooking-video { position: relative; background: #342f28; }
+.cooking-video video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; }
+.video-toggle {
+  position: absolute; bottom: 14px; right: 14px; min-width: 80px; min-height: 44px;
+  padding: 10px 16px; border: 1px solid #f2edde; border-radius: 22px;
+  background: rgba(28, 24, 20, .85); color: #f2edde; cursor: pointer;
+  font: 500 13px/1.3 var(--font-sans);
+}
+.video-toggle[hidden] { display: none; }
+.video-toggle:focus-visible { outline: 3px solid #c99a4b; outline-offset: 3px; }
+.video-fallback { padding: 12px; background: #f2edde; }
+.experience-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 32px; }
+.experience-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+.cooking-reviews { margin-top: 24px; padding-top: 18px; border-top: 1px solid #c9beae; }
+.cooking-reviews h4 { margin: 0 0 14px; font: 500 14px/1.4 var(--font-sans); }
+.cooking-reviews-quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.cooking-reviews blockquote { margin: 0; }
+.cooking-reviews blockquote p { margin: 0 0 8px; font: italic 500 21px/1.35 var(--font-serif); }
+.cooking-reviews cite { font: 400 12px/1.5 var(--font-sans); }
+.cooking-reviews .cooking-reviews-source { margin: 16px 0 0; font: 400 12px/1.6 var(--font-sans); }
+.cooking-reviews a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.cooking-reviews a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+@media (max-width: 479px) {
+  .cooking-reviews-quotes { grid-template-columns: 1fr; gap: 16px; }
+}
+.experience-attentions { margin: 32px 0 8px; padding-bottom: 32px; border-bottom: 1px solid #c9beae; }
+.experience-attentions h3 { margin: 0 0 14px; font: 500 27px/1.2 var(--font-serif); text-wrap: balance; color: var(--paper-ink); }
+.experience-attentions p { font-size: 15px; line-height: 1.75; }
+.oil-placeholder { aspect-ratio: 4 / 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #e7e8dd; border: 1px solid #c6c9b6; color: #545b3f; }
+.oil-placeholder span { font: italic 500 clamp(38px, 4vw, 58px)/1.15 var(--font-serif); }
+.oil-placeholder small { font: 400 12px/1.4 var(--font-sans); letter-spacing: .05em; }
+.experience-list-compact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.page-esperienze .experience-list-compact .feature { display: flex; flex-direction: column; align-items: stretch; gap: 20px; }
+.experience-list-compact .feature.flip figure { order: 0; }
+.experience-list-compact .feature h3 { font-size: clamp(28px, 3vw, 36px); }
+.experience-list-compact .feature img { aspect-ratio: 3 / 2; }
+.page-esperienze [id] { scroll-margin-top: 100px; }
+@media (max-width: 767px) {
+  .page-esperienze .page-hero .photo-full img { object-position: 64% 42%; }
+  .page-esperienze .feature, .page-esperienze .feature.flip { grid-template-columns: 1fr; gap: 24px; }
+  .page-esperienze .feature.flip figure { order: 0; }
+  .feature-video > div { grid-row: 1; }
+  .feature-video .cooking-video { width: min(100%, 300px); }
+  .experience-gallery { grid-template-columns: 1fr; gap: 16px; }
+  .experience-list-compact { grid-template-columns: 1fr; gap: 4px; }
+  .experience-list-compact .feature img { aspect-ratio: 4 / 3; }
+}

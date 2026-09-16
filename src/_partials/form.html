@@ -1,25 +1,26 @@
         <form class="contact-form reveal" id="richiesta" novalidate>
           <div class="cf-fields">
             <div class="cf-grid">
-              <label>Nome e cognome*<input type="text" name="nome" required autocomplete="name" placeholder="Il vostro nome"></label>
-              <label>Email*<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="nome@esempio.it"></label>
-              <label>Telefono<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="+39 …"></label>
-              <label>Dimora preferita<select name="dimora">
-                <option value="">Consigliateci voi</option>
-                {{#each dimore.elenco}}<option>{{nome}}</option>{{/each}}
+              <label>{{ui.fullName}}*<input type="text" name="nome" required autocomplete="name" placeholder="{{ui.yourName}}"></label>
+              <label>{{ui.email}}*<input type="email" name="email" required autocomplete="email" inputmode="email" placeholder="{{ui.exampleEmail}}"></label>
+              <label>{{ui.phone}}<input type="tel" name="telefono" autocomplete="tel" inputmode="tel" placeholder="+39 …"></label>
+              <label>{{ui.preferredStay}}<select name="dimora" aria-describedby="dimora-nota">
+                <option value="">{{ui.suggestStay}}</option>
+                {{#each dimore.scelte_richiesta}}<option>{{.}}</option>{{/each}}
               </select></label>
-              <label>Arrivo<input type="date" name="arrivo"></label>
-              <label>Partenza<input type="date" name="partenza"></label>
+              <p class="cf-full dimora-nota" id="dimora-nota">{{dimore.nota_richiesta}}</p>
+              <label>{{ui.arrival}}<input type="date" name="arrivo"></label>
+              <label>{{ui.departure}}<input type="date" name="partenza"></label>
               <div class="cf-pair">
-                <label>Adulti<select name="adulti"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></label>
-                <label>Bambini<select name="bambini"><option selected>0</option><option>1</option><option>2</option><option>3</option></select></label>
+                <label>{{ui.adults}}<select name="adulti"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></label>
+                <label>{{ui.children}}<select name="bambini"><option selected>0</option><option>1</option><option>2</option><option>3</option></select></label>
               </div>
-              <label>Vi interessa<select name="interesse">
-                <option value="">Solo il soggiorno</option>
+              <label>{{ui.interest}}<select name="interesse">
+                <option value="">{{ui.stayOnly}}</option>
                 {{#each site.form.interessi}}<option>{{.}}</option>{{/each}}
               </select></label>
-              <label class="cf-full">Messaggio<textarea name="messaggio" placeholder="Raccontateci il vostro soggiorno: quanti siete, cosa vi piacerebbe fare, se avete richieste particolari."></textarea></label>
-              <label class="cf-check cf-full"><input type="checkbox" name="privacy" required> Ho letto l’informativa sulla privacy e acconsento al trattamento dei dati.</label>
+              <label class="cf-full">{{ui.message}}<textarea name="messaggio" placeholder="{{ui.messageHint}}"></textarea></label>
+              <label class="cf-check cf-full"><input type="checkbox" name="privacy" required> {{ui.privacy}}</label>
             </div>
             <div class="cf-actions">
               <button class="btn magnetic" type="submit"><span>{{site.form.bottone}}</span></button>
@@ -28,4 +29,4 @@
           </div>
           <p class="cf-ok" hidden>{{site.form.grazie}}<br>{{site.form.grazie_riga2}}</p>
         </form>
-        <p class="cta-alt reveal">Preferite scrivere? <a href="https://wa.me/{{site.contatti.whatsapp}}">WhatsApp {{site.contatti.telefono}}</a> · <a href="mailto:{{site.contatti.email}}">{{site.contatti.email}}</a></p>
+        <p class="cta-alt reveal">{{ui.preferWrite}} <a href="https://wa.me/{{site.contatti.whatsapp}}">WhatsApp {{site.contatti.telefono}}</a> · <a href="mailto:{{site.contatti.email}}">{{site.contatti.email}}</a></p>

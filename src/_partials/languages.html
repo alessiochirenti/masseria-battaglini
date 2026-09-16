@@ -1,0 +1,9 @@
+      <details class="language-switch" data-languages>
+        <summary aria-label="{{ui.language}}: {{language_name}}"><span class="language-current">{{language_name}}</span><span class="language-code" aria-hidden="true">{{locale}}</span><span class="language-mark" aria-hidden="true">＋</span></summary>
+        <div class="language-sheet" data-lenis-prevent>
+          <p>{{ui.languageTitle}}<br><em>{{ui.languageEm}}</em></p>
+          <nav aria-label="{{ui.language}}">
+            {{#each language_links}}<a href="{{href}}" lang="{{code}}" hreflang="{{code}}"{{#if current}} aria-current="true"{{/if}}><span>{{name}}</span><small aria-hidden="true">{{code}}</small></a>{{/each}}
+          </nav>
+        </div>
+      </details>

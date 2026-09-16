@@ -19,7 +19,7 @@
     "kicker": "Giuseppe e Giovannella",
     "titolo": "Qui trovate sempre",
     "titolo_corsivo": "i padroni di casa.",
-    "testo": "Qui convivono due realtà: un’azienda agricola biologica certificata e un B&B a conduzione familiare, ricavato tra trulli e cummerse e ristrutturato nel rispetto delle tradizioni del luogo. La differenza rispetto a un albergo è semplice: qui ci siamo noi. Vi accogliamo, vi consigliamo cosa vedere e cosa fare, vi prepariamo la colazione in casa e, se volete, anche la cena, nello spirito delle table d’hôtes.\n\nNon vi proponiamo qualcosa di finto, di costruito. Vi proponiamo la nostra terra e la nostra dimora, una parte della quale è dedicata alla vita familiare, e viviamo la giornata per e con gli ospiti.",
+    "testo": "Qui convivono due realtà: un’azienda agricola biologica certificata e un B&B a conduzione familiare, ricavato tra trulli e cummerse e ristrutturato nel rispetto delle tradizioni del luogo. La differenza rispetto a un albergo è semplice: qui ci siamo noi. Vi accogliamo, vi consigliamo cosa vedere e dove mangiare, vi aiutiamo con prenotazioni e trasporti. Ogni mattina Giovannella prepara la colazione biologica fatta in casa, inclusa nel soggiorno. Pranzo e cena si possono concordare su richiesta e non sono inclusi.\n\nNon vi proponiamo qualcosa di finto, di costruito. Vi proponiamo la nostra terra e la nostra dimora, una parte della quale è dedicata alla vita familiare, e viviamo la giornata per e con gli ospiti.",
     "foto": "/uploads/facciata.webp",
     "alt": "La facciata in pietra della masseria con il salottino di vimini e i gerani",
     "didascalia": "Il salottino davanti casa, dove si fa colazione quando c’è il sole",
@@ -31,7 +31,7 @@
     "numeri": [
       { "valore": "3,5", "etichetta": "ettari biologici" },
       { "valore": "163", "etichetta": "piante di ulivo" },
-      { "valore": "3", "etichetta": "dimore indipendenti" },
+      { "valore": "2", "etichetta": "dimore da vivere" },
       { "valore": "1", "etichetta": "famiglia ad accogliervi" }
     ],
     "testo": "L’azienda agricola si estende per tre ettari e mezzo nella campagna di Martina Franca. Tra i campi, i muretti a secco e la vista che arriva fino a Locorotondo crescono 163 piante di ulivo, coltivate secondo il metodo biologico.\n\nDa queste olive nasce Sublim’e, l’olio della masseria. Gli ospiti lo assaggiano a tavola e spesso se ne innamorano: prima di partire, ne portano a casa qualche bottiglia. È qui che le due anime della Masseria si incontrano, nella terra coltivata e nell’accoglienza di ogni giorno.",
@@ -39,21 +39,6 @@
     "alt": "Il giardino della masseria visto dall’alto: ghiaia bianca, la palma, i campi verdi",
     "didascalia": "Tre ettari e mezzo di campagna biologica attorno alla masseria",
     "link": "Scoprite le dimore"
-  },
-  "benessere": {
-    "titolo": "Il tempo per",
-    "titolo_corsivo": "prendersi cura.",
-    "intro": "Cura è una parola densa: premura, attenzione, riguardo. Qui vale per le piante, per la tavola e per chi arriva stanco.",
-    "servizi": [
-      { "titolo": "Massaggi e trattamenti", "testo": "Corpo e viso, all’ombra degli ulivi o nella vostra dimora." },
-      { "titolo": "Yoga", "testo": "Sul prato, la mattina presto, con i trulli davanti." },
-      { "titolo": "Ginnastica posturale", "testo": "All’aperto, a piccoli gruppi o da soli." },
-      { "titolo": "Respirazione", "testo": "Percorsi di gestione dell’ansia attraverso il respiro." }
-    ],
-    "foto": "/uploads/massaggio.webp",
-    "alt": "Il lettino da massaggio all’ombra degli ulivi, con i trulli sullo sfondo",
-    "didascalia": "Il lettino sotto gli ulivi, la mattina presto",
-    "link": "Tutte le esperienze"
   },
   "mezzogiorno": {
     "frase": "Un posto lento",
@@ -63,10 +48,34 @@
     "kicker": "Verso sera",
     "titolo": "Quello che vi aspetta",
     "card": [
-      { "titolo": "Le dimore", "testo": "Il trullo con sette coni e due cummerse: tre case indipendenti, ciascuna con il suo ingresso, il suo patio e la sua vista.", "foto": "/uploads/trulli-sala.webp", "link": "camere.html" },
-      { "titolo": "La tavola", "testo": "Colazioni preparate in casa, le marmellate dell’azienda, la cena su richiesta e le cooking class con Giovannella.", "foto": "/uploads/cena.webp", "link": "esperienze.html#tavola" },
-      { "titolo": "Le escursioni", "testo": "In e-bike tra i muretti a secco, a cavallo in campagna o in riva al mare. Partite da qui, vi diciamo noi dove.", "foto": "/uploads/ebike.webp", "link": "esperienze.html#escursioni" },
-      { "titolo": "Il benessere", "testo": "Massaggi, yoga, ginnastica posturale all’aperto, respirazione. Il tempo per prendersi cura di sé.", "foto": "/uploads/massaggio.webp", "link": "esperienze.html#benessere" }
+      { "titolo": "Le dimore", "testo": "Un trullo e una Cummersa su due piani: due dimore indipendenti. La Cummersa si vive al piano terra o su entrambi i piani, sempre per un’unica famiglia o gruppo.", "foto": "/uploads/dimore-salotto.webp", "link": "camere.html" },
+      { "titolo": "Cooking class", "testo": "Le mani in pasta con Giovannella: ricette di famiglia, gesti da imparare con calma e il piacere di cucinare insieme.", "foto": "/uploads/cooking-class-giovannella.webp", "link": "esperienze.html#tavola" },
+      { "titolo": "Colazione", "testo": "Il buongiorno preparato da Giovannella: una colazione biologica, varia e fatta in casa con ingredienti locali. Sempre inclusa nel soggiorno.", "foto": "/uploads/colazione-pancake.webp", "link": "esperienze.html#colazione" },
+      { "titolo": "Benessere e attività", "testo": "Massaggi e yoga, passeggiate a cavallo ed escursioni in e-bike. Il tempo per ritrovare il proprio ritmo, tra relax e scoperta della Valle d’Itria.", "foto": "/uploads/benessere-giardino.webp", "posizione_foto": "left center", "link": "esperienze.html#benessere" }
+    ]
+  },
+  "tramonti": {
+    "domanda": "I nostri tramonti?",
+    "risposta": "Eccoli",
+    "panorama": {
+      "foto": "/uploads/tramonto-panorama.webp",
+      "alt": "Cielo arancio e nuvole al tramonto sulla campagna della Valle d’Itria",
+      "width": 1672,
+      "height": 941
+    },
+    "dettagli": [
+      {
+        "foto": "/uploads/tramonto-arcobaleno.webp",
+        "alt": "Un arcobaleno attraversa il cielo rosa sopra i tetti dei trulli",
+        "width": 1448,
+        "height": 1086
+      },
+      {
+        "foto": "/uploads/tramonto-pino.webp",
+        "alt": "Il pino e un trullo della Masseria sotto le nuvole illuminate dal tramonto",
+        "width": 1448,
+        "height": 1086
+      }
     ]
   },
   "notte": {

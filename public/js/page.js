@@ -6,7 +6,7 @@
 import { state, initInput } from './state.js'
 import { initScroll } from './scroll.js'
 import { initStars } from './stars.js'
-import { initGallery } from './gallery.js'
+import { initGallery } from './gallery.js?v=20260916-i18n'
 
 initInput()
 if (state.reduced) document.documentElement.classList.add('reduced')
@@ -106,8 +106,8 @@ if (!state.reduced) {
         const txt = item.querySelectorAll(':scope > div > *')
         gsap.set(item, { opacity: 1, y: 0 })
         tl.fromTo(fig, { clipPath: `inset(${side})` }, { clipPath: 'inset(0 0% 0 0%)', duration: 1.2, ease: 'power4.inOut' }, at)
-          .fromTo(img, { scale: 1.18 }, { scale: 1.06, duration: 1.6, ease: 'power3.out' }, at)
           .fromTo(txt, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.07 }, at + 0.25)
+        if (img) tl.fromTo(img, { scale: 1.18 }, { scale: 1.06, duration: 1.6, ease: 'power3.out' }, at)
         at += 0.35
       } else if (item.classList.contains('gal')) {
         const imgs = item.querySelectorAll('img')

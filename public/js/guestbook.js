@@ -1,3 +1,4 @@
+import { t } from './i18n.js'
 // Independent progressive enhancement: original pages remain readable without JS/CDNs.
 const root = document.querySelector('[data-guestbook]')
 if (root) {
@@ -15,7 +16,7 @@ if (root) {
 
 async function enhance() {
   const [{ PageFlip }, { createGuestbookReader }, { attachGuestbookRenderer }] = await Promise.all([
-    import('./vendor/page-flip-2.0.7.js'), import('./guestbook-reader.js'),
+    import('./vendor/page-flip-2.0.7.js'), import('./guestbook-reader.js?v=20260916-i18n'),
     import('./guestbook-renderer.js'),
   ])
   const stage = root.querySelector('.gb-stage')
@@ -45,7 +46,7 @@ async function enhance() {
 
   root.querySelector('.gb-actions').hidden = false
   open.disabled = true
-  open.firstChild.textContent = 'Preparazione del libro… '
+  open.firstChild.textContent = t('Preparazione del libro…') + ' '
   const images = [...book.querySelectorAll('img')]
   images.forEach(img => { img.loading = 'eager'; if (img.dataset.src) img.src = img.dataset.src })
   // Decode before permitting a flip, so even a quick first gesture reveals ink, not an empty page.
@@ -80,11 +81,11 @@ async function enhance() {
     prev.disabled = closed || busy
     next.disabled = back || busy
     const visible = activeEntries()
-    counter.textContent = closed ? 'Copertina' : back ? 'L’ultima pagina' : visible.length ?
-      `${visible.length > 1 ? 'Pagine' : 'Pagina'} ${visible.map(i => i + 1).join(' e ')} di ${pages.length}` : 'Il libro degli ospiti'
-    instructions.textContent = closed ? 'Apri la copertina, poi trascina l’angolo per sfogliare.' :
-      reduced.matches ? 'Usa le frecce per sfogliare. Ingrandisci per leggere ogni parola.' :
-      'Trascina un angolo o usa le frecce. Ingrandisci per leggere ogni parola.'
+    counter.textContent = closed ? t('Copertina') : back ? t('L’ultima pagina') : visible.length ?
+      `${visible.length > 1 ? t('Pagine') : t('Pagina')} ${visible.map(i => i + 1).join(' '+t('e')+' ')} ${t('di')} ${pages.length}` : t('Il libro degli ospiti')
+    instructions.textContent = closed ? t('Apri la copertina, poi trascina l’angolo per sfogliare.') :
+      reduced.matches ? t('Usa le frecce per sfogliare. Ingrandisci per leggere ogni parola.') :
+      t('Trascina un angolo o usa le frecce. Ingrandisci per leggere ogni parola.')
     read.hidden = visible.length === 0
     if (closed && (document.activeElement === close || document.activeElement === prev)) open.focus({ preventScroll: true })
     if (!closed && document.activeElement === open) next.focus({ preventScroll: true })
@@ -102,7 +103,7 @@ async function enhance() {
   flip.loadFromHTML(book.querySelectorAll('.gb-page'))
   bookReady = true
   open.disabled = false
-  open.firstChild.textContent = 'Apri il libro '
+  open.firstChild.textContent = t('Apri il libro') + ' '
   sync()
 
   function step(direction) {

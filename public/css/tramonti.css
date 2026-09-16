@@ -1,0 +1,53 @@
+/* Pausa fotografica nel ciclo del giorno, dopo le esperienze. */
+.s-tramonti-intro { height: 180svh; }
+.s-tramonti-intro .stage { height: 100svh; }
+.tramonti-domanda {
+  padding: 0 24px;
+  margin: 0;
+  color: var(--ink);
+  font: 500 clamp(48px, 7.5vw, 112px)/1.12 var(--font-serif);
+  letter-spacing: -.025em;
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 2px 35px rgba(35, 18, 33, .28);
+}
+.js:not(.reduced) .tramonti-domanda { opacity: 0; }
+.s-tramonti-foto { width: 100%; }
+.s-tramonti-foto figure { margin: 0; overflow: clip; }
+.s-tramonti-foto img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tramonti-panorama { height: 100svh; }
+.tramonti-panorama img { object-position: 58% center; }
+.tramonti-dittico {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 6px;
+  padding-top: 6px;
+  height: 82svh;
+  min-height: 400px;
+}
+.tramonti-dittico figure { min-height: 0; }
+.tramonti-dittico::after {
+  content: ''; position: absolute; inset: 6px 0 0; pointer-events: none;
+  background: linear-gradient(transparent 20%, rgba(28, 18, 25, .28) 50%, transparent 80%);
+}
+.tramonti-risposta {
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  z-index: 1; margin: 0; pointer-events: none;
+  color: #f2edde;
+  font: italic 500 clamp(72px, 10vw, 152px)/1.15 var(--font-serif);
+  text-shadow: 0 3px 24px rgba(28, 18, 25, .65);
+}
+@media (max-width: 767px) {
+  .tramonti-domanda:lang(de) { font-size: clamp(36px, 10.5vw, 60px); }
+  .tramonti-dittico { height: 58svh; min-height: 320px; gap: 3px; padding-top: 3px; }
+  .tramonti-dittico::after { inset-block-start: 3px; }
+  .tramonti-dittico figure:first-child img { object-position: 20% center; }
+  .tramonti-dittico figure:last-of-type img { object-position: 85% center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .s-tramonti-intro { height: auto; }
+  .s-tramonti-intro .stage { position: static; min-height: 80svh; height: auto; padding: 12svh 0; }
+  .js .tramonti-domanda { opacity: 1; }
+}

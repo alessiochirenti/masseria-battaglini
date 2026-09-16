@@ -3,12 +3,11 @@
   "url": "https://alessiochirenti.github.io/masseria-battaglini/",
   "logo": "/uploads/logo-lilla-orizzontale.svg",
   "indicizza": false,
-  "descrizione": "Masseria Battaglini, Martina Franca: azienda agricola biologica certificata e B&B a conduzione familiare nella Valle d’Itria. Tre dimore, tre ettari e mezzo di campagna e 163 ulivi da cui nasce l’olio Sublim’e.",
+  "descrizione": "Masseria Battaglini, Martina Franca: azienda agricola biologica certificata e B&B a conduzione familiare nella Valle d’Itria. Un trullo e una cummersa, tre ettari e mezzo di campagna e 163 ulivi da cui nasce l’olio Sublim’e.",
   "menu": {
     "racconto": "Il racconto",
     "dimore": "Le dimore",
     "esperienze": "Esperienze",
-    "contatti": "Contatti",
     "cta": "Richiedi disponibilità"
   },
   "contatti": {
@@ -25,7 +24,7 @@
     "titolo_corsivo": "al resto pensiamo noi.",
     "bottone": "Richiedi disponibilità",
     "nota": "Rispondiamo entro un giorno.",
-    "interessi": ["Cena in masseria", "Cooking class", "Massaggi e benessere", "Escursioni"],
+    "interessi": ["Pranzo o cena in masseria", "Cooking class", "Massaggi e benessere", "Escursioni"],
     "grazie": "Grazie, richiesta ricevuta.",
     "grazie_riga2": "Vi rispondiamo entro un giorno."
   }

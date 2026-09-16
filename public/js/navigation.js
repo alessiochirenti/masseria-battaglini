@@ -1,9 +1,10 @@
+import { t } from './i18n.js'
 // Il menu funziona indipendentemente dai motori 3D e di scroll.
 const header = document.querySelector('.nav')
 const toggle = header?.querySelector('.nav-toggle')
 const panel = header?.querySelector('.nav-panel')
 if (header && toggle && panel) {
-  const mobile = matchMedia('(max-width: 1100px)')
+  const mobile = matchMedia('(max-width: 1280px)')
   const label = toggle.querySelector('.nav-toggle-label')
   let open = false
   let previousOverflow = ''
@@ -14,8 +15,8 @@ if (header && toggle && panel) {
     open = value
     header.classList.toggle('open', open)
     toggle.setAttribute('aria-expanded', String(open))
-    toggle.setAttribute('aria-label', open ? 'Chiudi il menu' : 'Apri il menu')
-    label.textContent = open ? 'Chiudi' : 'Menu'
+    toggle.setAttribute('aria-label', open ? t('Chiudi il menu') : t('Apri il menu'))
+    label.textContent = open ? t('Chiudi') : t('Menu')
     if (open) {
       previousOverflow = document.documentElement.style.overflow
       document.documentElement.style.overflow = 'hidden'
@@ -42,7 +43,7 @@ if (header && toggle && panel) {
     if (!open) return
     if (event.key === 'Escape') { event.preventDefault(); setOpen(false); return }
     if (event.key !== 'Tab') return
-    const focusable = [...header.querySelectorAll('a[href], button')].filter(el => el.getClientRects().length)
+    const focusable = [...header.querySelectorAll('a[href], button, summary')].filter(el => el.getClientRects().length)
     const first = focusable[0], last = focusable.at(-1)
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus() }
     if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus() }

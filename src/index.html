@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="it">
+<html lang="{{locale}}">
 <head>
   <meta charset="utf-8">
+{{> locale-head}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#050817">
   <title>{{site.nome}} · {{home.hero.kicker}}</title>
@@ -10,7 +11,7 @@
   <meta property="og:site_name" content="{{site.nome}}">
   <meta property="og:title" content="{{site.nome}}">
   <meta property="og:description" content="{{home.hero.tagline}}">
-  <meta property="og:url" content="{{site.url}}">
+  <meta property="og:url" content="{{canonical}}">
   <meta property="og:image" content="{{site.url}}og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,9 +23,10 @@
   <link rel="preload" href="fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/villa.css?v=20260914-arrivo">
-  <link rel="stylesheet" href="css/navigation.css?v=20260914-soft">
+  <link rel="stylesheet" href="css/navigation.css?v=20260916-i18n">
   <link rel="stylesheet" href="css/guestbook.css">
   <link rel="stylesheet" href="css/guestbook-reader.css">
+  <link rel="stylesheet" href="css/tramonti.css?v=20260916-i18n">
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -163,23 +165,6 @@
       </div>
     </section>
 
-    <section class="s-panel" id="benessere">
-      <div class="panel">
-        <h2 class="reveal">{{home.benessere.titolo}} <em>{{home.benessere.titolo_corsivo}}</em></h2>
-        <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
-        {{#if home.benessere.intro}}<p class="copy reveal" style="text-align:center">{{home.benessere.intro}}</p>{{/if}}
-        <div class="servizi-grid">
-          {{#each home.benessere.servizi}}<article class="serv reveal"><h3>{{titolo}}</h3><p>{{testo}}</p></article>
-          {{/each}}
-        </div>
-        {{#if home.benessere.foto}}<figure class="panel-photo reveal">
-          <img src="{{home.benessere.foto}}" alt="{{home.benessere.alt}}" loading="lazy">
-          {{#if home.benessere.didascalia}}<figcaption>{{home.benessere.didascalia}}</figcaption>{{/if}}
-        </figure>{{/if}}
-        {{#if home.benessere.link}}<p class="panel-link reveal"><a href="esperienze.html">{{home.benessere.link}}</a></p>{{/if}}
-      </div>
-    </section>
-
     <section class="s-climax" id="mezzogiorno" aria-label="{{home.mezzogiorno.frase}}">
       <div class="stage">
         <p class="big-claim" aria-hidden="true">{{home.mezzogiorno.frase}}</p>
@@ -194,12 +179,30 @@
           <h2>{{home.sera.titolo}}</h2>
         </div>
         <div class="track-h">
-          {{#each home.sera.card}}<a class="card" href="{{link}}" style="background: url('{{foto}}') center / cover no-repeat, linear-gradient(168deg, #3b3a55 0%, #23233a 55%, #12121f 100%)">
+          {{#each home.sera.card}}<a class="card" href="{{link}}" style="background: url('{{foto}}') center / cover no-repeat, linear-gradient(168deg, #3b3a55 0%, #23233a 55%, #12121f 100%);{{#if posizione_foto}} background-position: {{posizione_foto}};{{/if}}">
             <h3>{{titolo}}</h3>
             <p>{{testo}}</p>
           </a>
           {{/each}}
         </div>
+      </div>
+    </section>
+
+    <section class="s-tramonti-intro" id="tramonti" aria-labelledby="tramonti-titolo">
+      <div class="stage">
+        <h2 class="tramonti-domanda" id="tramonti-titolo">{{home.tramonti.domanda}}</h2>
+      </div>
+    </section>
+
+    <section class="s-tramonti-foto" id="tramonti-foto" aria-label="{{ui.sunsetPhotos}}">
+      <figure class="tramonti-panorama">
+        <img src="{{home.tramonti.panorama.foto}}" alt="{{home.tramonti.panorama.alt}}" width="{{home.tramonti.panorama.width}}" height="{{home.tramonti.panorama.height}}" loading="lazy" decoding="async">
+      </figure>
+      <div class="tramonti-dittico">
+        {{#each home.tramonti.dettagli}}<figure>
+          <img src="{{foto}}" alt="{{alt}}" width="{{width}}" height="{{height}}" loading="lazy" decoding="async">
+        </figure>{{/each}}
+        <p class="tramonti-risposta">{{home.tramonti.risposta}}</p>
       </div>
     </section>
 
@@ -232,8 +235,8 @@
 
   </main>
 
-  <script type="module" src="js/main.js?v=20260914-nav"></script>
-  <script type="module" src="js/guestbook.js"></script>
-  <script type="module" src="js/reviews.js"></script>
+  <script type="module" src="js/main.js?v=20260916-tramonti"></script>
+  <script type="module" src="js/guestbook.js?v=20260916-i18n"></script>
+  <script type="module" src="js/reviews.js?v=20260916-i18n"></script>
 </body>
 </html>

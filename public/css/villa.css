@@ -73,6 +73,30 @@
 .jump a:hover { background: #efe6d4; border-color: #8a6d3f; }
 
 /* ---------- servizi: card chiare ---------- */
+/* Un'unica dimora: le configurazioni precedono il racconto dei due piani. */
+.cummersa-intro { max-width: 740px; margin: 0 auto; }
+.cummersa-intro .copy { margin-top: 24px; text-align: center; }
+.soggiorno-scelte {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin: 36px 0 24px;
+  padding: 28px 0;
+  border-block: 1px solid #c9beae;
+  text-align: left;
+}
+.soggiorno-scelte dt { font: 500 30px/1.15 var(--font-serif); margin-bottom: 12px; }
+.soggiorno-scelte dd { margin: 0; font-size: 15px; line-height: 1.75; color: #4a4034; }
+.cummersa-esclusiva { max-width: 660px; margin: 0 auto; font-size: 15px; line-height: 1.75; color: #4a4034; }
+.cummersa-piano { margin-top: 56px; scroll-margin-top: 100px; }
+.cummersa-piano + .cummersa-piano { border-top: 1px solid #c9beae; padding-top: 48px; }
+.dimora-nota { margin: 0; font-size: 13px; line-height: 1.65; color: var(--ink-soft); text-align: left; }
+@media (max-width: 767px) {
+  .soggiorno-scelte { grid-template-columns: 1fr; gap: 24px; }
+  .soggiorno-scelte dt { font-size: 27px; }
+  .cummersa-piano { margin-top: 40px; }
+}
+
 .servizi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -241,6 +265,16 @@ a.card { text-decoration: none; color: inherit; }
 .feature .chips { margin-top: 14px; }
 
 /* ---------- mobile ---------- */
+.ospitalita { margin-top: 48px; padding-top: 40px; border-top: 1px solid #c9beae; }
+.ospitalita-titolo { max-width: 740px; margin: 0 auto 32px; font: 500 clamp(30px, 3.4vw, 44px)/1.15 var(--font-serif); text-wrap: balance; }
+.ospitalita-voci { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 48px); text-align: left; }
+.ospitalita-voci h4 { margin-bottom: 16px; font: 500 27px/1.2 var(--font-serif); text-wrap: balance; }
+.ospitalita-voci p { margin: 0 0 14px; font-size: 15px; line-height: 1.75; color: #4a4034; }
+.ospitalita-voci p:last-child { margin-bottom: 0; }
+@media (max-width: 767px) {
+  .ospitalita-voci { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 900px) {
   .servizi-grid { grid-template-columns: repeat(2, 1fr); }
   .gal { grid-template-columns: repeat(3, 1fr); gap: 8px; }

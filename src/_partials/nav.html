@@ -1,16 +1,20 @@
   <header class="nav">
     {{#if is_home}}<a class="brand brand-logo" href="#hero" data-scroll-to="#hero"><img src="{{site.logo}}" alt="{{site.nome}}" width="310" height="86"></a>{{else}}<a class="brand brand-logo" href="index.html"><img src="{{site.logo}}" alt="{{site.nome}}" width="310" height="86"></a>{{/if}}
     <div class="nav-panel" id="navigation-panel" data-lenis-prevent>
-    <nav class="nav-links" aria-label="Navigazione principale">
-      {{#if is_home}}{{else}}<a href="index.html">Home</a>{{/if}}
+    <nav class="nav-links" aria-label="{{ui.nav}}">
+      <a href="index.html">{{ui.home}}</a>
       <a href="racconto.html">{{site.menu.racconto}}</a>
       <a href="camere.html">{{site.menu.dimore}}</a>
       <a href="esperienze.html">{{site.menu.esperienze}}</a>
-      <a href="#contatti" data-scroll-to="#contatti">{{site.menu.contatti}}</a>
     </nav>
+      <div class="nav-actions">
+{{> languages}}
       <a class="nav-cta" href="#contatti" data-scroll-to="#contatti">{{site.menu.cta}}<span aria-hidden="true">↗</span></a>
+      </div>
       <p class="nav-place">Martina Franca <span aria-hidden="true">·</span> Valle d’Itria</p>
     </div>
-    <button class="nav-toggle" type="button" aria-controls="navigation-panel" aria-label="Apri il menu" aria-expanded="false"><span class="nav-toggle-label">Menu</span><span class="nav-toggle-icon" aria-hidden="true"><i></i><i></i></span></button>
+    <button class="nav-toggle" type="button" aria-controls="navigation-panel" aria-label="{{ui.openMenu}}" aria-expanded="false"><span class="nav-toggle-label">{{ui.menu}}</span><span class="nav-toggle-icon" aria-hidden="true"><i></i><i></i></span></button>
   </header>
-  <script type="module" src="js/navigation.js?v=20260914-lilla2"></script>
+  <script type="module" src="js/navigation.js?v=20260916-i18n"></script>
+  <script type="module" src="js/languages.js?v=20260916-i18n"></script>
+  <script type="module" src="js/form-validation.js?v=20260916-i18n"></script>

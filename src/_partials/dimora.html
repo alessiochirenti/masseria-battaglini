@@ -1,0 +1,17 @@
+        <article class="feature {{flip}} reveal">
+          <figure><img src="{{foto}}" alt="{{alt}}" loading="lazy"></figure>
+          <div>
+            {{#if etichetta}}<span class="f-n">{{etichetta}}</span>{{/if}}
+            <h3>{{titolo}} <em>{{titolo_corsivo}}</em></h3>
+            {{#paragrafi testo}}<p>{{.}}</p>
+            {{/paragrafi}}
+            {{#if caratteristiche}}<ul class="chips">{{#each caratteristiche}}<li>{{.}}</li>{{/each}}</ul>{{/if}}
+          </div>
+        </article>
+        {{#if galleria}}
+        <div class="gal reveal" data-gallery="{{id}}" data-title="{{nome}}" data-photos='{{{galleria_json}}}'>
+          {{#each anteprime}}<img src="{{foto}}" alt="{{nome}}, {{ui.photos}} {{@n}}" loading="lazy" data-i="{{i}}">
+          {{/each}}
+        </div>
+        <p class="reveal"><button class="gal-open" type="button" data-gallery-open="{{id}}">{{ui.allPhotos}}<small>{{n_foto}} {{ui.photos}}</small></button></p>
+        {{/if}}

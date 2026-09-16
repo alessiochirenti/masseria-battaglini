@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="it">
+<html lang="{{locale}}">
 <head>
 {{> head-sub}}
+  <link rel="stylesheet" href="css/esperienze.css?v=20260916">
   <title>{{esperienze.titolo_pagina}} · {{site.nome}}</title>
   <meta name="description" content="{{esperienze.descrizione}}">
   <meta property="og:title" content="{{esperienze.titolo_pagina}}, {{site.nome}}">
   <meta property="og:description" content="{{esperienze.hero.sottotitolo}}">
-  <meta property="og:url" content="{{site.url}}esperienze.html">
+  <meta property="og:url" content="{{canonical}}">
 </head>
-<body class="page-sub">
+<body class="page-sub page-esperienze">
 {{> silhouette-sub}}
 {{> nav}}
 
@@ -36,22 +37,55 @@
         <h2 class="reveal">{{titolo}} <em>{{titolo_corsivo}}</em></h2>
         <div class="ornament reveal"><span></span><i>❖</i><span></span></div>
         {{#if intro}}<p class="copy reveal" style="text-align:center">{{intro}}</p>{{/if}}
+        {{#if attenzioni}}<div class="ospitalita-voci experience-attentions" id="tavola-ospitalita">
+          {{#each attenzioni}}<article class="reveal">
+            <h3>{{titolo}}</h3>
+            {{#paragrafi testo}}<p>{{.}}</p>{{/paragrafi}}
+          </article>{{/each}}
+        </div>{{/if}}
+        <div class="experience-list{{#if compatto}} experience-list-compact{{/if}}">
         {{#each voci}}
-        <article class="feature {{flip}} reveal">
-          <figure><img src="{{foto}}" alt="{{alt}}" loading="lazy"></figure>
+        <article class="feature {{flip}} reveal{{#if video}} feature-video{{/if}}"{{#if ancora}} id="{{ancora}}"{{/if}}>
+          <figure{{#if video}} class="cooking-video"{{/if}}>
+            {{#if video}}<video data-loop-src="{{video}}" poster="{{poster}}" width="540" height="960" muted loop playsinline preload="none" aria-label="{{alt}}"></video>
+            <button type="button" class="video-toggle" aria-label="{{ui.playVideo}}" hidden>{{ui.play}}</button>
+            <noscript><p class="video-fallback"><a href="{{video}}">{{ui.watchVideo}}</a></p></noscript>
+            {{else}}{{#if placeholder}}<div class="oil-placeholder" role="img" aria-label="{{alt}}"><span>Sublim’e</span><small>{{ui.photoComing}}</small></div>
+            {{else}}<img src="{{foto}}" alt="{{alt}}" loading="lazy" decoding="async" width="1200" height="900">{{/if}}{{/if}}
+          </figure>
           <div>
             {{#if etichetta}}<span class="f-n">{{etichetta}}</span>{{/if}}
             <h3>{{titolo}} <em>{{titolo_corsivo}}</em></h3>
             {{#paragrafi testo}}<p>{{.}}</p>
             {{/paragrafi}}
             {{#if caratteristiche}}<ul class="chips">{{#each caratteristiche}}<li>{{.}}</li>{{/each}}</ul>{{/if}}
+            {{#if recensioni_cucina}}<section class="cooking-reviews" aria-label="{{recensioni_cucina.titolo}}">
+              <h4>{{recensioni_cucina.titolo}}</h4>
+              <div class="cooking-reviews-quotes">
+                {{#each recensioni_cucina.voci}}<blockquote>
+                  <p>«{{testo}}»</p>
+                  <cite>{{autore}}</cite>
+                </blockquote>{{/each}}
+              </div>
+              <p class="cooking-reviews-source">{{recensioni_cucina.nota}} · <a href="{{recensioni_cucina.url}}" target="_blank" rel="noopener noreferrer" aria-label="{{ui.readOn}} {{recensioni_cucina.fonte}} ({{ui.newTab}})">{{ui.readOn}} {{recensioni_cucina.fonte}}</a></p>
+            </section>{{/if}}
           </div>
         </article>
         {{/each}}
-        {{#if galleria}}<div class="gal gal-2 reveal">
-          {{#each galleria}}<img src="{{.}}" alt="" loading="lazy">
+        </div>
+        {{#if galleria}}<div class="experience-gallery reveal">
+          {{#each galleria}}<img src="{{foto}}" alt="{{alt}}" width="1254" height="1254" loading="lazy" decoding="async">
           {{/each}}
         </div>{{/if}}
+        {{#if conclusione}}<section class="ospitalita" id="{{id}}-ospitalita" aria-label="{{ui.hostsCare}}">
+          <h3 class="ospitalita-titolo reveal">{{conclusione.titolo}} <em>{{conclusione.titolo_corsivo}}</em></h3>
+          <div class="ospitalita-voci">
+            {{#each conclusione.voci}}<article class="reveal">
+              <h4>{{titolo}}</h4>
+              {{#paragrafi testo}}<p>{{.}}</p>{{/paragrafi}}
+            </article>{{/each}}
+          </div>
+        </section>{{/if}}
       </div>
     </section>
     {{/each}}
@@ -66,6 +100,7 @@
 
   </main>
 
-  <script type="module" src="js/page.js?v=20260914-nav"></script>
+  <script type="module" src="js/page.js?v=20260916-i18n"></script>
+  <script type="module" src="js/experience-video.js?v=20260916-i18n"></script>
 </body>
 </html>

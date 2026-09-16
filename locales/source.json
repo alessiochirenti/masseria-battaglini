@@ -1,0 +1,1049 @@
+{
+  "Le dimore": [
+    "dimore.titolo_pagina",
+    "dimore.hero.titolo",
+    "home.sera.card.0.titolo",
+    "site.menu.dimore"
+  ],
+  "Il trullo con sette coni e la Cummersa di Masseria Battaglini: una dimora su due piani, da vivere al piano terra o con il primo piano in aggiunta, sempre in esclusiva per voi.": [
+    "dimore.descrizione"
+  ],
+  "La sala del trullo: gli archi in pietra, le tende chiare e il divano bianco": [
+    "dimore.hero.alt"
+  ],
+  "L’intimità del trullo, gli spazi della Cummersa. Due modi di sentirsi a casa.": [
+    "dimore.hero.sottotitolo"
+  ],
+  "La vostra dimora,": [
+    "dimore.intro.titolo"
+  ],
+  "il vostro modo di abitarla.": [
+    "dimore.intro.titolo_corsivo"
+  ],
+  "Scegliete il trullo con sette coni o la Cummersa: una sola abitazione, con il primo piano da aggiungere quando desiderate più spazio.": [
+    "dimore.intro.testo"
+  ],
+  "Sceglietela per come": [
+    "dimore.stazione.riga1"
+  ],
+  "volete svegliarvi.": [
+    "dimore.stazione.riga2"
+  ],
+  "Trulli Battaglini": [
+    "dimore.elenco.0.nome"
+  ],
+  "La suite nel trullo": [
+    "dimore.elenco.0.etichetta"
+  ],
+  "Trulli Battaglini:": [
+    "dimore.elenco.0.titolo"
+  ],
+  "sette coni, due camini.": [
+    "dimore.elenco.0.titolo_corsivo"
+  ],
+  "Un’antica costruzione in trulli con sette coni e una lamia. L’open space con la crociera centrale è il soggiorno, con il camino, un divano letto matrimoniale e uno singolo; l’alcova separata ha il letto matrimoniale e un secondo camino. Completano la casa una piccola cucina con frigobar e il bagno con doccia.\n\nL’ingresso privato guarda il giardino e i sentieri che portano alla piscina.": [
+    "dimore.elenco.0.testo"
+  ],
+  "80 mq": [
+    "dimore.elenco.0.caratteristiche.0",
+    "dimore.elenco.1.piani.0.caratteristiche.0",
+    "dimore.elenco.1.piani.1.caratteristiche.0"
+  ],
+  "Fino a 5 ospiti": [
+    "dimore.elenco.0.caratteristiche.1"
+  ],
+  "Cucina privata": [
+    "dimore.elenco.0.caratteristiche.2"
+  ],
+  "2 camini": [
+    "dimore.elenco.0.caratteristiche.3"
+  ],
+  "Patio": [
+    "dimore.elenco.0.caratteristiche.4",
+    "dimore.elenco.1.piani.0.caratteristiche.3"
+  ],
+  "Vista piscina": [
+    "dimore.elenco.0.caratteristiche.5",
+    "dimore.elenco.1.piani.0.caratteristiche.4"
+  ],
+  "Il soggiorno del trullo con il camino in pietra e le poltrone bianche": [
+    "dimore.elenco.0.alt"
+  ],
+  "La Cummersa": [
+    "dimore.elenco.1.nome"
+  ],
+  "Una sola dimora,": [
+    "dimore.elenco.1.titolo"
+  ],
+  "tutta la vostra riservatezza.": [
+    "dimore.elenco.1.titolo_corsivo"
+  ],
+  "Fiori di Campo al piano terra e Luce di Luna al primo piano sono i due livelli della stessa casa. Scegliete quanto spazio vivere.": [
+    "dimore.elenco.1.testo"
+  ],
+  "Piano terra": [
+    "dimore.elenco.1.configurazioni.0.nome"
+  ],
+  "Fiori di Campo, con camera, soggiorno e bagno. Il primo piano rimane libero per tutta la durata del vostro soggiorno.": [
+    "dimore.elenco.1.configurazioni.0.testo"
+  ],
+  "Entrambi i piani": [
+    "dimore.elenco.1.configurazioni.1.nome"
+  ],
+  "Al piano terra si aggiunge Luce di Luna, con un supplemento: più spazio per la stessa famiglia o gruppo, con un bagno su ciascun piano.": [
+    "dimore.elenco.1.configurazioni.1.testo"
+  ],
+  "La Cummersa accoglie una sola famiglia o un solo gruppo alla volta. I due piani non vengono mai affittati a ospiti diversi nelle stesse date.": [
+    "dimore.elenco.1.esclusiva"
+  ],
+  "Fiori di Campo": [
+    "dimore.elenco.1.piani.0.nome"
+  ],
+  "Piano terra · Il cuore della Cummersa": [
+    "dimore.elenco.1.piani.0.etichetta"
+  ],
+  "Fiori di Campo:": [
+    "dimore.elenco.1.piani.0.titolo"
+  ],
+  "la casa si apre sul giardino.": [
+    "dimore.elenco.1.piani.0.titolo_corsivo"
+  ],
+  "Il soggiorno nella Cummersa comincia qui: una camera da letto, un ampio open space con divano letto matrimoniale e un bagno con cabina doccia.\n\nGli arredi sobri e gli spazi esterni invitano a rallentare, tra il giardino mediterraneo e i sentieri verso la piscina. Potete scegliere il solo piano terra: il primo piano resterà libero, a tutela della vostra tranquillità.": [
+    "dimore.elenco.1.piani.0.testo"
+  ],
+  "Fino a 4 ospiti": [
+    "dimore.elenco.1.piani.0.caratteristiche.1",
+    "dimore.elenco.1.piani.1.caratteristiche.1"
+  ],
+  "Camera + open space": [
+    "dimore.elenco.1.piani.0.caratteristiche.2"
+  ],
+  "Il soggiorno della Cummersa Fiori di Campo: travi in legno, poltrone bianche, tappeto rosso": [
+    "dimore.elenco.1.piani.0.alt"
+  ],
+  "Luce di Luna": [
+    "dimore.elenco.1.piani.1.nome"
+  ],
+  "Primo piano · Più spazio per stare insieme": [
+    "dimore.elenco.1.piani.1.etichetta"
+  ],
+  "Luce di Luna:": [
+    "dimore.elenco.1.piani.1.titolo"
+  ],
+  "il cielo in una stanza.": [
+    "dimore.elenco.1.piani.1.titolo_corsivo"
+  ],
+  "Da aggiungere al piano terra, con un supplemento, quando viaggiate in famiglia o con amici e desiderate più intimità per ciascuno. Il primo piano offre un letto e un divano letto matrimoniali, il proprio bagno con doccia e un terrazzo attrezzato.\n\nL’ingresso privato e la vista su Locorotondo accompagnano uno spazio raccolto, illuminato dall’abbaino. Fa parte dello stesso soggiorno e non si prenota separatamente.": [
+    "dimore.elenco.1.piani.1.testo"
+  ],
+  "Terrazzo": [
+    "dimore.elenco.1.piani.1.caratteristiche.2"
+  ],
+  "Vista su Locorotondo": [
+    "dimore.elenco.1.piani.1.caratteristiche.3"
+  ],
+  "Abbaino": [
+    "dimore.elenco.1.piani.1.caratteristiche.4"
+  ],
+  "La camera mansardata della Cummersa Luce di Luna con il parquet e il divano": [
+    "dimore.elenco.1.piani.1.alt"
+  ],
+  "Le attenzioni": [
+    "dimore.servizi.titolo"
+  ],
+  "di casa.": [
+    "dimore.servizi.titolo_corsivo"
+  ],
+  "Colazione inclusa": [
+    "dimore.servizi.elenco.0.titolo"
+  ],
+  "Biologica, varia e fatta in casa da Giovannella, con ingredienti locali.": [
+    "dimore.servizi.elenco.0.testo"
+  ],
+  "Pranzo e cena su richiesta": [
+    "dimore.servizi.elenco.1.titolo"
+  ],
+  "Da concordare con noi, non inclusi nel soggiorno.": [
+    "dimore.servizi.elenco.1.testo"
+  ],
+  "Piscina e giardino": [
+    "dimore.servizi.elenco.2.titolo"
+  ],
+  "La piscina tra i campi, il salotto sotto i pini.": [
+    "dimore.servizi.elenco.2.testo"
+  ],
+  "Ingresso privato": [
+    "dimore.servizi.elenco.3.titolo"
+  ],
+  "Ogni casa ha il suo, con patio o terrazzo.": [
+    "dimore.servizi.elenco.3.testo"
+  ],
+  "Lavanderia": [
+    "dimore.servizi.elenco.4.titolo"
+  ],
+  "On demand, quando serve.": [
+    "dimore.servizi.elenco.4.testo"
+  ],
+  "Accappatoi e cortesia": [
+    "dimore.servizi.elenco.5.titolo"
+  ],
+  "Con il nostro nome ricamato.": [
+    "dimore.servizi.elenco.5.testo"
+  ],
+  "Wi-Fi e parcheggio": [
+    "dimore.servizi.elenco.6.titolo"
+  ],
+  "In tutta la masseria, gratuiti.": [
+    "dimore.servizi.elenco.6.testo"
+  ],
+  "Consigli e prenotazioni": [
+    "dimore.servizi.elenco.7.titolo"
+  ],
+  "Ristoranti, taxi e trasporti: Giovannella e Giuseppe vi aiutano a organizzare.": [
+    "dimore.servizi.elenco.7.testo"
+  ],
+  "Per la Cummersa potete scegliere il piano terra o aggiungere il primo piano con un supplemento. La dimora è sempre riservata a un’unica famiglia o gruppo.": [
+    "dimore.nota_richiesta"
+  ],
+  "Esperienze": [
+    "esperienze.titolo_pagina",
+    "esperienze.hero.titolo",
+    "site.menu.esperienze"
+  ],
+  "Cooking class con Giovannella, Cesarina a Martina Franca: ricette di famiglia, gesti lenti e cucina condivisa. Poi la tavola della masseria, massaggi, benessere all’aperto ed escursioni nella Valle d’Itria.": [
+    "esperienze.descrizione"
+  ],
+  "Un bambino di profilo sull’amaca tende la mano verso una sfera luminosa nel giardino al crepuscolo": [
+    "esperienze.hero.alt"
+  ],
+  "In cucina, a tavola, tra gli ulivi. Il tempo per imparare e prendersi cura di sé.": [
+    "esperienze.hero.sottotitolo"
+  ],
+  "In cucina": [
+    "esperienze.sezioni.0.titolo"
+  ],
+  "con Giovannella.": [
+    "esperienze.sezioni.0.titolo_corsivo"
+  ],
+  "Cooking class": [
+    "esperienze.sezioni.0.voci.0.etichetta",
+    "home.sera.card.1.titolo",
+    "site.form.interessi.1"
+  ],
+  "L’amore,": [
+    "esperienze.sezioni.0.voci.0.titolo"
+  ],
+  "un gesto alla volta.": [
+    "esperienze.sezioni.0.voci.0.titolo_corsivo"
+  ],
+  "Giovannella vi accoglie nella sua cucina per condividere ricette di famiglia e piccoli segreti imparati nel tempo. Diplomata all’Accademia Italiana di Cucina, è una Cesarina: parte della rete di cuoche e cuochi di casa che custodiscono e tramandano la tradizione italiana.\n\nDurante la cooking class si impasta, si osserva, si fanno domande. Anche mettere le fave a bagno diventa una scoperta: capire perché si fa e come cambiano al mattino insegna a rispettare il tempo degli ingredienti. Ogni gesto racconta la cura di chi cucina per qualcuno.\n\nPoi ci si siede a tavola insieme. Si portano a casa ricette, gesti da ripetere e il piacere di ritrovare nella propria cucina qualcosa di questa giornata.": [
+    "esperienze.sezioni.0.voci.0.testo"
+  ],
+  "Giovannella lavora l’impasto durante una cooking class in masseria": [
+    "esperienze.sezioni.0.voci.0.alt"
+  ],
+  "La voce di chi ha cucinato con noi": [
+    "esperienze.sezioni.0.voci.0.recensioni_cucina.titolo"
+  ],
+  "Estratti tradotti dall’inglese": [
+    "esperienze.sezioni.0.voci.0.recensioni_cucina.nota"
+  ],
+  "Un corso di cucina splendido, dall’inizio alla fine.": [
+    "esperienze.sezioni.0.voci.0.recensioni_cucina.voci.0.testo"
+  ],
+  "Non vedo l’ora di provare a casa tutto quello che abbiamo imparato!": [
+    "esperienze.sezioni.0.voci.0.recensioni_cucina.voci.1.testo"
+  ],
+  "Giovannella insegna a una bambina a lavorare l’impasto": [
+    "esperienze.sezioni.0.galleria.0.alt"
+  ],
+  "Giovannella accompagna un’ospite nella preparazione dei biscotti alle mandorle": [
+    "esperienze.sezioni.0.galleria.1.alt"
+  ],
+  "Giovannella sorride mentre mescola una preparazione in padella": [
+    "esperienze.sezioni.0.galleria.2.alt"
+  ],
+  "L’attenzione di chi vi conosce": [
+    "esperienze.sezioni.1.titolo"
+  ],
+  "per nome.": [
+    "esperienze.sezioni.1.titolo_corsivo"
+  ],
+  "Un pranzo o una cena, pensati per voi.": [
+    "esperienze.sezioni.1.attenzioni.0.titolo"
+  ],
+  "Pranzo e cena non sono inclusi e non è previsto un servizio quotidiano di ristorazione. Su richiesta, Giovannella e Giuseppe concordano con voi il menù, fanno la spesa e preparano un pranzo o una cena intima in masseria.": [
+    "esperienze.sezioni.1.attenzioni.0.testo"
+  ],
+  "Fuori casa, con i consigli di casa.": [
+    "esperienze.sezioni.1.attenzioni.1.titolo"
+  ],
+  "Un ristorante, una pizza o un picnic: Giovannella e Giuseppe vi consigliano i luoghi che conoscono, prenotano per voi e comunicano le vostre preferenze. Si occupano anche di taxi e trasporti.": [
+    "esperienze.sezioni.1.attenzioni.1.testo"
+  ],
+  "Sublim’e · L’olio della masseria": [
+    "esperienze.sezioni.1.voci.0.etichetta"
+  ],
+  "Dalla nostra terra,": [
+    "esperienze.sezioni.1.voci.0.titolo"
+  ],
+  "alla vostra tavola.": [
+    "esperienze.sezioni.1.voci.0.titolo_corsivo"
+  ],
+  "Dai 163 ulivi coltivati secondo il metodo biologico nasce Sublim’e, l’olio della masseria. Lo assaggiate a tavola e, se vi conquista, potete portarne a casa qualche bottiglia: un ricordo della nostra terra da ritrovare ogni giorno.": [
+    "esperienze.sezioni.1.voci.0.testo"
+  ],
+  "Bottiglia e tanichetta di olio biologico Sublim’è su pietra chiara, accanto a rami di ulivo": [
+    "esperienze.sezioni.1.voci.0.alt"
+  ],
+  "La colazione · Inclusa nel soggiorno": [
+    "esperienze.sezioni.1.voci.1.etichetta"
+  ],
+  "Il buongiorno,": [
+    "esperienze.sezioni.1.voci.1.titolo"
+  ],
+  "preparato a mano.": [
+    "esperienze.sezioni.1.voci.1.titolo_corsivo"
+  ],
+  "Ogni mattina Giovannella prepara una colazione biologica, varia e fatta in casa, con ingredienti locali. Torte, marmellate e preparazioni artigianali da assaporare con calma. Sempre inclusa nel soggiorno.": [
+    "esperienze.sezioni.1.voci.1.testo"
+  ],
+  "La tavola della colazione nella luce del mattino, con crostata, marmellate, frutta e caffè": [
+    "esperienze.sezioni.1.voci.1.alt"
+  ],
+  "Il benessere,": [
+    "esperienze.sezioni.2.titolo"
+  ],
+  "all’aperto.": [
+    "esperienze.sezioni.2.titolo_corsivo"
+  ],
+  "All’ombra degli ulivi, sul prato o nella vostra dimora: il tempo per ritrovare calma e ascoltare il corpo.": [
+    "esperienze.sezioni.2.intro"
+  ],
+  "Massaggi e trattamenti": [
+    "esperienze.sezioni.2.voci.0.etichetta"
+  ],
+  "Corpo e viso,": [
+    "esperienze.sezioni.2.voci.0.titolo"
+  ],
+  "sotto gli ulivi.": [
+    "esperienze.sezioni.2.voci.0.titolo_corsivo"
+  ],
+  "Massaggi rilassanti e decontratturanti, trattamenti viso e corpo con operatori professionisti. Nella vostra dimora o all’aperto, su prenotazione.": [
+    "esperienze.sezioni.2.voci.0.testo"
+  ],
+  "Due ospiti si rilassano sui lettini per i trattamenti in giardino": [
+    "esperienze.sezioni.2.voci.0.alt"
+  ],
+  "Yoga, posturale e respiro": [
+    "esperienze.sezioni.2.voci.1.etichetta"
+  ],
+  "Il prato, l’alba,": [
+    "esperienze.sezioni.2.voci.1.titolo"
+  ],
+  "i trulli davanti.": [
+    "esperienze.sezioni.2.voci.1.titolo_corsivo"
+  ],
+  "Yoga e ginnastica posturale sul prato, individualmente o in piccoli gruppi, con insegnanti della zona. Esercizi di respirazione e piccoli gesti da portare nella vita di ogni giorno.": [
+    "esperienze.sezioni.2.voci.1.testo"
+  ],
+  "Una donna pratica yoga tra i tetti in pietra dei trulli, con le mani unite sopra la testa": [
+    "esperienze.sezioni.2.voci.1.alt"
+  ],
+  "La Valle d’Itria,": [
+    "esperienze.sezioni.3.titolo"
+  ],
+  "al vostro passo.": [
+    "esperienze.sezioni.3.titolo_corsivo"
+  ],
+  "Tra borghi, campagna e mare, vi aiutiamo a scegliere il percorso e a organizzare la giornata.": [
+    "esperienze.sezioni.3.intro"
+  ],
+  "E-bike tour": [
+    "esperienze.sezioni.3.voci.0.etichetta"
+  ],
+  "Tra trulli": [
+    "esperienze.sezioni.3.voci.0.titolo"
+  ],
+  "e muretti a secco.": [
+    "esperienze.sezioni.3.voci.0.titolo_corsivo"
+  ],
+  "In e-bike lungo le strade della Valle d’Itria, tra campi e soste nei borghi. Con guida o con un itinerario preparato insieme, per mezza giornata o una giornata intera.": [
+    "esperienze.sezioni.3.voci.0.testo"
+  ],
+  "Due persone in e-bike sulla stradina tra i muretti a secco e i trulli": [
+    "esperienze.sezioni.3.voci.0.alt"
+  ],
+  "A cavallo": [
+    "esperienze.sezioni.3.voci.1.etichetta"
+  ],
+  "In campagna": [
+    "esperienze.sezioni.3.voci.1.titolo"
+  ],
+  "o in riva al mare.": [
+    "esperienze.sezioni.3.voci.1.titolo_corsivo"
+  ],
+  "Passeggiate con i maneggi della zona, tra ulivi e campagna o in riva al mare. Percorsi adatti anche a chi sale in sella per la prima volta.": [
+    "esperienze.sezioni.3.voci.1.testo"
+  ],
+  "Due cavalieri a passo sulla battigia al tramonto": [
+    "esperienze.sezioni.3.voci.1.alt"
+  ],
+  "Diteci cosa vi piacerebbe,": [
+    "esperienze.contatti.titolo"
+  ],
+  "al resto pensiamo noi.": [
+    "esperienze.contatti.titolo_corsivo",
+    "site.form.titolo_corsivo"
+  ],
+  "Il tempo che rallenta": [
+    "guestbook.pages.0.title"
+  ],
+  "7-17 agosto 2020\n\nGuardare il tempo che rallenta\nnel vento che all’ombra sussurra\nall’ozio desiderato che noia non diventa\n\nCamminare tra la stoppia [parola non leggibile]\ndanzare con gli occhi seguendo eleganti farfalle\nviaggiare sulle dolci asperità della valle\ndi terra rossa e piante varie\ndi case antiche dai tetti a punta e piatte dimore\ndi bianchi paesi arroccati e genti colorite\n\nAssaporare la tradizione\naffidata a mani sapienti e cuori gentili\n\nIn tutta questa assenza\nincantevole\nci siamo ritrovati\n\nFrancesca, Susanna, Doriano, Tiziano": [
+    "guestbook.pages.0.transcript"
+  ],
+  "La cornice perfetta": [
+    "guestbook.pages.1.title"
+  ],
+  "23.08.2021\n\nGrazie per la fantastica accoglienza e ospitalità: una location meravigliosa ed unica, indimenticabili tramonti. Il nostro sguardo si perdeva nell’incantevole campagna pugliese e il suono dei grilli è stata la cornice perfetta del nostro soggiorno.\nUn grazie speciale alla meravigliosa Susan!\n\nGiulia [altre firme non tutte leggibili]": [
+    "guestbook.pages.1.transcript"
+  ],
+  "Una settimana meravigliosa": [
+    "guestbook.pages.2.title"
+  ],
+  "16-07-2022\n\nVenendo dalla frenetica vita cittadina in Olanda, questo era il riposo perfetto che cercavamo.\nUna settimana meravigliosa, grazie alle vostre attenzioni, Giovanella e Giuseppe! La colazione era straordinaria e siamo grati per le proposte vegetariane sempre nuove. Tutto era curato così bene, tutte le persone che lavorano qui sono gentili e disponibili!\n\nCi mancheranno le conversazioni sulla natura, l’ambiente, gli uccelli e le piante, e speriamo davvero di tornare un giorno!\n\nUn carissimo saluto, anche ad Albus e Hagrid,\nJoris & Ilona": [
+    "guestbook.pages.2.transcript"
+  ],
+  "Una casa accogliente": [
+    "guestbook.pages.3.title"
+  ],
+  "Dalla famiglia Schley\n\nCari Giovanella, Susan e Giuseppe,\n\nAbbiamo trascorso momenti splendidi nella vostra bella casa. È stata un’opportunità incredibile soggiornare in questa meravigliosa Masseria, assaggiare i vostri prodotti locali e vivere la campagna italiana.\nIl momento più bello è stata la cena che avete preparato per noi. Non solo il cibo, ma anche il vostro senso dell’umorismo era straordinario. Siete persone di grande cuore, che ci hanno fatto sentire sempre benvenuti.\nGrazie per averci regalato questo tempo di qualità in famiglia. Grazie anche a Hagrid e Albus per tutto l’affetto e la gioia.\nSperiamo di tornare un giorno, restate così come siete. [cuore]\n\n[Disegno della famiglia e dei due cani; alcune piccole didascalie dei nomi non sono leggibili con certezza.]": [
+    "guestbook.pages.3.transcript"
+  ],
+  "Sentirsi di casa": [
+    "guestbook.pages.4.title"
+  ],
+  "21-07-2025\n\nGiovannella, Susan e Giuseppe,\n\nVi ringraziamo per l’ospitalità e l’accoglienza che ci avete riservato aprendoci le porte della Vostra masseria e delle esperienze che ci avete consigliato.\nCi avete presentato i sapori della Vostra terra attraverso la Vostra magnifica cucina.\nVi ringraziamo per questi bellissimi giorni, è un’esperienza che consiglieremo ai nostri amici e conoscenti.\nCi farebbe molto piacere ripetere questa esperienza con voi.\nGrazie per averci fatto sentire di casa.\nCon affetto e stima.\n\nSilvia, Riccardo [terza firma non leggibile con certezza]": [
+    "guestbook.pages.4.transcript"
+  ],
+  "Un’esperienza indimenticabile": [
+    "guestbook.pages.5.title"
+  ],
+  "4 giugno 2026\n\nAbbiamo trascorso un soggiorno meraviglioso e imparato moltissimo sulla cucina pugliese autentica con un’insegnante straordinaria, Giovanella. L’esperienza in cucina è stata davvero memorabile.\nSusan ci ha fatto sentire subito a casa, ogni dettaglio era curato con attenzione e sia lei sia Giovanella hanno fatto di tutto per rendere il nostro soggiorno confortevole e piacevole!\n\nGrazie per un’esperienza indimenticabile!\n\nNon vediamo l’ora di tornare…\nBaby Noah, Cristhian & Michelle\n\nGrazie mille!!\nMasseria Battaglini!\n\n[A destra, disegni originali di colazione, mare, pasta e trulli, con cuori e un fiore.]": [
+    "guestbook.pages.5.transcript"
+  ],
+  "Il nostro caro trullo": [
+    "guestbook.pages.6.title"
+  ],
+  "6 giugno 2026\n\nCari Giovanella e Giuseppe,\nGrazie per il meraviglioso soggiorno nel vostro bellissimo trullo. È stata un’esperienza unica e abbiamo apprezzato ogni momento. Tutto era perfetto.\nAbbiamo amato l’atmosfera autentica, i bellissimi dintorni e la deliziosa colazione preparata con tanto amore.\nGrazie per aver reso così speciale il nostro soggiorno.\nSperiamo di tornare in futuro!\n\nCon affetto\nJana & Peter\n[cuore e viso sorridente]\n\nPS: Grazie per il bellissimo tempo trascorso da voi!": [
+    "guestbook.pages.6.transcript"
+  ],
+  "Valle d’Itria · Martina Franca": [
+    "home.hero.kicker"
+  ],
+  "Masseria": [
+    "home.hero.riga1"
+  ],
+  "Battaglini": [
+    "home.hero.riga2"
+  ],
+  "Azienda agricola biologica certificata e B&B a conduzione familiare.": [
+    "home.hero.tagline"
+  ],
+  "scorri, la notte finisce": [
+    "home.hero.hint"
+  ],
+  "Il racconto comincia": [
+    "home.alba.riga1"
+  ],
+  "con un fiore di maggio.": [
+    "home.alba.riga2"
+  ],
+  "Masseria Battaglini: la casa bianca, i coni dei trulli e la palma nel cortile": [
+    "home.arrivo.alt"
+  ],
+  "E inizia proprio da qui.\nNella nostra masseria.\nNella nostra casa.": [
+    "home.arrivo.parola"
+  ],
+  "Giuseppe e Giovannella": [
+    "home.storia.kicker",
+    "racconto.sezioni.1.didascalia"
+  ],
+  "Qui trovate sempre": [
+    "home.storia.titolo"
+  ],
+  "i padroni di casa.": [
+    "home.storia.titolo_corsivo"
+  ],
+  "Qui convivono due realtà: un’azienda agricola biologica certificata e un B&B a conduzione familiare, ricavato tra trulli e cummerse e ristrutturato nel rispetto delle tradizioni del luogo. La differenza rispetto a un albergo è semplice: qui ci siamo noi. Vi accogliamo, vi consigliamo cosa vedere e dove mangiare, vi aiutiamo con prenotazioni e trasporti. Ogni mattina Giovannella prepara la colazione biologica fatta in casa, inclusa nel soggiorno. Pranzo e cena si possono concordare su richiesta e non sono inclusi.\n\nNon vi proponiamo qualcosa di finto, di costruito. Vi proponiamo la nostra terra e la nostra dimora, una parte della quale è dedicata alla vita familiare, e viviamo la giornata per e con gli ospiti.": [
+    "home.storia.testo"
+  ],
+  "La facciata in pietra della masseria con il salottino di vimini e i gerani": [
+    "home.storia.alt"
+  ],
+  "Il salottino davanti casa, dove si fa colazione quando c’è il sole": [
+    "home.storia.didascalia"
+  ],
+  "Leggete il racconto": [
+    "home.storia.link"
+  ],
+  "Tre ettari e mezzo,": [
+    "home.terra.titolo"
+  ],
+  "163 ulivi.": [
+    "home.terra.titolo_corsivo"
+  ],
+  "ettari biologici": [
+    "home.terra.numeri.0.etichetta"
+  ],
+  "piante di ulivo": [
+    "home.terra.numeri.1.etichetta"
+  ],
+  "dimore da vivere": [
+    "home.terra.numeri.2.etichetta"
+  ],
+  "famiglia ad accogliervi": [
+    "home.terra.numeri.3.etichetta"
+  ],
+  "L’azienda agricola si estende per tre ettari e mezzo nella campagna di Martina Franca. Tra i campi, i muretti a secco e la vista che arriva fino a Locorotondo crescono 163 piante di ulivo, coltivate secondo il metodo biologico.\n\nDa queste olive nasce Sublim’e, l’olio della masseria. Gli ospiti lo assaggiano a tavola e spesso se ne innamorano: prima di partire, ne portano a casa qualche bottiglia. È qui che le due anime della Masseria si incontrano, nella terra coltivata e nell’accoglienza di ogni giorno.": [
+    "home.terra.testo"
+  ],
+  "Il giardino della masseria visto dall’alto: ghiaia bianca, la palma, i campi verdi": [
+    "home.terra.alt"
+  ],
+  "Tre ettari e mezzo di campagna biologica attorno alla masseria": [
+    "home.terra.didascalia"
+  ],
+  "Scoprite le dimore": [
+    "home.terra.link",
+    "racconto.sezioni.3.link"
+  ],
+  "Un posto lento": [
+    "home.mezzogiorno.frase"
+  ],
+  "Mezzogiorno. In silenzio. Nient’altro.": [
+    "home.mezzogiorno.sottotitolo"
+  ],
+  "Verso sera": [
+    "home.sera.kicker"
+  ],
+  "Quello che vi aspetta": [
+    "home.sera.titolo"
+  ],
+  "Un trullo e una Cummersa su due piani: due dimore indipendenti. La Cummersa si vive al piano terra o su entrambi i piani, sempre per un’unica famiglia o gruppo.": [
+    "home.sera.card.0.testo"
+  ],
+  "Le mani in pasta con Giovannella: ricette di famiglia, gesti da imparare con calma e il piacere di cucinare insieme.": [
+    "home.sera.card.1.testo"
+  ],
+  "Colazione": [
+    "home.sera.card.2.titolo"
+  ],
+  "Il buongiorno preparato da Giovannella: una colazione biologica, varia e fatta in casa con ingredienti locali. Sempre inclusa nel soggiorno.": [
+    "home.sera.card.2.testo"
+  ],
+  "Benessere e attività": [
+    "home.sera.card.3.titolo"
+  ],
+  "Massaggi e yoga, passeggiate a cavallo ed escursioni in e-bike. Il tempo per ritrovare il proprio ritmo, tra relax e scoperta della Valle d’Itria.": [
+    "home.sera.card.3.testo"
+  ],
+  "I nostri tramonti?": [
+    "home.tramonti.domanda"
+  ],
+  "Eccoli": [
+    "home.tramonti.risposta"
+  ],
+  "Cielo arancio e nuvole al tramonto sulla campagna della Valle d’Itria": [
+    "home.tramonti.panorama.alt"
+  ],
+  "Un arcobaleno attraversa il cielo rosa sopra i tetti dei trulli": [
+    "home.tramonti.dettagli.0.alt"
+  ],
+  "Il pino e un trullo della Masseria sotto le nuvole illuminate dal tramonto": [
+    "home.tramonti.dettagli.1.alt"
+  ],
+  "Poi torna la notte.": [
+    "home.notte.riga1"
+  ],
+  "E la luna entra dall’abbaino.": [
+    "home.notte.riga2"
+  ],
+  "Masseria Battaglini la sera: le finestre accese, i coni dei trulli contro il cielo blu": [
+    "home.ritorno.alt"
+  ],
+  "Le finestre sono accese": [
+    "home.ritorno.kicker"
+  ],
+  "Bentornati.": [
+    "home.ritorno.parola"
+  ],
+  "Una notte,": [
+    "home.contatti.titolo"
+  ],
+  "o una vita lenta.": [
+    "home.contatti.titolo_corsivo"
+  ],
+  "Diteci quando e quanti siete. Al resto pensiamo noi.": [
+    "home.contatti.nota"
+  ],
+  "Il racconto": [
+    "racconto.titolo_pagina",
+    "racconto.hero.titolo",
+    "site.menu.racconto"
+  ],
+  "Il racconto di Masseria Battaglini: Giuseppe e Giovannella, due vite che si incontrano nella Valle d’Itria, una casa bianca vista il 3 di maggio e la cura come modo di stare al mondo.": [
+    "racconto.descrizione"
+  ],
+  "Veduta aerea di Masseria Battaglini, con i trulli e gli edifici bianchi tra alberi, campi verdi e muretti a secco": [
+    "racconto.hero.alt"
+  ],
+  "Comincia con un fiore di maggio.": [
+    "racconto.hero.sottotitolo"
+  ],
+  "Il senso": [
+    "racconto.sezioni.0.titolo"
+  ],
+  "dei luoghi.": [
+    "racconto.sezioni.0.titolo_corsivo"
+  ],
+  "Il senso dei luoghi, il sentimento dei luoghi, l’anima dei luoghi si costruiscono nel loro sovrasenso emotivo in relazione ad angoli di mondo inseriti in un tempo dato, in un paesaggio cangiante, in una storia.": [
+    "racconto.sezioni.0.testo"
+  ],
+  "«La nostra storia ha incrociato le radici profonde e resistenti di un ciliegio, che a un terreno si adattano perlustrandone la profondità. Bisogna saper cogliere le opportunità che la vita offre e poi, come per ogni pianta, ogni essere vivente, averne cura. E la cura è pazienza.»": [
+    "racconto.sezioni.0.citazione"
+  ],
+  "Un albero solitario in mezzo al campo verde della masseria": [
+    "racconto.sezioni.0.alt"
+  ],
+  "Il campo dietro casa, dove tutto è cominciato": [
+    "racconto.sezioni.0.didascalia"
+  ],
+  "E la cura": [
+    "racconto.sezioni.1.frase_prima"
+  ],
+  "è pazienza.": [
+    "racconto.sezioni.1.frase_prima_corsivo"
+  ],
+  "Due vite che": [
+    "racconto.sezioni.1.titolo"
+  ],
+  "non s’incontrano subito.": [
+    "racconto.sezioni.1.titolo_corsivo"
+  ],
+  "Giovannella nasce a Napoli e Giuseppe a Locorotondo, ma ci vorrà del tempo perché le loro vite si incontrino, ritrovandosi nelle verdi campagne della Valle d’Itria. A quel punto sono sogni e necessità che hanno bisogno di farsi spazio: quando Giuseppe si domanda dove ritrovare sé stesso dopo una vita da ingegnere giramondo, la Valle d’Itria è la risposta.\n\nÈ l’irresistibile richiamo delle radici in un uomo che da piantina vuol diventare albero e lasciare un’impronta. Ed è così che quella bianca costruzione che ha colpito Giuseppe il 3 di maggio diventerà la Masseria Battaglini. Giovannella, a sua volta, si lega progressivamente a questa terra dove si sente accolta, amata e al sicuro, e ricambia il sentimento ritrovando il meglio di sé da offrire.": [
+    "racconto.sezioni.1.testo"
+  ],
+  "Giuseppe e Giovannella, ritratto in bianco e nero": [
+    "racconto.sezioni.1.alt"
+  ],
+  "La cura": [
+    "racconto.sezioni.2.titolo"
+  ],
+  "è amore che accetta.": [
+    "racconto.sezioni.2.titolo_corsivo"
+  ],
+  "«È un rapporto molto intenso quello che vivo: è la traduzione di un sogno e l’applicazione del forte senso di famiglia che ho.»": [
+    "racconto.sezioni.2.citazione"
+  ],
+  "Giovannella è suo padre nella vita lavorativa che era, sua madre nella gioia per la cucina, sua nonna nel saper raccontare e le sue figlie nell’accogliere. Con Giuseppe scopre che la cosa che le riesce meglio è prendersi cura dell’altro.\n\nCura è una parola densa di significato: sollecitudine, premura, attenzione, riguardo, amore. Ha un senso vivo anche nella sfera pratica, nel rapporto tra l’uomo e le piante, tra l’uomo e gli animali, tra l’uomo e il cibo nel mondo che dividono. Cura significa avere attenzione per le persone, per i rapporti, per i legami. Cura è anche saper fare i conti con il dolore.": [
+    "racconto.sezioni.2.testo"
+  ],
+  "Ci piace il poco che c’è,": [
+    "racconto.sezioni.3.frase_prima"
+  ],
+  "questo scorrere lento.": [
+    "racconto.sezioni.3.frase_prima_corsivo"
+  ],
+  "La nostra storia": [
+    "racconto.sezioni.3.titolo"
+  ],
+  "non finisce con noi.": [
+    "racconto.sezioni.3.titolo_corsivo"
+  ],
+  "Questa nostra storia di radici e di terra non è stata semplice, un cammino tortuoso, ma abbiamo combattuto per conquistarci quest’angolo di paradiso e renderlo tale per l’ospite. Il nostro è un luogo che ne racconta altri: siamo i luoghi in cui siamo nati e cresciuti, i luoghi che abbiamo abitato, sognati e desiderati, e anche quelli da cui siamo fuggiti.\n\nMasseria Battaglini è un insieme di relazioni, tra noi e chi desidera trovare rifugio e sorriso. È il luogo dove la vita lenta scandisce il ritmo della felicità, donandoci il tempo di coltivarla e poi offrirla. L’amore è come una piccola pianta: va curata ogni giorno. L’abbiamo imparato tra noi ed è qui che l’abbiamo reso concreto.": [
+    "racconto.sezioni.3.testo"
+  ],
+  "Il salotto di vimini sotto i pini del giardino": [
+    "racconto.sezioni.3.alt"
+  ],
+  "La nostra storia parla e continua con voi": [
+    "racconto.sezioni.3.didascalia"
+  ],
+  "Venite a sentirlo": [
+    "racconto.contatti.titolo"
+  ],
+  "di persona.": [
+    "racconto.contatti.titolo_corsivo"
+  ],
+  "Location da favola e trulli restaurati con grazia.": [
+    "recensioni.reviews.0.quote"
+  ],
+  "Per gli amanti della tranquillità è un posto veramente magico.": [
+    "recensioni.reviews.1.quote"
+  ],
+  "La qualità di un hotel di lusso con la sensazione di essere ospiti in una casa meravigliosa.": [
+    "recensioni.reviews.2.quote"
+  ],
+  "Tutto è ben organizzato e curato, il cibo è squisito e le porzioni abbondanti.": [
+    "recensioni.reviews.3.quote"
+  ],
+  "Il miglior pasto casalingo che abbia mai mangiato in Italia.": [
+    "recensioni.reviews.4.quote"
+  ],
+  "Masseria Battaglini": [
+    "site.nome"
+  ],
+  "Masseria Battaglini, Martina Franca: azienda agricola biologica certificata e B&B a conduzione familiare nella Valle d’Itria. Un trullo e una cummersa, tre ettari e mezzo di campagna e 163 ulivi da cui nasce l’olio Sublim’e.": [
+    "site.descrizione"
+  ],
+  "Richiedi disponibilità": [
+    "site.menu.cta",
+    "site.form.bottone"
+  ],
+  "Diteci quando,": [
+    "site.form.titolo"
+  ],
+  "Rispondiamo entro un giorno.": [
+    "site.form.nota"
+  ],
+  "Pranzo o cena in masseria": [
+    "site.form.interessi.0"
+  ],
+  "Massaggi e benessere": [
+    "site.form.interessi.2"
+  ],
+  "Escursioni": [
+    "site.form.interessi.3"
+  ],
+  "Grazie, richiesta ricevuta.": [
+    "site.form.grazie"
+  ],
+  "Vi rispondiamo entro un giorno.": [
+    "site.form.grazie_riga2"
+  ],
+  "Home": [
+    "ui.home"
+  ],
+  "Navigazione principale": [
+    "ui.nav"
+  ],
+  "Apri il menu": [
+    "ui.openMenu"
+  ],
+  "Chiudi il menu": [
+    "ui.closeMenu"
+  ],
+  "Menu": [
+    "ui.menu"
+  ],
+  "Chiudi": [
+    "ui.close"
+  ],
+  "Scegli la lingua": [
+    "ui.language"
+  ],
+  "La stessa storia,": [
+    "ui.languageTitle"
+  ],
+  "nella vostra lingua.": [
+    "ui.languageEm"
+  ],
+  "Torna alla home": [
+    "ui.backHome"
+  ],
+  "Nome e cognome": [
+    "ui.fullName"
+  ],
+  "Il vostro nome": [
+    "ui.yourName"
+  ],
+  "Email": [
+    "ui.email"
+  ],
+  "nome@esempio.it": [
+    "ui.exampleEmail"
+  ],
+  "Telefono": [
+    "ui.phone"
+  ],
+  "Dimora preferita": [
+    "ui.preferredStay"
+  ],
+  "Consigliateci voi": [
+    "ui.suggestStay"
+  ],
+  "Arrivo": [
+    "ui.arrival"
+  ],
+  "Partenza": [
+    "ui.departure"
+  ],
+  "Adulti": [
+    "ui.adults"
+  ],
+  "Bambini": [
+    "ui.children"
+  ],
+  "Vi interessa": [
+    "ui.interest"
+  ],
+  "Solo il soggiorno": [
+    "ui.stayOnly"
+  ],
+  "Messaggio": [
+    "ui.message"
+  ],
+  "Raccontateci il vostro soggiorno: quanti siete, cosa vi piacerebbe fare, se avete richieste particolari.": [
+    "ui.messageHint"
+  ],
+  "Ho letto l’informativa sulla privacy e acconsento al trattamento dei dati.": [
+    "ui.privacy"
+  ],
+  "Preferite scrivere?": [
+    "ui.preferWrite"
+  ],
+  "Compilate questo campo.": [
+    "ui.required"
+  ],
+  "Inserite un indirizzo email valido.": [
+    "ui.validEmail"
+  ],
+  "Per continuare è necessario il consenso al trattamento dei dati.": [
+    "ui.privacyRequired"
+  ],
+  "Come vivere la Cummersa": [
+    "ui.cummersaChoices"
+  ],
+  "Guardate tutte le foto": [
+    "ui.allPhotos"
+  ],
+  "foto": [
+    "ui.photos"
+  ],
+  "Galleria fotografica": [
+    "ui.gallery"
+  ],
+  "Chiudi la galleria": [
+    "ui.closeGallery"
+  ],
+  "Foto precedente": [
+    "ui.prevPhoto"
+  ],
+  "Foto successiva": [
+    "ui.nextPhoto"
+  ],
+  "Apri la galleria: %title%": [
+    "ui.openGallery"
+  ],
+  "%title%, foto %n% di %total%": [
+    "ui.photoCount"
+  ],
+  "Fotografie dei nostri tramonti": [
+    "ui.sunsetPhotos"
+  ],
+  "Riproduci": [
+    "ui.play"
+  ],
+  "Pausa": [
+    "ui.pause"
+  ],
+  "Riprendi": [
+    "ui.resume"
+  ],
+  "Riproduci il video della cooking class": [
+    "ui.playVideo"
+  ],
+  "Metti in pausa il video della cooking class": [
+    "ui.pauseVideo"
+  ],
+  "Guarda il video della cooking class": [
+    "ui.watchVideo"
+  ],
+  "Fotografia in arrivo": [
+    "ui.photoComing"
+  ],
+  "Leggi su": [
+    "ui.readOn"
+  ],
+  "si apre in una nuova scheda": [
+    "ui.newTab"
+  ],
+  "Le attenzioni dei padroni di casa": [
+    "ui.hostsCare"
+  ],
+  "Cosa dicono": [
+    "ui.reviewsTitle"
+  ],
+  "di noi.": [
+    "ui.reviewsEm"
+  ],
+  "Valutazione": [
+    "ui.rating"
+  ],
+  "su 5": [
+    "ui.outOf5"
+  ],
+  "Tutte le recensioni su Google": [
+    "ui.allGoogle"
+  ],
+  "carosello": [
+    "ui.carousel"
+  ],
+  "Recensioni Google degli ospiti": [
+    "ui.guestReviews"
+  ],
+  "recensione": [
+    "ui.review"
+  ],
+  "di": [
+    "ui.of"
+  ],
+  "stelle su 5": [
+    "ui.stars"
+  ],
+  "Leggi la recensione Google di": [
+    "ui.readReview"
+  ],
+  "Recensione Google": [
+    "ui.googleReview"
+  ],
+  "Traduzione di Google": [
+    "ui.googleTranslation"
+  ],
+  "Estratto tradotto": [
+    "ui.translatedExcerpt"
+  ],
+  "Recensione precedente": [
+    "ui.prevReview"
+  ],
+  "Recensione successiva": [
+    "ui.nextReview"
+  ],
+  "Il libro degli ospiti": [
+    "ui.guestbook"
+  ],
+  "Ci sono parole": [
+    "ui.wordsTitle"
+  ],
+  "che restano.": [
+    "ui.wordsEm"
+  ],
+  "Prima di partire, un pensiero sulla carta.": [
+    "ui.guestbookIntro"
+  ],
+  "Sette pagine del nostro libro, con la voce e la calligrafia di chi è stato qui.": [
+    "ui.guestbookIntro2"
+  ],
+  "Libro degli ospiti sfogliabile": [
+    "ui.flipBook"
+  ],
+  "La prossima pagina": [
+    "ui.nextPageTitle"
+  ],
+  "potrebbe essere vostra.": [
+    "ui.nextPageEm"
+  ],
+  "Vi aspettiamo.": [
+    "ui.welcome"
+  ],
+  "Gli incontri restano.": [
+    "ui.encounters"
+  ],
+  "Apri il libro": [
+    "ui.openBook"
+  ],
+  "Pagina precedente": [
+    "ui.prevPage"
+  ],
+  "Pagina successiva": [
+    "ui.nextPage"
+  ],
+  "Leggi da vicino": [
+    "ui.readClose"
+  ],
+  "Chiudi il libro": [
+    "ui.closeBook"
+  ],
+  "Apri la copertina, poi trascina l’angolo per sfogliare.": [
+    "ui.flipHelp"
+  ],
+  "Le pagine e i pensieri, da leggere": [
+    "ui.pagesToRead"
+  ],
+  "Guarda la pagina originale": [
+    "ui.viewOriginal"
+  ],
+  "Testi trascritti e, dove necessario, tradotti. Le scansioni conservano le parole originali.": [
+    "ui.transcriptNote"
+  ],
+  "Preparazione del libro…": [
+    "ui.preparingBook"
+  ],
+  "Copertina": [
+    "ui.cover"
+  ],
+  "L’ultima pagina": [
+    "ui.lastPage"
+  ],
+  "Pagine": [
+    "ui.pages"
+  ],
+  "Pagina": [
+    "ui.page"
+  ],
+  "e": [
+    "ui.and"
+  ],
+  "Usa le frecce per sfogliare. Ingrandisci per leggere ogni parola.": [
+    "ui.flipReduced"
+  ],
+  "Trascina un angolo o usa le frecce. Ingrandisci per leggere ogni parola.": [
+    "ui.flipArrows"
+  ],
+  "Chiudi il libro degli ospiti": [
+    "ui.readerClose"
+  ],
+  "Pagina del libro degli ospiti": [
+    "ui.readerPage"
+  ],
+  "Riprova": [
+    "ui.retry"
+  ],
+  "Leggi il testo": [
+    "ui.readText"
+  ],
+  "Pagine del libro degli ospiti": [
+    "ui.bookPages"
+  ],
+  "Precedente": [
+    "ui.previous"
+  ],
+  "Successiva": [
+    "ui.next"
+  ],
+  "Ingrandisci": [
+    "ui.zoomIn"
+  ],
+  "Riduci": [
+    "ui.zoomOut"
+  ],
+  "Usa le frecce sinistra e destra per cambiare pagina. Ingrandisci per scorrere la scansione nei dettagli. Premi Esc per chiudere.": [
+    "ui.readerHelp"
+  ],
+  "Pagina %n% di %total%": [
+    "ui.pageCount"
+  ],
+  "Caricamento pagina…": [
+    "ui.loadingPage"
+  ],
+  "Scansione originale del libro degli ospiti.": [
+    "ui.originalScan"
+  ],
+  "La pagina non si è caricata. Puoi riprovare o leggere il testo qui sotto.": [
+    "ui.pageErrorText"
+  ],
+  "La pagina non si è caricata. Puoi riprovare.": [
+    "ui.pageError"
+  ]
+}
